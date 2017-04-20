@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet">
+	<script src="js/scripts.js"></script>
+	<title>Home - Study Finder</title>
+</head>
+
+<body class="control">
+	<div class="pageFiller">
+		<div id="topNav">
+			<div id="navHeader">
+				<a id="navBrand" href="index.html">StudyFinder</a>
+			</div>	
+			<a class="navLogin" href="index.html">Logout</a>
+			<a class="navLogin" href="sampleControl.html" style="background-color: #6f6f6f">User Panel</a>			
+			<a class="navLogin" href="samplematches.html">Matches</a>
+			<a class="navLogin" href="sources.html">Sources</a>				
+		</div>
+	</div>
+	<div class="container content">
+		<div class="row" id="row2">
+				<h1> User Panel </h1>
+			<div class="oneElement">
+				<div class="module-container notices">
+					<div class="module-header notices">
+						<a>Notices</a>
+					</div>
+					<div class="module-content notices">
+						<a>You currently have no notices!</a>
+					</div>
+				</div>
+			</div>
+			<div class="twoElement">
+				<div class="module-container left">
+					<div class="module-header">
+						<a>Your Units</a>
+					</div>
+					<ul class="module-content-list" id="unit-list">
+						<li>
+							<div class="module-content-text vacantTxt">No units selected!</div>
+						</li>						
+					</ul>
+					<div class="module-footer">
+						<button class="button modify" id="unit-edit-btn">Edit</button>
+						<div class="modal" id="unitModal">
+							<div class="modal-wrapper">
+								<div class="modal-header">
+									<a>Unit Selector</a>
+								</div>
+								<div class="modal-content">
+									<a class="modal-content-title">Select your units:</a>
+								</div>
+								<ul class="modal-list">
+									<li id="unit-single1"><label><input type="checkbox" id="unit-checked1" class="checkbox"/>CITS3001 - Algorithms, Agents and Artificial Intelligence</label></li>
+									<li id="unit-single2"><label><input type="checkbox" id="unit-checked2" class="checkbox"/>CITS3002 - Networks and Security</label></li>
+									<li id="unit-single3"><label><input type="checkbox" id="unit-checked3" class="checkbox"/>CITS3200 - Professional Computing</label></li>
+									<li id="unit-single4"><label><input type="checkbox" id="unit-checked4" class="checkbox"/>CITS3403 - Agile Web Development</label></li>							
+								</ul>
+								<div class="modal-footer">
+									<span class="close"><button class="button">Close</button></span>						
+									<button class="button login" id="unitSubmit">Save</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="module-container left">
+					<div class="module-header">
+						<a>Experience</a>
+					</div>
+					<div class="module-content" id="experience">
+						<ul class="module-content-list">
+							<li>								
+								<div class="module-content-header">C#</div>
+								<div class="module-content-text">
+									Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
+								</div>							
+								<div class="module-footer experience">
+									<button class="button modify removeExp">-</button>
+								</div>							
+							</li>							
+							<li>
+								<div class="module-content-header">C++</div>
+								<div class="module-content-text">
+									Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
+								</div>
+								<div class="module-footer experience">
+									<button class="button modify removeExp">-</button>
+								</div>								
+							</li>							
+							<li>
+								<div class="module-content-header">Java</div>
+								<div class="module-content-text">
+									Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
+								</div>	
+								<div class="module-footer experience">
+									<button class="button modify removeExp">-</button>
+								</div>									
+							</li>						
+						</ul>
+					</div>
+					<div class="module-footer">
+						<button class="button modify add" id="add-exp">+</button>
+						<button class="button modify" id="edit-exp">Edit</button>
+						<button class="button modify cancel" id="cancel-exp">Cancel</button>						
+					</div>					
+				</div>
+			</div>
+			<div class="twoElement">
+				<div class="module-container">
+					<div class="module-header">
+						<a>Personal & Contact Information</a>
+					</div>	
+					<ul class="module-content-list">
+						<li>
+							<div class="module-content-header">
+								<a>Name:</a>
+							</div>
+							<div class="module-content-text">
+								<a>Jason Ankers</a>
+							</div>								
+						</li>		
+						<li>
+							<div class="module-content-header">
+								<a>Age:</a>
+							</div>
+							<div class="module-content-text">
+								<a>21</a>
+							</div>								
+						</li>
+						<li>
+							<div class="module-content-header">
+								<a>Phone:</a>
+							</div>
+							<div class="module-content-text">
+								<a>0435606909</a>
+							</div>								
+						</li>
+						<li>
+							<div class="module-content-header">
+								<a>Email:</a>
+							</div>
+							<div class="module-content-text">
+								<a>21493118@student.uwa.edu.au</a>
+							</div>								
+						</li>
+					</ul>
+				</div>		
+				<div class="module-container">	
+					<div class="module-header">
+						<a>Availability</a>
+					</div>
+					<ul class="module-content-list" id="day-list">	
+						<li>
+							<div class="module-content-text vacantTxt">No days selected!</div>
+						</li>					
+					</ul>
+					<div class="module-footer">
+						<button class="button modify" id="availability-edit-btn">Edit</button>
+						<div class="modal" id="availabilityModal">
+							<div class="modal-wrapper">
+								<div class="modal-header">
+									<a>Availability</a>
+								</div>
+								<div class="modal-content">
+									<a class="modal-content-title">Choose your availability</a>
+								</div>
+								<ul class="modal-list">
+									<li>
+										<label class="timeframe-list-label"><input type="checkbox" class="checkbox day"/>Monday</label>
+										<div class="timeframe">
+											<div class="dropdown inactive">
+												<button class="button modify drop-btn">0:00</button>
+												<div class="drop-content">
+													<a>12:00am</a><a>1:00am</a><a>2:00am</a><a>3:00am</a><a>4:00am</a><a>5:00am</a><a>6:00am</a><a>7:00am</a><a>8:00am</a><a>9:00am</a><a>10:00am</a><a>11:00am</a><a>12:00pm</a><a>1:00pm</a><a>2:00pm</a><a>3:00pm</a><a>4:00pm</a><a>5:00pm</a><a>6:00pm</a><a>7:00pm</a><a>8:00pm</a><a>9:00pm</a><a>10:00pm</a><a>11:00pm</a>	
+												</div>
+											</div>
+											<a>To</a>
+											<div class="dropdown inactive">
+												<button class="button modify drop-btn">0:00</button>
+												<div class="drop-content">
+													<a>12:00am</a><a>1:00am</a><a>2:00am</a><a>3:00am</a><a>4:00am</a><a>5:00am</a><a>6:00am</a><a>7:00am</a><a>8:00am</a><a>9:00am</a><a>10:00am</a><a>11:00am</a><a>12:00pm</a><a>1:00pm</a><a>2:00pm</a><a>3:00pm</a><a>4:00pm</a><a>5:00pm</a><a>6:00pm</a><a>7:00pm</a><a>8:00pm</a><a>9:00pm</a><a>10:00pm</a><a>11:00pm</a>
+												</div>
+											</div>
+										</div>	
+									</li>
+									<li>
+										<label class="timeframe-list-label"><input type="checkbox" class="checkbox day"/>Tuesday</label>
+										<div class="timeframe">
+											<div class="dropdown inactive">
+												<button class="button modify drop-btn">0:00</button>
+												<div class="drop-content">
+													<a>12:00am</a><a>1:00am</a><a>2:00am</a><a>3:00am</a><a>4:00am</a><a>5:00am</a><a>6:00am</a><a>7:00am</a><a>8:00am</a><a>9:00am</a><a>10:00am</a><a>11:00am</a><a>12:00pm</a><a>1:00pm</a><a>2:00pm</a><a>3:00pm</a><a>4:00pm</a><a>5:00pm</a><a>6:00pm</a><a>7:00pm</a><a>8:00pm</a><a>9:00pm</a><a>10:00pm</a><a>11:00pm</a>
+												</div>
+											</div>
+											<a>To</a>
+											<div class="dropdown inactive">
+												<button class="button modify drop-btn">0:00</button>
+												<div class="drop-content">
+													<a>12:00am</a><a>1:00am</a><a>2:00am</a><a>3:00am</a><a>4:00am</a><a>5:00am</a><a>6:00am</a><a>7:00am</a><a>8:00am</a><a>9:00am</a><a>10:00am</a><a>11:00am</a><a>12:00pm</a><a>1:00pm</a><a>2:00pm</a><a>3:00pm</a><a>4:00pm</a><a>5:00pm</a><a>6:00pm</a><a>7:00pm</a><a>8:00pm</a><a>9:00pm</a><a>10:00pm</a><a>11:00pm</a>
+												</div>
+											</div>
+										</div>	
+									</li>
+									<li>
+										<label class="timeframe-list-label"><input type="checkbox" class="checkbox day"/>Wednesday</label>
+										<div class="timeframe">
+											<div class="dropdown inactive">
+												<button class="button modify drop-btn">0:00</button>
+												<div class="drop-content">
+													<a>12:00am</a><a>1:00am</a><a>2:00am</a><a>3:00am</a><a>4:00am</a><a>5:00am</a><a>6:00am</a><a>7:00am</a><a>8:00am</a><a>9:00am</a><a>10:00am</a><a>11:00am</a><a>12:00pm</a><a>1:00pm</a><a>2:00pm</a><a>3:00pm</a><a>4:00pm</a><a>5:00pm</a><a>6:00pm</a><a>7:00pm</a><a>8:00pm</a><a>9:00pm</a><a>10:00pm</a><a>11:00pm</a>
+												</div>
+											</div>
+											<a>To</a>
+											<div class="dropdown inactive">
+												<button class="button modify drop-btn">0:00</button>
+												<div class="drop-content">
+													<a>12:00am</a><a>1:00am</a><a>2:00am</a><a>3:00am</a><a>4:00am</a><a>5:00am</a><a>6:00am</a><a>7:00am</a><a>8:00am</a><a>9:00am</a><a>10:00am</a><a>11:00am</a><a>12:00pm</a><a>1:00pm</a><a>2:00pm</a><a>3:00pm</a><a>4:00pm</a><a>5:00pm</a><a>6:00pm</a><a>7:00pm</a><a>8:00pm</a><a>9:00pm</a><a>10:00pm</a><a>11:00pm</a>
+												</div>
+											</div>
+										</div>	
+									</li>
+									<li>
+										<label class="timeframe-list-label"><input type="checkbox" class="checkbox day"/>Thursday</label>
+										<div class="timeframe">
+											<div class="dropdown inactive">
+												<button class="button modify drop-btn">0:00</button>
+												<div class="drop-content">
+													<a>12:00am</a><a>1:00am</a><a>2:00am</a><a>3:00am</a><a>4:00am</a><a>5:00am</a><a>6:00am</a><a>7:00am</a><a>8:00am</a><a>9:00am</a><a>10:00am</a><a>11:00am</a><a>12:00pm</a><a>1:00pm</a><a>2:00pm</a><a>3:00pm</a><a>4:00pm</a><a>5:00pm</a><a>6:00pm</a><a>7:00pm</a><a>8:00pm</a><a>9:00pm</a><a>10:00pm</a><a>11:00pm</a>
+												</div>
+											</div>
+											<a>To</a>
+											<div class="dropdown inactive">
+												<button class="button modify drop-btn">0:00</button>
+												<div class="drop-content">
+													<a>12:00am</a><a>1:00am</a><a>2:00am</a><a>3:00am</a><a>4:00am</a><a>5:00am</a><a>6:00am</a><a>7:00am</a><a>8:00am</a><a>9:00am</a><a>10:00am</a><a>11:00am</a><a>12:00pm</a><a>1:00pm</a><a>2:00pm</a><a>3:00pm</a><a>4:00pm</a><a>5:00pm</a><a>6:00pm</a><a>7:00pm</a><a>8:00pm</a><a>9:00pm</a><a>10:00pm</a><a>11:00pm</a>
+												</div>
+											</div>
+										</div>	
+									</li>
+									<li>
+										<label class="timeframe-list-label"><input type="checkbox" class="checkbox day"/>Friday</label>
+										<div class="timeframe">
+											<div class="dropdown inactive">
+												<button class="button modify drop-btn">0:00</button>
+												<div class="drop-content">
+													<a>12:00am</a><a>1:00am</a><a>2:00am</a><a>3:00am</a><a>4:00am</a><a>5:00am</a><a>6:00am</a><a>7:00am</a><a>8:00am</a><a>9:00am</a><a>10:00am</a><a>11:00am</a><a>12:00pm</a><a>1:00pm</a><a>2:00pm</a><a>3:00pm</a><a>4:00pm</a><a>5:00pm</a><a>6:00pm</a><a>7:00pm</a><a>8:00pm</a><a>9:00pm</a><a>10:00pm</a><a>11:00pm</a>
+												</div>
+											</div>
+											<a>To</a>
+											<div class="dropdown inactive">
+												<button class="button modify drop-btn">0:00</button>
+												<div class="drop-content">
+													<a>12:00am</a><a>1:00am</a><a>2:00am</a><a>3:00am</a><a>4:00am</a><a>5:00am</a><a>6:00am</a><a>7:00am</a><a>8:00am</a><a>9:00am</a><a>10:00am</a><a>11:00am</a><a>12:00pm</a><a>1:00pm</a><a>2:00pm</a><a>3:00pm</a><a>4:00pm</a><a>5:00pm</a><a>6:00pm</a><a>7:00pm</a><a>8:00pm</a><a>9:00pm</a><a>10:00pm</a><a>11:00pm</a>
+												</div>
+											</div>
+										</div>	
+									</li>
+									<li>
+										<label class="timeframe-list-label"><input type="checkbox" class="checkbox day"/>Saturday</label>
+										<div class="timeframe">
+											<div class="dropdown inactive">
+												<button class="button modify drop-btn">0:00</button>
+												<div class="drop-content">
+													<a>12:00am</a><a>1:00am</a><a>2:00am</a><a>3:00am</a><a>4:00am</a><a>5:00am</a><a>6:00am</a><a>7:00am</a><a>8:00am</a><a>9:00am</a><a>10:00am</a><a>11:00am</a><a>12:00pm</a><a>1:00pm</a><a>2:00pm</a><a>3:00pm</a><a>4:00pm</a><a>5:00pm</a><a>6:00pm</a><a>7:00pm</a><a>8:00pm</a><a>9:00pm</a><a>10:00pm</a><a>11:00pm</a>
+												</div>
+											</div>
+											<a>To</a>
+											<div class="dropdown inactive">
+												<button class="button modify drop-btn">0:00</button>
+												<div class="drop-content">
+													<a>12:00am</a><a>1:00am</a><a>2:00am</a><a>3:00am</a><a>4:00am</a><a>5:00am</a><a>6:00am</a><a>7:00am</a><a>8:00am</a><a>9:00am</a><a>10:00am</a><a>11:00am</a><a>12:00pm</a><a>1:00pm</a><a>2:00pm</a><a>3:00pm</a><a>4:00pm</a><a>5:00pm</a><a>6:00pm</a><a>7:00pm</a><a>8:00pm</a><a>9:00pm</a><a>10:00pm</a><a>11:00pm</a>
+												</div>
+											</div>
+										</div>	
+									</li>
+									<li>
+										<label class="timeframe-list-label"><input type="checkbox" class="checkbox day"/>Sunday</label>
+										<div class="timeframe">
+											<div class="dropdown inactive">
+												<button class="button modify drop-btn">0:00</button>
+												<div class="drop-content">
+													<a>12:00am</a><a>1:00am</a><a>2:00am</a><a>3:00am</a><a>4:00am</a><a>5:00am</a><a>6:00am</a><a>7:00am</a><a>8:00am</a><a>9:00am</a><a>10:00am</a><a>11:00am</a><a>12:00pm</a><a>1:00pm</a><a>2:00pm</a><a>3:00pm</a><a>4:00pm</a><a>5:00pm</a><a>6:00pm</a><a>7:00pm</a><a>8:00pm</a><a>9:00pm</a><a>10:00pm</a><a>11:00pm</a>
+												</div>
+											</div>
+											<a>To</a>
+											<div class="dropdown inactive">
+												<button class="button modify drop-btn">0:00</button>
+												<div class="drop-content">
+													<a>12:00am</a><a>1:00am</a><a>2:00am</a><a>3:00am</a><a>4:00am</a><a>5:00am</a><a>6:00am</a><a>7:00am</a><a>8:00am</a><a>9:00am</a><a>10:00am</a><a>11:00am</a><a>12:00pm</a><a>1:00pm</a><a>2:00pm</a><a>3:00pm</a><a>4:00pm</a><a>5:00pm</a><a>6:00pm</a><a>7:00pm</a><a>8:00pm</a><a>9:00pm</a><a>10:00pm</a><a>11:00pm</a>
+												</div>
+											</div>
+										</div>	
+									</li>									
+								</ul>
+								<div class="modal-footer">
+									<span class="close"><button class="button">Close</button></span>						
+									<button class="button login" id="availSubmit">Save</button>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</div>
+	<footer class="pageFiller">
+		<div class="container footer">
+			<div id="footer-lastmodified"></div>
+		</div>
+	</footer>
+</body>
+</html>
