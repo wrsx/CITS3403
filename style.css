@@ -28,10 +28,6 @@
 	margin-left: 1px;
 }	
 
-#content {
-	text-align: center;
-}
-
 .pageFiller{
 	background-color: #333333;
 }
@@ -141,6 +137,34 @@
 	text-decoration: none;
 	display: inline-block;
 	padding: 6px 12px;
+}
+
+/* Registration */
+
+.signup-form {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.sign-up {
+	margin-top: 100px;
+}
+
+.reg-content input[type=text], .reg-content input[type=email], .reg-content select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 17px;
+    text-align: center;
+}
+
+.signup-form {
+	width: 50%;
+	margin: 0px auto;
 }
 
 /* Matches */
@@ -435,6 +459,11 @@
 
 .show {display: block; z-index: 1;}
 .inactive {opacity: 0.6;}
+
+/* Centered content */
+.splash-content, .reg-content {
+	text-align: center;
+}
 
 /* Responsive config */
 
