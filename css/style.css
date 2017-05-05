@@ -17,6 +17,8 @@
 	padding: 10px 10px;
 }
 
+#topNav .nav>li>a:focus, #topNav .nav>li>a:hover {
+	background-color: #3c3c3c;
 }
 
 #topNav .navbar, #topNav .navbar-right, #topNav .navbar-nav {
