@@ -4,13 +4,6 @@
 	margin-right: auto;
 }
 
-#navHeader {
-	overflow: hidden;	
-	padding: 5px;	
-	margin-left: 10px;
-	float: left;
-}
-
 #navBrand {
 	color: #fff;
 	text-decoration: none;
@@ -18,14 +11,20 @@
 	font-size: 23px;
 }
 
-.navLogin {
+.navButton {
 	color: #fff;
 	text-decoration: none;
-	background-color: #4e4e4e;
-	float: right;
-	height: 100%;
 	padding: 10px 10px;
-	margin-left: 1px;
+}
+
+}
+
+#topNav .navbar, #topNav .navbar-right, #topNav .navbar-nav {
+	margin: 0;
+}
+
+.navButton.active {
+	background-color: #3c3c3c;
 }	
 
 .pageFiller{
@@ -139,7 +138,7 @@
 	padding: 6px 12px;
 }
 
-/* Registration */
+/* Sign up */
 
 .signup-form {
 	width: 50%;
@@ -228,6 +227,7 @@
 	padding: 0;
 	
 }
+
 .module-container.match:hover { transform: scale(1.05); }
 
 
@@ -304,10 +304,6 @@
 	flex-wrap: wrap;
     border-top: 1px solid #ccc;
     padding: 10px 10px 10px 20px;	
-}
-
-.module-content-text {
-
 }
 
 /* Modal Config */
@@ -461,6 +457,7 @@
 .inactive {opacity: 0.6;}
 
 /* Centered content */
+
 .splash-content, .reg-content {
 	text-align: center;
 }
@@ -507,7 +504,7 @@
 	
 }
 
-/*Globals*/
+/* Globals */
 
 input[type=checkbox] {
 	margin-top: 0px;
@@ -543,7 +540,7 @@ body {
 	min-height: 100%;
 	display: flex;
 	margin: 0px;
-	font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+	font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;
 }
 
 html {

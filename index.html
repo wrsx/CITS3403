@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-    <link href="style.css" rel="stylesheet">
-	<script src="js/scripts.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<title>Home - Study Finder</title>
 </head>
 
 <body class="index">
 	<div class="pageFiller">
 		<div id="topNav">
-			<div id="navHeader">
-				<a id="navBrand" href="index.html">StudyFinder</a>
+			<div class="navbar-header">
+				<a class="navbar-brand" id="navBrand" href="index.html">StudyFinder</a>
 			</div>
-			<a class="navLogin" href="signup.html">Register</a>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a class="navButton" href="signup.html">Sign Up</a></li>
+			</ul>
 		</div>
 	</div>
 	<div class="container content">
@@ -29,24 +31,25 @@
 			<div class="threeElement">
 				<h1>Search</h1>
 				<p>Search for like-minded users seeking efficient ways to study. StudyFinder will search for matches based on your desired units and availability. A match percentage will indicate how compatible a given match appears.</p>
-				<a class="viewMore" href="#">View more</a>
 			</div>
 			<div class="threeElement">
 				<h1>Match</h1>
 				<p>StudyFinder gives you the option to view your existing matches on your profile page. Viewing a match will display contact details, a match percentage, and an option to unmatch with the respective user. </p>
-				<a class="viewMore" href="#">View more</a>
 			</div>
 			<div class="threeElement">
 				<h1>Study</h1>
-				<p>Contact matches via student email, phone number, or a custom contact method specified by the user. Contact details are only viewable once you have matched with a user first. You can edit your details via the user panel.</p>
-				<a class="viewMore" href="#">View more</a>
+				<p>Contact matches via student email, phone number, or a custom contact method specified by the user. Contact details are only viewable once you have matched with a user first. You can edit your details via the user panel.</p>	
 			</div>			
 		</div>
 	</div>
+	<br>
 	<footer class="pageFiller">
 		<div class="container footer">
 			<div id="footer-lastmodified"></div>
 		</div>
 	</footer>
+	<script src="js/scripts.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>		
 </body>
 </html>
