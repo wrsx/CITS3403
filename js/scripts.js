@@ -254,7 +254,7 @@ window.onload = function() {
 					var buttonText = e.target.parentElement.parentElement.childNodes[1];
 					var lowerTime = e.target.parentElement.parentElement.parentElement.childNodes[1];
 					var upperTime = e.target.parentElement.parentElement.parentElement.childNodes[5];	
-					if (e.target) {
+					if (e.target.tagName.toLowerCase() === 'a') {
 						buttonText.innerText = e.target.innerText;
 					}
 					if(buttonText.parentElement == lowerTime) {
