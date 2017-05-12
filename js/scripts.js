@@ -96,8 +96,8 @@ window.onload = function() {
 			moduleContentText.className = "module-content-text";
 			var moduleFooter = document.createElement("div");
 			moduleFooter.className = "module-footer experience active";
-			moduleContentHeader.innerHTML = '<textarea class="textHeader" maxlength = "50"></textarea>';
-			moduleContentText.innerHTML = '<textarea></textarea>';
+			moduleContentHeader.innerHTML = '<textarea class="textHeader" maxlength = "50" rows="1" cols="62"></textarea>';
+			moduleContentText.innerHTML = '<textarea rows="8" cols="62"></textarea>';
 			moduleFooter.innerHTML = '<button class="button modify removeExp">-</button>'
 			newListItem.appendChild(moduleContentHeader);
 			newListItem.appendChild(moduleContentText);

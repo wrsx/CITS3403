@@ -170,6 +170,11 @@
 	margin: 0px auto;
 }
 
+#signup-wrapper {
+	margin-right: auto;
+	margin-left: auto;
+}
+
 /* Matches config */
 
 .module-container.match {
@@ -470,10 +475,11 @@
 
 @media (min-width: 650px) { 
 	.modal-wrapper {
-	    width: 650px;
-		
+	    width: 650px;	
 	}
-
+	#signup-wrapper {
+		width: 650px;
+	}
 }
 
 @media (min-width: 815px) {
