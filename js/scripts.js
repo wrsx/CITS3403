@@ -1,7 +1,6 @@
 window.onload = function() {
 	
 	if (document.getElementsByTagName("body")[0].className.match("control")) { //Only for user panel page
-		
 		var subUnits = document.getElementById('unitSubmit'); //Unit submit button	
 		var subDays = document.getElementById('availSubmit'); //Availability submit button
 		var unitEditBtn = document.getElementById("unit-edit-btn"); //Edit units button
@@ -370,9 +369,16 @@ window.onload = function() {
 		}	
 	}
 	
+	else if (document.getElementsByTagName("body")[0].className.match("index")) { // Only for index page
+		var loginBtn = document.getElementById("loginBtn"); //Login button
+		loginBtn.onclick = function() {
+			document.getElementById('loginModal').style.display = "block";
+		}
+	}
 	var allModals = document.getElementsByClassName('modal'); //All modal elements
 	var allDropDowns = document.getElementsByClassName('drop-content'); //All dropdown elements	
-	var closes = document.getElementsByClassName("close"); //All close buttons (for modals)	
+	var closes = document.getElementsByClassName("close"); //All close buttons (for modals)
+	
 	//Global modal setting - close button		
 	for (var i=0; i < closes.length; i++) {
 		var close = closes[i];
@@ -412,7 +418,41 @@ window.onload = function() {
 				return curDrop;
 			}
 		}
-	}	
+	}
+	
+	//Validates valid form entries
+	function validateSignUp() {
+		var uname = document.forms["sign-up-form"]["uname"].value;
+		if (!(/^(\d|\w)+$/.test(uname))) {
+			alert("Username is invalid.");
+			return false;
+		}
+
+		var fname = document.forms["sign-up-form"]["fname"].value;
+		if (!(/^(\w)+$/.test(fname))) {
+			alert("First Name is invalid.");
+			return false;
+		}
+
+		var lname = document.forms["sign-up-form"]["lname"].value;
+		if (!(/^(\w)+$/.test(lname))) {
+			alert("Last Name is invalid.");
+			return false;
+		}
+
+		var uni = document.forms["sign-up-form"]["uni"].value;
+		if (!(/^(\w)+(\s\w+)*$/.test(uni))) {
+			alert("Uni is invalid.");
+			return false;
+		}
+
+		var email = document.forms["sign-up-form"]["email"].value;
+		if (!(/^(\d|\w)+@\w*\.edu\.au$/.test(email))) {
+			alert("Email is invalid.");
+			return false;
+		}
+	}
+	
 	document.getElementById("footer-lastmodified").innerHTML = "Last Modified: " + document.lastModified;
 	
 };

@@ -24,8 +24,27 @@
 			<img src="images/2.png" id="logo" alt="StudyFinder">
 			<p>StudyFinder is a fast and simple tool that makes finding study partners easy.</p>
 			<p>You are currently not logged in!</p>
-			<button class="button">Login</button>
-			<p>*Disabled, users would login using LMS. Use the demo login button in the top right nav.</p>			
+			<button class="button" id="loginBtn">Login</button>		
+		</div>
+		<div class="modal" id="loginModal">
+			<div class="modal-wrapper" id="loginModalWrap">
+				<div class="modal-header">
+					<a>Login to StudyFinder</a>
+				</div>
+				<div class="modal-content">
+					<div class="reg-content">	
+						<form name="sign-up-form" onsubmit="return validateSignUp()" method="POST">
+							<input type="text" name="uname" placeholder="Username" required><br>
+							<input type="password" name="fname" placeholder="Password" required><br>
+							<br>
+							<input type="submit" class="button" value="Submit" id="login-submit">
+						</form>	
+						<br>
+					</div>	
+				</div>
+				<div class="modal-footer">
+				</div>				
+			</div>
 		</div>
 		<div class="row" id="row1">
 			<div class="threeElement">

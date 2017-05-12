@@ -1,3 +1,5 @@
+/* General site structure & navs */
+
 #topNav {
 	color: #fff;
 	margin-left: auto;
@@ -65,6 +67,24 @@
 	border-bottom: 1px solid #eee;
 }
 
+.row {
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+.row h1 {
+    border-bottom: 1px solid #eaecef;
+}
+
+.threeElement {
+	width: 100%;
+}
+
+.threeElement p {
+	margin: 0px 10px 0px 0px;
+}
+
+/* Button styles */
 
 .button {
 	text-decoration: none;
@@ -114,32 +134,6 @@
 	display: block;
 }
 
-.row {
-	margin-left: 2%;
-	margin-right: 2%;
-}
-
-
-.row h1 {
-    border-bottom: 1px solid #eaecef;
-}
-
-
-.threeElement {
-	width: 100%;
-}
-
-.threeElement p {
-	margin: 0px 10px 0px 0px;
-}
-
-.viewMore {
-	color: 	#337ab7;
-	text-decoration: none;
-	display: inline-block;
-	padding: 6px 12px;
-}
-
 /* Sign up */
 
 .signup-form {
@@ -151,7 +145,15 @@
 	margin-top: 100px;
 }
 
-.reg-content input[type=text], .reg-content input[type=email], .reg-content select {
+.reg-content {
+	flex: 1;
+}
+
+#loginModalWrap {
+	width: 350px;
+}
+
+.reg-content input[type=text], .reg-content input[type=email], .reg-content input[type=password], .reg-content select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -168,7 +170,7 @@
 	margin: 0px auto;
 }
 
-/* Matches */
+/* Matches config */
 
 .module-container.match {
     background: #f1f1f1;	
@@ -460,7 +462,7 @@
 
 /* Centered content */
 
-.splash-content, .reg-content {
+.splash-content, .reg-content, .cent-txt{
 	text-align: center;
 }
 
