@@ -1,0 +1,563 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    link(href='css/style.css', rel='stylesheet')
+    link(href='css/bootstrap.min.css', rel='stylesheet')
+    title Home - Study Finder
+  body.control
+    .pageFiller
+      #topNav
+        nav.navbar
+          .navbar-header
+            a#navBrand.navbar-brand(href='index.html') StudyFinder
+          ul.nav.navbar-nav
+            li
+              a.navButton.active(href='control.html') User Panel
+            li
+              a.navButton(href='matches.html') Matches
+          ul.nav.navbar-nav.navbar-right
+            li
+              a.navButton(href='index.html') Logout
+    .container.content
+      #row2.row
+        h1  User Panel 
+        .oneElement
+          .module-container.notices
+            .module-header.notices
+              a Notices
+            .module-content.notices
+              a You currently have no notices!
+        .twoElement
+          .module-container.left
+            .module-header
+              a Your Units
+            ul#unit-list.module-content-list
+              li
+                .module-content-text.vacantTxt No units selected!
+            .module-footer
+              button#unit-edit-btn.button.modify Edit
+              #unitModal.modal
+                .modal-wrapper
+                  .modal-header
+                    a Unit Selector
+                  .modal-content
+                    a.modal-content-title Select your units:
+                  ul.modal-list
+                    li#unit-single1
+                      label
+                        input#unit-checked1.checkbox(type='checkbox')
+                        | CITS3001 - Algorithms, Agents and Artificial Intelligence
+                    li#unit-single2
+                      label
+                        input#unit-checked2.checkbox(type='checkbox')
+                        | CITS3002 - Networks and Security
+                    li#unit-single3
+                      label
+                        input#unit-checked3.checkbox(type='checkbox')
+                        | CITS3200 - Professional Computing
+                    li#unit-single4
+                      label
+                        input#unit-checked4.checkbox(type='checkbox')
+                        | CITS3403 - Agile Web Development
+                  .modal-footer
+                    span.close
+                      button.button Close
+                    button#unitSubmit.button.login Save
+          .module-container.left
+            .module-header
+              a Experience
+            #experience.module-content
+              ul.module-content-list
+                li
+                  .module-content-header C#
+                  .module-content-text
+                    | Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
+                  .module-footer.experience
+                    button.button.modify.removeExp -
+                li
+                  .module-content-header C++
+                  .module-content-text
+                    | Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
+                  .module-footer.experience
+                    button.button.modify.removeExp -
+                li
+                  .module-content-header Java
+                  .module-content-text
+                    | Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
+                  .module-footer.experience
+                    button.button.modify.removeExp -
+            .module-footer
+              button#add-exp.button.modify.add +
+              button#edit-exp.button.modify Edit
+              button#cancel-exp.button.modify.cancel Cancel
+        .twoElement
+          .module-container
+            .module-header
+              a Personal & Contact Information
+            ul.module-content-list
+              li
+                .module-content-header
+                  a Name:
+                .module-content-text
+                  a Jason Ankers
+              li
+                .module-content-header
+                  a Age:
+                .module-content-text
+                  a 21
+              li
+                .module-content-header
+                  a Phone:
+                .module-content-text
+                  a 0435606909
+              li
+                .module-content-header
+                  a Email:
+                .module-content-text
+                  a 21493118@student.uwa.edu.au
+          .module-container
+            .module-header
+              a Availability
+            ul#day-list.module-content-list
+              li
+                .module-content-text.vacantTxt No days selected!
+            .module-footer
+              button#availability-edit-btn.button.modify Edit
+              #availabilityModal.modal
+                .modal-wrapper
+                  .modal-header
+                    a Availability
+                  .modal-content
+                    a.modal-content-title Choose your availability
+                  ul.modal-list
+                    li
+                      label.timeframe-list-label
+                        input.checkbox.day(type='checkbox')
+                        | Monday
+                      .timeframe
+                        .dropdown.inactive
+                          button.button.modify.drop-btn 0:00
+                          .drop-content
+                            a 12:00am
+                            a 1:00am
+                            a 2:00am
+                            a 3:00am
+                            a 4:00am
+                            a 5:00am
+                            a 6:00am
+                            a 7:00am
+                            a 8:00am
+                            a 9:00am
+                            a 10:00am
+                            a 11:00am
+                            a 12:00pm
+                            a 1:00pm
+                            a 2:00pm
+                            a 3:00pm
+                            a 4:00pm
+                            a 5:00pm
+                            a 6:00pm
+                            a 7:00pm
+                            a 8:00pm
+                            a 9:00pm
+                            a 10:00pm
+                            a 11:00pm
+                        a To
+                        .dropdown.inactive
+                          button.button.modify.drop-btn 0:00
+                          .drop-content
+                            a 12:00am
+                            a 1:00am
+                            a 2:00am
+                            a 3:00am
+                            a 4:00am
+                            a 5:00am
+                            a 6:00am
+                            a 7:00am
+                            a 8:00am
+                            a 9:00am
+                            a 10:00am
+                            a 11:00am
+                            a 12:00pm
+                            a 1:00pm
+                            a 2:00pm
+                            a 3:00pm
+                            a 4:00pm
+                            a 5:00pm
+                            a 6:00pm
+                            a 7:00pm
+                            a 8:00pm
+                            a 9:00pm
+                            a 10:00pm
+                            a 11:00pm
+                    li
+                      label.timeframe-list-label
+                        input.checkbox.day(type='checkbox')
+                        | Tuesday
+                      .timeframe
+                        .dropdown.inactive
+                          button.button.modify.drop-btn 0:00
+                          .drop-content
+                            a 12:00am
+                            a 1:00am
+                            a 2:00am
+                            a 3:00am
+                            a 4:00am
+                            a 5:00am
+                            a 6:00am
+                            a 7:00am
+                            a 8:00am
+                            a 9:00am
+                            a 10:00am
+                            a 11:00am
+                            a 12:00pm
+                            a 1:00pm
+                            a 2:00pm
+                            a 3:00pm
+                            a 4:00pm
+                            a 5:00pm
+                            a 6:00pm
+                            a 7:00pm
+                            a 8:00pm
+                            a 9:00pm
+                            a 10:00pm
+                            a 11:00pm
+                        a To
+                        .dropdown.inactive
+                          button.button.modify.drop-btn 0:00
+                          .drop-content
+                            a 12:00am
+                            a 1:00am
+                            a 2:00am
+                            a 3:00am
+                            a 4:00am
+                            a 5:00am
+                            a 6:00am
+                            a 7:00am
+                            a 8:00am
+                            a 9:00am
+                            a 10:00am
+                            a 11:00am
+                            a 12:00pm
+                            a 1:00pm
+                            a 2:00pm
+                            a 3:00pm
+                            a 4:00pm
+                            a 5:00pm
+                            a 6:00pm
+                            a 7:00pm
+                            a 8:00pm
+                            a 9:00pm
+                            a 10:00pm
+                            a 11:00pm
+                    li
+                      label.timeframe-list-label
+                        input.checkbox.day(type='checkbox')
+                        | Wednesday
+                      .timeframe
+                        .dropdown.inactive
+                          button.button.modify.drop-btn 0:00
+                          .drop-content
+                            a 12:00am
+                            a 1:00am
+                            a 2:00am
+                            a 3:00am
+                            a 4:00am
+                            a 5:00am
+                            a 6:00am
+                            a 7:00am
+                            a 8:00am
+                            a 9:00am
+                            a 10:00am
+                            a 11:00am
+                            a 12:00pm
+                            a 1:00pm
+                            a 2:00pm
+                            a 3:00pm
+                            a 4:00pm
+                            a 5:00pm
+                            a 6:00pm
+                            a 7:00pm
+                            a 8:00pm
+                            a 9:00pm
+                            a 10:00pm
+                            a 11:00pm
+                        a To
+                        .dropdown.inactive
+                          button.button.modify.drop-btn 0:00
+                          .drop-content
+                            a 12:00am
+                            a 1:00am
+                            a 2:00am
+                            a 3:00am
+                            a 4:00am
+                            a 5:00am
+                            a 6:00am
+                            a 7:00am
+                            a 8:00am
+                            a 9:00am
+                            a 10:00am
+                            a 11:00am
+                            a 12:00pm
+                            a 1:00pm
+                            a 2:00pm
+                            a 3:00pm
+                            a 4:00pm
+                            a 5:00pm
+                            a 6:00pm
+                            a 7:00pm
+                            a 8:00pm
+                            a 9:00pm
+                            a 10:00pm
+                            a 11:00pm
+                    li
+                      label.timeframe-list-label
+                        input.checkbox.day(type='checkbox')
+                        | Thursday
+                      .timeframe
+                        .dropdown.inactive
+                          button.button.modify.drop-btn 0:00
+                          .drop-content
+                            a 12:00am
+                            a 1:00am
+                            a 2:00am
+                            a 3:00am
+                            a 4:00am
+                            a 5:00am
+                            a 6:00am
+                            a 7:00am
+                            a 8:00am
+                            a 9:00am
+                            a 10:00am
+                            a 11:00am
+                            a 12:00pm
+                            a 1:00pm
+                            a 2:00pm
+                            a 3:00pm
+                            a 4:00pm
+                            a 5:00pm
+                            a 6:00pm
+                            a 7:00pm
+                            a 8:00pm
+                            a 9:00pm
+                            a 10:00pm
+                            a 11:00pm
+                        a To
+                        .dropdown.inactive
+                          button.button.modify.drop-btn 0:00
+                          .drop-content
+                            a 12:00am
+                            a 1:00am
+                            a 2:00am
+                            a 3:00am
+                            a 4:00am
+                            a 5:00am
+                            a 6:00am
+                            a 7:00am
+                            a 8:00am
+                            a 9:00am
+                            a 10:00am
+                            a 11:00am
+                            a 12:00pm
+                            a 1:00pm
+                            a 2:00pm
+                            a 3:00pm
+                            a 4:00pm
+                            a 5:00pm
+                            a 6:00pm
+                            a 7:00pm
+                            a 8:00pm
+                            a 9:00pm
+                            a 10:00pm
+                            a 11:00pm
+                    li
+                      label.timeframe-list-label
+                        input.checkbox.day(type='checkbox')
+                        | Friday
+                      .timeframe
+                        .dropdown.inactive
+                          button.button.modify.drop-btn 0:00
+                          .drop-content
+                            a 12:00am
+                            a 1:00am
+                            a 2:00am
+                            a 3:00am
+                            a 4:00am
+                            a 5:00am
+                            a 6:00am
+                            a 7:00am
+                            a 8:00am
+                            a 9:00am
+                            a 10:00am
+                            a 11:00am
+                            a 12:00pm
+                            a 1:00pm
+                            a 2:00pm
+                            a 3:00pm
+                            a 4:00pm
+                            a 5:00pm
+                            a 6:00pm
+                            a 7:00pm
+                            a 8:00pm
+                            a 9:00pm
+                            a 10:00pm
+                            a 11:00pm
+                        a To
+                        .dropdown.inactive
+                          button.button.modify.drop-btn 0:00
+                          .drop-content
+                            a 12:00am
+                            a 1:00am
+                            a 2:00am
+                            a 3:00am
+                            a 4:00am
+                            a 5:00am
+                            a 6:00am
+                            a 7:00am
+                            a 8:00am
+                            a 9:00am
+                            a 10:00am
+                            a 11:00am
+                            a 12:00pm
+                            a 1:00pm
+                            a 2:00pm
+                            a 3:00pm
+                            a 4:00pm
+                            a 5:00pm
+                            a 6:00pm
+                            a 7:00pm
+                            a 8:00pm
+                            a 9:00pm
+                            a 10:00pm
+                            a 11:00pm
+                    li
+                      label.timeframe-list-label
+                        input.checkbox.day(type='checkbox')
+                        | Saturday
+                      .timeframe
+                        .dropdown.inactive
+                          button.button.modify.drop-btn 0:00
+                          .drop-content
+                            a 12:00am
+                            a 1:00am
+                            a 2:00am
+                            a 3:00am
+                            a 4:00am
+                            a 5:00am
+                            a 6:00am
+                            a 7:00am
+                            a 8:00am
+                            a 9:00am
+                            a 10:00am
+                            a 11:00am
+                            a 12:00pm
+                            a 1:00pm
+                            a 2:00pm
+                            a 3:00pm
+                            a 4:00pm
+                            a 5:00pm
+                            a 6:00pm
+                            a 7:00pm
+                            a 8:00pm
+                            a 9:00pm
+                            a 10:00pm
+                            a 11:00pm
+                        a To
+                        .dropdown.inactive
+                          button.button.modify.drop-btn 0:00
+                          .drop-content
+                            a 12:00am
+                            a 1:00am
+                            a 2:00am
+                            a 3:00am
+                            a 4:00am
+                            a 5:00am
+                            a 6:00am
+                            a 7:00am
+                            a 8:00am
+                            a 9:00am
+                            a 10:00am
+                            a 11:00am
+                            a 12:00pm
+                            a 1:00pm
+                            a 2:00pm
+                            a 3:00pm
+                            a 4:00pm
+                            a 5:00pm
+                            a 6:00pm
+                            a 7:00pm
+                            a 8:00pm
+                            a 9:00pm
+                            a 10:00pm
+                            a 11:00pm
+                    li
+                      label.timeframe-list-label
+                        input.checkbox.day(type='checkbox')
+                        | Sunday
+                      .timeframe
+                        .dropdown.inactive
+                          button.button.modify.drop-btn 0:00
+                          .drop-content
+                            a 12:00am
+                            a 1:00am
+                            a 2:00am
+                            a 3:00am
+                            a 4:00am
+                            a 5:00am
+                            a 6:00am
+                            a 7:00am
+                            a 8:00am
+                            a 9:00am
+                            a 10:00am
+                            a 11:00am
+                            a 12:00pm
+                            a 1:00pm
+                            a 2:00pm
+                            a 3:00pm
+                            a 4:00pm
+                            a 5:00pm
+                            a 6:00pm
+                            a 7:00pm
+                            a 8:00pm
+                            a 9:00pm
+                            a 10:00pm
+                            a 11:00pm
+                        a To
+                        .dropdown.inactive
+                          button.button.modify.drop-btn 0:00
+                          .drop-content
+                            a 12:00am
+                            a 1:00am
+                            a 2:00am
+                            a 3:00am
+                            a 4:00am
+                            a 5:00am
+                            a 6:00am
+                            a 7:00am
+                            a 8:00am
+                            a 9:00am
+                            a 10:00am
+                            a 11:00am
+                            a 12:00pm
+                            a 1:00pm
+                            a 2:00pm
+                            a 3:00pm
+                            a 4:00pm
+                            a 5:00pm
+                            a 6:00pm
+                            a 7:00pm
+                            a 8:00pm
+                            a 9:00pm
+                            a 10:00pm
+                            a 11:00pm
+                  .modal-footer
+                    span.close
+                      button.button Close
+                    button#availSubmit.button.login Save
+    footer.pageFiller
+      .container.footer
+        #footer-lastmodified
+    script(src='js/scripts.js')
+    script(src='js/jquery.min.js')
+    script(src='js/bootstrap.min.js')

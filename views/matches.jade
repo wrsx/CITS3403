@@ -1,0 +1,330 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    link(href='css/style.css', rel='stylesheet')
+    link(href='css/bootstrap.min.css', rel='stylesheet')
+    title Home - Study Finder
+  body.matches
+    .pageFiller
+      #topNav
+        nav.navbar
+          .navbar-header
+            a#navBrand.navbar-brand(href='index.html') StudyFinder
+          ul.nav.navbar-nav
+            li
+              a.navButton(href='control.html') User Panel
+            li
+              a.navButton.active(href='matches.html') Matches
+          ul.nav.navbar-nav.navbar-right
+            li
+              a.navButton(href='index.html') Logout
+    .container.content
+      #row3.row
+        .fullElement
+          h1 Your matches
+          p
+            | Here you can find and view your existing matches, click on a match to view user details. Matching is done automatically. You will be alerted when new matches have been found. If you wish to view the most recent match data, you can force a resync by pressing the refresh button at any time.
+        .fullElement
+          ul#single-matches
+            li
+              .module-container.match
+                .module-header
+                  | 21493118
+                .match-photo
+                  img(src='images/nophoto_s.png', alt='vacantPhoto')
+                | 								Name: Sample Match
+                br
+                | Email: 21493118@student.uwa.edu.au
+                br
+                | Units: CITS3002, CITS3001
+                br
+                | Match Percentage: 81%
+            li
+              .module-container.match
+                .module-header
+                  | 21493118
+                .match-photo
+                  img(src='images/nophoto_s.png', alt='vacantPhoto')
+                | 								Name: Sample Match
+                br
+                | Email: 21493118@student.uwa.edu.au
+                br
+                | Units: CITS3002, CITS3001
+                br
+                | Match Percentage: 81%;
+            li
+              .module-container.match
+                .module-header
+                  | 21493118
+                .match-photo
+                  img(src='images/nophoto_s.png', alt='vacantPhoto')
+                | 								Name: Sample Match
+                br
+                | Email: 21493118@student.uwa.edu.au
+                br
+                | Units: CITS3002, CITS3001
+                br
+                | Match Percentage: 81%;
+            li
+              .module-container.match
+                .module-header
+                  | 21493118
+                .match-photo
+                  img(src='images/nophoto_s.png', alt='vacantPhoto')
+                | 								Name: Sample Match
+                br
+                | Email: 21493118@student.uwa.edu.au
+                br
+                | Units: CITS3002, CITS3001
+                br
+                | Match Percentage: 81%;
+            li
+              .module-container.match
+                .module-header
+                  | 21493118
+                .match-photo
+                  img(src='images/nophoto_s.png', alt='vacantPhoto')
+                | 								Name: Sample Match
+                br
+                | Email: 21493118@student.uwa.edu.au
+                br
+                | Units: CITS3002, CITS3001
+                br
+                | Match Percentage: 81%;
+            li
+              .module-container.match
+                .module-header
+                  | 21493118
+                .match-photo
+                  img(src='images/nophoto_s.png', alt='vacantPhoto')
+                | 								Name: Sample Match
+                br
+                | Email: 21493118@student.uwa.edu.au
+                br
+                | Units: CITS3002, CITS3001
+                br
+                | Match Percentage: 81%;
+            li
+              .module-container.match
+                .module-header
+                  | 21493118
+                .match-photo
+                  img(src='images/nophoto_s.png', alt='vacantPhoto')
+                | 								Name: Sample Match
+                br
+                | Email: 21493118@student.uwa.edu.au
+                br
+                | Units: CITS3002, CITS3001
+                br
+                | Match Percentage: 81%;
+            li
+              .module-container.match
+                .module-header
+                  | 21493118
+                .match-photo
+                  img(src='images/nophoto_s.png', alt='vacantPhoto')
+                | 								Name: Sample Match
+                br
+                | Email: 21493118@student.uwa.edu.au
+                br
+                | Units: CITS3002, CITS3001
+                br
+                | Match Percentage: 81%;
+          #sampleMatch.modal
+            .modal-wrapper
+              .modal-header
+                a 21493118
+              .modal-content
+                .match-tab.units.active Units
+                .match-tab.exp Experience
+                .match-tab.avail Availability & Contact
+              .tab-content.units.active
+                ul.module-content-list
+                  li
+                    .module-content-header CITS3001 - Algorithms, Agents and Artificial Intelligence
+                  li
+                    .module-content-header CITS3002 - Networks and Security
+              .tab-content.exp
+                ul.module-content-list
+                  li
+                    .module-content-header C#
+                    .module-content-text
+                      | Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
+                  li
+                    .module-content-header C++
+                    .module-content-text
+                      | Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
+                  li
+                    .module-content-header Java
+                    .module-content-text
+                      | Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
+              .tab-content.avail
+                .modal-content
+                  a.modal-content-subtitle Availability
+                ul.module-content-list.avail
+                  li
+                    .module-content-header Monday
+                    .timeframe
+                      .dropdown.inactive
+                        button.button.modify.drop-btn 12:00pm
+                        .drop-content
+                          a 12:00am
+                          a 1:00am
+                          a.show 2:00am
+                          a 3:00am
+                          a 4:00am
+                          a 5:00am
+                          a 6:00am
+                          a 7:00am
+                          a 8:00am
+                          a 9:00am
+                          a 10:00am
+                          a 11:00am
+                          a 12:00pm
+                          a 1:00pm
+                          a 2:00pm
+                          a 3:00pm
+                          a 4:00pm
+                          a 5:00pm
+                          a 6:00pm
+                          a 7:00pm
+                          a 8:00pm
+                          a 9:00pm
+                          a 10:00pm
+                          a 11:00pm
+                      a To
+                      .dropdown.inactive
+                        button.button.modify.drop-btn 6:00pm
+                        .drop-content
+                          a 1:00pm
+                          a 2:00pm
+                          a 3:00pm
+                          a.show 4:00pm
+                          a 5:00pm
+                          a 6:00pm
+                          a 7:00pm
+                          a 8:00pm
+                          a 9:00pm
+                          a 10:00pm
+                          a 11:00pm
+                          a 12:00am
+                  li
+                    .module-content-header Wednesday
+                    .timeframe
+                      .dropdown.inactive
+                        button.button.modify.drop-btn 9:00am
+                        .drop-content
+                          a 12:00am
+                          a 1:00am
+                          a.show 2:00am
+                          a 3:00am
+                          a 4:00am
+                          a 5:00am
+                          a 6:00am
+                          a 7:00am
+                          a 8:00am
+                          a 9:00am
+                          a 10:00am
+                          a 11:00am
+                          a 12:00pm
+                          a 1:00pm
+                          a 2:00pm
+                          a 3:00pm
+                          a 4:00pm
+                          a 5:00pm
+                          a 6:00pm
+                          a 7:00pm
+                          a 8:00pm
+                          a 9:00pm
+                          a 10:00pm
+                          a 11:00pm
+                      a To
+                      .dropdown.inactive
+                        button.button.modify.drop-btn 12:00pm
+                        .drop-content
+                          a 10:00am
+                          a 11:00am
+                          a 12:00pm
+                          a.show 1:00pm
+                          a 2:00pm
+                          a 3:00pm
+                          a 4:00pm
+                          a 5:00pm
+                          a 6:00pm
+                          a 7:00pm
+                          a 8:00pm
+                          a 9:00pm
+                          a 10:00pm
+                          a 11:00pm
+                          a 12:00am
+                  li
+                    .module-content-header Thursday
+                    .timeframe
+                      .dropdown.inactive
+                        button.button.modify.drop-btn 11:00am
+                        .drop-content
+                          a 12:00am
+                          a 1:00am
+                          a.show 2:00am
+                          a 3:00am
+                          a 4:00am
+                          a 5:00am
+                          a 6:00am
+                          a 7:00am
+                          a 8:00am
+                          a 9:00am
+                          a 10:00am
+                          a 11:00am
+                          a 12:00pm
+                          a 1:00pm
+                          a 2:00pm
+                          a 3:00pm
+                          a 4:00pm
+                          a 5:00pm
+                          a 6:00pm
+                          a 7:00pm
+                          a 8:00pm
+                          a 9:00pm
+                          a 10:00pm
+                          a 11:00pm
+                      a To
+                      .dropdown.inactive
+                        button.button.modify.drop-btn 2:00pm
+                        .drop-content
+                          a 12:00pm
+                          a 1:00pm
+                          a 2:00pm
+                          a.show 3:00pm
+                          a 4:00pm
+                          a 5:00pm
+                          a 6:00pm
+                          a 7:00pm
+                          a 8:00pm
+                          a 9:00pm
+                          a 10:00pm
+                          a 11:00pm
+                          a 12:00am
+                .modal-content
+                  a.modal-content-subtitle Contact Details
+                ul.module-content-list
+                  li
+                    .module-content-header
+                      a Phone:
+                    .module-content-text
+                      a 0435606909
+                  li
+                    .module-content-header
+                      a Email:
+                    .module-content-text
+                      a 21493118@student.uwa.edu.au
+              .modal-footer
+                span.close
+                  button.button Close
+                button#unitSubmit.button.login Unmatch
+    footer.pageFiller
+      .container.footer
+        #footer-lastmodified
+    script(src='js/scripts.js')
+    script(src='js/jquery.min.js')
+    script(src='js/bootstrap.min.js')
