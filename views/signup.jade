@@ -1,57 +1,33 @@
-doctype html
-html(lang='en')
-  head
-    meta(charset='UTF-8')
-    link(href='css/style.css', rel='stylesheet')
-    link(href='css/bootstrap.min.css', rel='stylesheet')
-    title Register - Study Finder
-  body.signup
-    .pageFiller
-      #topNav
-        nav.navbar
-          .navbar-header
-            a#navBrand.navbar-brand(href='index.html') StudyFinder
-          ul.nav.navbar-nav
-            li
-              a.navButton(href='control.html') User Panel
-            li
-              a.navButton(href='matches.html') Matches
-          ul.nav.navbar-nav.navbar-right
-            li
-              a.navButton(href='index.html') Logout
-    .container.content
-      #row3.row
-        #signup-wrapper.fullElement
-          h1 Create a StudyFinder Profile
-          .reg-content
-            form(name='sign-up-form', onsubmit='return validateSignUp()', method='POST')
-              input(type='text', name='uname', placeholder='Username', required='')
-              br
-              input(type='text', name='fname', placeholder='First Name', required='')
-              br
-              input(type='text', name='lname', placeholder='Last Name', required='')
-              br
-              input(type='text', name='uni', placeholder='University', required='')
-              br
-              input(type='email', name='email', placeholder='Email', required='')
-              br
-              h4
-                | Entering Units is not required, but will help you match with others taking those units!
-              h4 Enter up to four units
-              input(type='text', name='unit1', placeholder='Unit Code')
-              br
-              input(type='text', name='unit2', placeholder='Unit Code')
-              br
-              input(type='text', name='unit3', placeholder='Unit Code')
-              br
-              input(type='text', name='unit4', placeholder='Unit Code')
-              br
-              br
-              input.button(type='submit', value='Submit')
-            br
-    footer.pageFiller
-      .container.footer
-        #footer-lastmodified
-    script(src='js/scripts.js')
-    script(src='js/jquery.min.js')
-    script(src='js/bootstrap.min.js')
+extends layout
+
+block content
+	.container.content
+		#row3.row
+			#signup-wrapper.fullElement
+				h1 Create a StudyFinder Profile
+				.reg-content
+					form(name='sign-up-form', onsubmit='return validateSignUp()', method='POST')
+						input(type='text', name='uname', placeholder='Username', required='')
+						br
+						input(type='text', name='fname', placeholder='First Name', required='')
+						br
+						input(type='text', name='lname', placeholder='Last Name', required='')
+						br
+						input(type='text', name='uni', placeholder='University', required='')
+						br
+						input(type='email', name='email', placeholder='Email', required='')
+						br
+						h4
+							| Entering Units is not required, but will help you match with others taking those units!
+						h4 Enter up to four units
+						input(type='text', name='unit1', placeholder='Unit Code')
+						br
+						input(type='text', name='unit2', placeholder='Unit Code')
+						br
+						input(type='text', name='unit3', placeholder='Unit Code')
+						br
+						input(type='text', name='unit4', placeholder='Unit Code')
+						br
+						br
+						input.button(type='submit', value='Submit')
+					br

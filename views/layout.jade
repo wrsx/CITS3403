@@ -1,56 +1,20 @@
 doctype html
 html(lang='en')
   head
-    meta(charset='UTF-8')
+    title= title
     link(href='stylesheets/style.css', rel='stylesheet')
     link(href='stylesheets/bootstrap.min.css', rel='stylesheet')
-    title Home - Study Finder
-  body.index
-    .pageFiller
-      #topNav
-        .navbar-header
-          a#navBrand.navbar-brand(href='index.html') StudyFinder
-        ul.nav.navbar-nav.navbar-right
-          li
-            a.navButton(href='signup.html') Sign Up
-    .container.content
-      .splash-content
-        h1 Welcome to UWA StudyFinder!
-        img#logo(src='images/2.png', alt='StudyFinder')
-        p StudyFinder is a fast and simple tool that makes finding study partners easy.
-        p You are currently not logged in!
-        button#loginBtn.button Login
-      #loginModal.modal
-        #loginModalWrap.modal-wrapper
-          .modal-header
-            a Login to StudyFinder
-          .modal-content
-            .reg-content
-              form(name='sign-up-form', onsubmit='return validateSignUp()', method='POST')
-                input(type='text', name='uname', placeholder='Username', required='')
-                br
-                input(type='password', name='fname', placeholder='Password', required='')
-                br
-                br
-                input#login-submit.button(type='submit', value='Submit')
-              br
-          .modal-footer
-            .cent-txt
-              a Forgot your password?
-      #row1.row
-        .threeElement
-          h1 Search
-          p
-            | Search for like-minded users seeking efficient ways to study. StudyFinder will search for matches based on your desired units and availability. A match percentage will indicate how compatible a given match appears.
-        .threeElement
-          h1 Match
-          p
-            | StudyFinder gives you the option to view your existing matches on your profile page. Viewing a match will display contact details, a match percentage, and an option to unmatch with the respective user.
-        .threeElement
-          h1 Study
-          p
-            | Contact matches via student email, phone number, or a custom contact method specified by the user. Contact details are only viewable once you have matched with a user first. You can edit your details via the user panel.
-    br
+  body(class=name)
+    if !loggedIn
+      .pageFiller
+        #topNav
+          nav.navbar
+            .navbar-header
+              a#navBrand.navbar-brand(href='/') StudyFinder
+            ul.nav.navbar-nav.navbar-right
+              li
+                a.navButton(href='/signup') Sign Up
+    block content
     footer.pageFiller
       .container.footer
         #footer-lastmodified

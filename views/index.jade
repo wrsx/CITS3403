@@ -1,5 +1,60 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+	.container.content
+		.splash-content
+			h1 Welcome to UWA StudyFinder!
+			| &#x9;&#x9;&#x9;
+			img#logo(src='images/2.png', alt='StudyFinder')
+			| &#x9;&#x9;&#x9;
+			p StudyFinder is a fast and simple tool that makes finding study partners easy.
+			| &#x9;&#x9;&#x9;
+			p You are currently not logged in!
+			| &#x9;&#x9;&#x9;
+			button#loginBtn.button Login
+		| &#x9;&#x9;
+		#loginModal.modal
+			#loginModalWrap.modal-wrapper
+				.modal-header
+					a Login to StudyFinder
+				| &#x9;&#x9;&#x9;&#x9;
+				.modal-content
+					.reg-content
+						form(name='sign-up-form', onsubmit='return validateSignUp()', method='POST')
+							input(type='text', name='uname', placeholder='Username', required='')
+							br
+							| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+							input(type='password', name='fname', placeholder='Password', required='')
+							br
+							| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+							br
+							| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+							input#login-submit.button(type='submit', value='Submit')
+						| &#x9;
+						| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+						br
+				| &#x9;&#x9;&#x9;&#x9;
+				.modal-footer
+					.cent-txt
+						a Forgot your password?
+		| &#x9;&#x9;
+		#row1.row
+			.threeElement
+				h1 Search
+				| &#x9;&#x9;&#x9;&#x9;
+				p
+					| Search for like-minded users seeking efficient ways to study. StudyFinder will search for matches based on your desired units and availability. A match percentage will indicate how compatible a given match appears.
+			| &#x9;&#x9;&#x9;
+			.threeElement
+				h1 Match
+				| &#x9;&#x9;&#x9;&#x9;
+				p
+					| StudyFinder gives you the option to view your existing matches on your profile page. Viewing a match will display contact details, a match percentage, and an option to unmatch with the respective user.
+			| &#x9;&#x9;&#x9;
+			.threeElement
+				h1 Study
+				| &#x9;&#x9;&#x9;&#x9;
+				p
+					| Contact matches via student email, phone number, or a custom contact method specified by the user. Contact details are only viewable once you have matched with a user first. You can edit your details via the user panel.
+		| &#x9;
+		br
