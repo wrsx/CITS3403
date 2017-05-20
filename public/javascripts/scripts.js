@@ -5,7 +5,6 @@ window.onload = function() {
 		var subDays = document.getElementById('availSubmit'); //Availability submit button
 		var unitEditBtn = document.getElementById("unit-edit-btn"); //Edit units button
 		var expEditBtn = document.getElementById("edit-exp"); //Edit experience button
-		var cancelBtn = document.getElementById("cancel-exp"); //Cancel experience edit mode button
 		var availabilityEditBtn = document.getElementById("availability-edit-btn"); //Edit availability buttion
 		var dayBoxes = document.getElementsByClassName('day'); //All availability day checkboxes
 		
