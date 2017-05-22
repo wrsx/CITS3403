@@ -1,7 +1,7 @@
 doctype html
 html(lang='en')
   head
-    title= title
+    title=title
     link(href='/stylesheets/style.css', rel='stylesheet')
     link(href='/stylesheets/bootstrap.min.css', rel='stylesheet')
   body(class=name)
@@ -18,7 +18,7 @@ html(lang='en')
                 a.navButton(class=name == 'matches' ? "active" : "" href='/users/matches') Matches
             ul.nav.navbar-nav.navbar-right
               li
-                a.navButton(href='/') Logout
+                a.navButton(href='/logout') Logout
     else
       .pageFiller
         #topNav

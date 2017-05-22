@@ -5,7 +5,10 @@ block content
     h1 Welcome to UWA StudyFinder!
     img#logo(src='images/2.png', alt='StudyFinder')
     p StudyFinder is a fast and simple tool that makes finding study partners easy.
-    p You are currently not logged in!
+    if loggedIn
+      p You are currently logged in!
+    else
+      p You are currently not logged in!
     button#loginBtn.button Login
   #loginModal.modal
     #loginModalWrap.modal-wrapper
@@ -13,10 +16,10 @@ block content
         a Login to StudyFinder
       .modal-content
         .reg-content
-          form(name='sign-up-form', onsubmit='return validateSignUp()', method='POST')
-            input(type='text', name='uname', placeholder='Username', required='')
+          form(name='sign-up-form', onsubmit='return validateSignUp()', method='POST', action='/login')
+            input(type='text', name='username', placeholder='Username', required='')
             br
-            input(type='password', name='fname', placeholder='Password', required='')
+            input(type='password', name='password', placeholder='Password', required='')
             br
             br
             input#login-submit.button(type='submit', value='Submit')

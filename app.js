@@ -4,7 +4,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+//for passport (npm auth-pkg.)
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+// end passport
 var index = require('./routes/index');
 var users = require('./routes/users');
 var db    = require('./routes/db');
@@ -21,10 +24,26 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+// for passport
+app.use(require('express-session')({
+  secret: 'thisisasecret',
+  resave: false,
+  saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+// end passport
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+
+// passport config
+var Account = require('./models/account');
+passport.use(new LocalStrategy(Account.authenticate()));
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
+// end passport config
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
