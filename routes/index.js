@@ -7,7 +7,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'StudyFinder - Home' , name: 'index', loggedIn: req.user});
+  res.render('index', { title: 'StudyFinder - Home' , pagename: 'index', loggedIn: req.user});
 });
 
 /* POST home page. AKA Login */
@@ -23,7 +23,7 @@ router.get('/logout', function(req, res) {
 
 /* GET signup page. */
 router.get('/signup', function(req, res, next) {
-  res.render('signup', { title: 'StudyFinder - Signup' , name: 'signup', loggedIn: false});
+  res.render('signup', { title: 'StudyFinder - Signup' , pagenamee: 'signup', loggedIn: false});
 });
 
 /* POST signup page. */

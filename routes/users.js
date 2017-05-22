@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET users listing. */
 router.get('/control', function(req, res, next) {
   res.render('control', { title: 'StudyFinder - User Control',
-                          name: 'control',
+                          pagename: 'control',
                           loggedIn: req.user,
                           name: req.user.firstname + " " + req.user.lastname,
                           age: 'should this be added at signup or be optionally added later?',
@@ -15,7 +15,7 @@ router.get('/control', function(req, res, next) {
 
 router.get('/matches', function(req, res, next) {
   res.render('matches', { title: 'StudyFinder - Your Matches',
-                          name: 'matches',
+                          pagename: 'matches',
                           loggedIn: req.user});
 });
 
