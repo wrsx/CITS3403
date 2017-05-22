@@ -113,24 +113,18 @@ window.onload = function() {
 		}
 
     /**
-		 * Change bg of selected units
+     * Change bg of selected units
      */
-		function changeBG(i) {
-			if (document.getElementById('unit-checked' + i).checked) {
-				document.getElementById('unit-single' + i).style.backgroundColor = '#eaeaea';
-			} else {
-				document.getElementById('unit-single' + i).style.backgroundColor = '#fff';
-			}
-		}
-
-    /**
-		 * Assign changeBG to units
-     */
-		for (var i=1; i<unitNo+1; i++) {
-			!function outer(ii){
-				document.getElementById('unit-checked' + i).addEventListener('change', function(){changeBG(ii);} );
-			}(i)
-		}
+    var unitBoxes = document.getElementsByClassName("unit-checkbox");
+    for (var i=0; i<unitBoxes.length; i++) {
+      unitBoxes[i].addEventListener('change', function() {
+        if (this.checked) {
+          this.parentElement.parentElement.style.backgroundColor = '#eaeaea';
+        } else {
+          this.parentElement.parentElement.style.backgroundColor = '#fff';
+        }
+      });
+    }
 
     /**
 		 * Submit availability handler
@@ -167,12 +161,12 @@ window.onload = function() {
 		subUnits.onclick = function(e) {
 			var noAdded = 0;		
 			clearItems(e.target);
-			for (var i=1; i<unitNo+1; i++) {
-				if (document.getElementById('unit-checked' + i).checked){
-					addItem(e.target, document.getElementById('unit-checked' + i).parentElement.innerText);
+      for (var i=0; i<unitBoxes.length; i++) {
+				if (unitBoxes[i].checked) {
+					addItem(e.target, unitBoxes[i].parentElement.innerText);
 					noAdded++;
-				} 
-			}
+				}
+      }
 			if (noAdded == 0) {
 				vacantText(e.target);
 			}
