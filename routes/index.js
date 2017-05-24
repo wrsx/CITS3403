@@ -45,6 +45,7 @@ router.post('/signup', function(req, res) {
                    });
 });
 
+/* GET unit requests */
 router.get('/search_unit', function(req, res) {
   var regex = new RegExp(req.query.query, 'i');
   var query = Units.find({Unit: regex});
@@ -52,10 +53,9 @@ router.get('/search_unit', function(req, res) {
   query.exec(function(err, units) {
     if (!err) {
       //Build a result set
-      console.log(units[0]);
       var result = [];
       for (var i=0; i<units.length; i++) {
-        result.push(units[i].Unit);
+        result.push(units[i].Unit + " - " + units[i].Name);
       }
       res.send(result, {
         'Content-Type': 'application/json'

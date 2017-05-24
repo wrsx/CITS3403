@@ -107,7 +107,7 @@
 }
 
 .button.modify {
-	margin-right: 4px;
+
 	float: right;
 	font-size: .8rem;
 	color: #333333;
@@ -516,7 +516,12 @@
 
 /* Typeahead */
 
+#unit-searchbox {
+	width: 100%;
+}
+
 .twitter-typeahead {
+	width: 100%;
 	position: static !important;
 }
 
@@ -527,14 +532,10 @@
 }
 
 .tt-hint {
-	width: 422px !important;
-	top: auto !important;
-	left: auto !important;
-	display: none;
+	display: none !important;
 }
 
 .tt-menu {    /* used to be tt-dropdown-menu in older versions */
-	width: 422px;
 	margin-top: 4px;
 	padding: 4px 0;
 	background-color: #fff;

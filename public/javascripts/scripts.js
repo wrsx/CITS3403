@@ -8,14 +8,39 @@ window.onload = function() {
 		var availabilityEditBtn = document.getElementById("availability-edit-btn"); //Edit availability buttion
 		var dayBoxes = document.getElementsByClassName('day'); //All availability day checkboxes
 
+
     /**
-		 * Pull unit data from the database
+		 * Handler for making a unit selection
+      */
+    $('#unit-searchbox').on('click', '.tt-suggestion', function(){
+    	var unitExists = false;
+      var unitName = this.innerText;
+      var curUnits = $('#unitlist').children(); //current unit list
+
+			//if units exist
+			curUnits.each(function () {
+				//if names match, dont add unit
+				if (unitName == $("label", this).contents().get(1).nodeValue) {
+          unitExists = true;
+        }
+			});
+      if (!unitExists) {
+        $('#unitlist').append('<li><label><button class="button modify removeUnit">X</button>'+ unitName + '</label></li>')
+			}
+    });
+
+    /**
+		 * Handler for removing a unit
+     */
+
+    /**
+		 * Twitter typeahead searchbar
      */
     $(function () {
       $('#unit-search').typeahead({
           hint: true,
           highlight: true,
-          minLength: 3
+          minLength: 1
         },
         {
           limit: 12,
@@ -38,7 +63,6 @@ window.onload = function() {
      * Display the unit selector modal
      */
     unitEditBtn.onclick = function() {
-      var unitNo;
       document.getElementById('unitModal').style.display = "block";
     }
 
@@ -297,25 +321,27 @@ window.onload = function() {
 		var times = document.getElementsByClassName("drop-content");
 		for (var i=0; i<times.length; i++) {
 			times[i].addEventListener("click", function(e) {
-					var buttonText = e.target.parentElement.parentElement.childNodes[0];
-					var lowerTime = e.target.parentElement.parentElement.parentElement.childNodes[0];
-					var upperTime = e.target.parentElement.parentElement.parentElement.childNodes[2];
-					if (e.target.tagName.toLowerCase() === 'a') {
-						buttonText.innerText = e.target.innerText;
-					}
-					if(buttonText.parentElement == lowerTime) {
-						if (upperTime.classList.contains("inactive")){ 
-						upperTime.classList.toggle("inactive");
-						}
-						//remove elements that are not valid times
-						updateTimes(e.target.innerText,upperTime);
-					}
-					else {
-						upperTime.classList.toggle("inactive");
-						lowerTime.classList.toggle("inactive");	
-					}				
+        if (e.target.tagName.toLowerCase() === 'a') { //if the click is valid
+        	var buttonText = e.target.parentElement.parentElement.childNodes[0];
+          var lowerTime = e.target.parentElement.parentElement.parentElement.childNodes[0];
+          var upperTime = e.target.parentElement.parentElement.parentElement.childNodes[2];
+          buttonText.innerText = e.target.innerText;
+          if (buttonText.parentElement == lowerTime) {
+            if (upperTime.classList.contains("inactive")) {
+              upperTime.classList.toggle("inactive");
+            }
+            //remove elements that are not valid times
+            updateTimes(e.target.innerText, upperTime);
+          }
+          else {
+            upperTime.classList.toggle("inactive");
+            lowerTime.classList.toggle("inactive");
+          }
+        }
 			});
 		}
+
+
 
      /**
 		 * Updates a dropdown menu to only display times after chosenTime
