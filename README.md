@@ -18,6 +18,23 @@ CD To the CITS3403 directory and run:
 npm install
 ```
 
+### Install mongoDB
+After adding mongod to PATH, create a data directory
+```
+md \data
+```
+```
+md \data\db
+```
+Start mongod
+```
+mongod
+```
+### Import unit data to the DB
+Copy the CSV file to MongoDB /bin/ and run:
+```
+mongoimport -d CITS3403 -c units --type csv --file units.csv --headerline
+```
 ### Start the server
 ```
 nodemon npm start

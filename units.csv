@@ -1,0 +1,873 @@
+Unit,Name
+ACCT1101,Financial Accounting Standard
+ACCT2112,Management Accounting Standard
+ACCT2201,Corporate Accounting Standard
+ACCT2331,Taxation Standard
+ACCT3203,Contemporary Managerial Accounting Standard
+ACCT3302,Financial Statement Analysis Standard
+ACCT3322,Auditing Standard
+ACCT4440,Management Accounting: Issues and Perspectives Standard
+ACCT4471,Advanced Accounting Research Standard
+ACCT4472,Contemporary Issues in Accounting Standard
+ACCT5432,Introductory Financial Accounting Standard
+ACCT5511,Intermediate Corporate Financial Accounting Standard
+ACCT5521,Advanced Corporate Financial Accounting Standard
+ACCT5522,Principles of Auditing Standard
+ACCT5531,Financial Accounting: Theory and Practice Standard
+ACCT5602,Accounting
+ACCT5633,Accounting for Planning and Control Standard
+AGRI4401,Advanced Crop Production Science
+AGRI4402,Agribusiness
+AGRI4403,Animal Reproduction
+AGRI4404,Breeding and Animal Biotechnology
+AGRI4405,Breeding and Plant Biotechnology
+AGRI4407,Plant and Human Nutrition CRAWLEY
+AGRI5501,Advanced Breeding and Biotechnology in Action 1 Standard
+AGRI5502,Case Studies in Breeding and Biotechnology
+AGRI5508,Sustainable Grazing Systems
+AHEA2201,Aboriginal Health and Wellbeing Standard
+AHEA2202,Aboriginal Health Context and Application Standard
+AHEA2203,Advanced Human Biological Sciences I Standard
+AHEA2204,Advanced Human Biological Sciences II Standard
+AHEA2205,Human Sciences Research Project Standard
+AHEA5755,Aboriginal Health
+ANHB0035,Human Biology 2 Standard
+ANHB1102,Human Biology II: Being Human Standard
+ANHB2214,Human Organs and Systems Standard
+ANHB2216,Human Reproductive Biology Standard
+ANHB3310,Human Biology: Applications & Investigations I Standard
+ANHB3316,Human Reproduction Standard
+ANHB3320,Human Biology: Applications & Investigations II Standard
+ANHB3321,Biological Anthropology: Genes and Society Standard
+ANHB4103,Normal Systems I Standard
+ANIM2207,Animal Function and Structure Standard
+ANIM2208,Animal Ethics and Welfare Standard
+ANIM2209,Field Studies in Zoology
+ANIM3306,Clean Green and Ethical Animal Production Standard
+ANIM3353,Wildlife Conservation and Management Standard
+ANIM3361,Animal Populations Standard
+ANIM3362,Evolutionary Processes Standard
+ANIM3363,Environmental Physiology Standard
+ANIM3365,Behavioural Ecology Standard
+ANIM5501,Vertebrate Development
+ANTH1001,Being Human: Culture Identity and Society Standard
+ANTH1002,Global Change Local Responses Standard
+ANTH2001,Social Thought Standard
+ANTH2406,Society Law and Politics Standard
+ANTH2407,Australian Society Standard
+ANTH2801,Refugees Human Rights Violence and Fear Standard
+ANTH2902,Aboriginal Art Standard
+ANTH3001,Advanced Qualitative Methods: Ethnography Standard
+ANTH3402,Contemporary Social Thought Standard
+ANTH3501,Mind Body Culture Standard
+ANTH3701,Environment Landscape and Place Standard
+APHB5503,Neuroendocrinology Standard
+APHB5505,Advanced Studies in Physiology Standard
+ARCT1010,Drawing History Standard
+ARCT1030,Structures and Natural Systems Standard
+ARCT2010,Parallel Modernities in Art and Architecture Standard
+ARCT2030,Materials and Small Constructions Standard
+ARCT2050,Environmental Design Standard
+ARCT3000,Architecture Studio 3 Standard
+ARCT3010,History and Theories of the Built Environment Standard
+ARCT3030,Construction Standard
+ARCT4430,Architectural Technology Structures and Services Standard
+ARCT4440,Project Implementation and Documentation Standard
+ARCT5001,Architectural Design 5a Standard
+ARCT5509,Practical building conservation - Developed Research Project on a Building Construction System Standard
+ARCT5589,Architecture of Furniture Standard
+ARCY1001,Discoveries in Archaeology Standard
+ARCY1002,Archaeology Today: Principles and Themes Standard
+ARCY2005,Rock Art Field Unit
+ARCY3002,Archaeological Field Methods Standard
+ARCY3003,Archaeological Laboratory Methods Standard
+ARCY3005,Archaeology of Indigenous Australia Standard
+ARCY3008,Archaeological Method and Theory Standard
+ASIA1001,Exploring Asian Identities Standard
+ASIA1002,Creating Asian Modernities Standard
+ASIA2001,Culture Society and the State in Asia HK-ARTS
+ASIA2004,Popular Culture in Asia HK-ARTS
+ASIA3001,Indonesian Politics and Culture Standard
+ASIA3002,Issues in Japanese Society and Culture Standard
+ASIA3003,Social Issues in Contemporary China Standard
+AUST0062,Foundations Of Uni Study 2 Standard
+AUST0072,Elective Study 2 Standard
+BIOC2001,Biochemistry and Molecular Biology of the Cell Standard
+BIOC3002,Structural and Functional Biochemistry Standard
+BIOC3004,Biochemistry in Health and Disease Standard
+BIOC3005,Cellular Biochemistry Standard
+BIOL2261,Conservation Biology Standard
+BIOL5503,Sampling Techniques in Wildlife Research Standard
+BUSN1102,Changing the World: Social Innovation Finance and Enterprise Standard
+BUSN3020,Innovation and Startup Practice Standard
+BUSN4401,Qualitative Business Research Methods Standard
+BUSN4402,Quantitative Business Research Methods Standard
+BUSN5501,Business Advisory Project Part 1
+BUSN5502,Business Advisory Project Part 2
+BUSN5503,Business Advisory Project Part 3
+CELT1111,Academic English Bridging Course: Part 1 CELT Bridging Course
+CELT1112,Academic English Bridging Course: Part 2 CELT Bridging Course
+CELT1113,Academic English Summer Bridging Course: Part 2 CELT Summer Bridging Course
+CHEM0037,Chemistry 2 Standard
+CHEM1001,Chemistry - Properties and Energetics Standard
+CHEM1002,Chemistry - Structure and Reactivity Standard
+CHEM1003,Introductory Chemistry Standard
+CHEM1004,Biological Chemistry Standard
+CHEM2001,Core Chemical Concepts and Techniques Standard
+CHEM2002,Physical and Analytical Chemistry Standard
+CHEM2003,Chemical Synthesis Standard
+CHEM3001,Essential Chemical Skills Standard
+CHEM3002,Chemical Explorations Standard
+CHEM3003,Advanced Chemical Synthesis Standard
+CHEM3004,Synthetic Applications Standard
+CHEM3005,Chemical Spectroscopy and Structure Standard
+CHEM3006,Chemistry Beyond the Laboratory Standard
+CHEM4309,Occupational Hygiene and Chemical Safety Standard
+CHIN1001,Chinese 3A Standard
+CHIN1401,Chinese 1 Standard
+CHIN1402,Chinese 2 Standard
+CHIN1403,Chinese 3 Standard
+CHIN1404,Chinese 4 Standard
+CHIN1405,Chinese 5 Standard
+CHIN1406,Chinese 6 Standard
+CHIN2407,Chinese 7 Standard
+CHIN3409,Chinese 9 Standard
+CHIN3410,Chinese 10 Standard
+CHPR4404,Advanced Thermodynamics Standard
+CHPR4405,Particle Mechanics and Solids Handling Standard
+CHPR4406,Reaction Engineering Standard
+CHPR5501,Advanced Reaction Engineering and Catalysts Standard
+CHPR5520,Combustion Science and Technology
+CHPR5521,Gas Processing 1 - Flow Assurance and Gathering Standard
+CHPR5551,Chemical Engineering Design Project 1 Standard
+CHPR5552,Chemical Engineering Design Project 2 Standard
+CITS1001,Object-oriented Programming and Software Engineering Standard
+CITS1401,Problem Solving and Programming Standard
+CITS1402,Relational Database Management Systems Standard
+CITS2002,Systems Programming Standard
+CITS2200,Data Structures and Algorithms Standard
+CITS2211,Discrete Structures Standard
+CITS2401,Computer Analysis and Visualisation Standard
+CITS3001,Algorithms Agents and Artificial Intelligence Standard
+CITS3002,Networks and Security Standard
+CITS3003,Graphics and Animation Standard
+CITS3401,Data Warehousing and Data Mining Standard
+CITS3402,High Performance Computing Standard
+CITS3403,Agile Web Development Standard
+CITS4401,Software Requirements and Design Standard
+CITS4402,Computer Vision Standard
+CITS4403,Computational Modelling Standard
+CITS4404,Artificial Intelligence and Adaptive Systems Standard
+CITS4419,Mobile and Wireless Computing Standard
+CITS5501,Software Testing and Quality Assurance Standard
+CITS5502,Software Processes Standard
+CITS5503,Cloud Computing Standard
+CITS5506,Ubiquitous Computing Standard
+CIVL4401,Applied Geomechanics Standard
+CIVL4402,Civil Hydraulics Standard
+CIVL4403,Structural Concrete Standard
+CIVL4404,Structural Steel Standard
+CIVL5501,Structural Dynamics Standard
+CIVL5502,Transportation Engineering Standard
+CIVL5503,Underground Construction
+CIVL5504,Offshore Geomechanics
+CIVL5505,Introduction to Design of Offshore Systems Standard
+CIVL5551,Civil Engineering Design Project 1 Standard
+CIVL5552,Civil Engineering Design Project 2 Standard
+CLAN1001,Myths of the Greeks and Romans: Story History and Reinvention Standard
+CLAN1002,Glory and Grandeur Standard
+CLAN1101,Latin 1 Standard
+CLAN2001,The Golden Age of Athens Standard
+CLAN2002,The Foundation of the Roman Empire Standard
+COMM1002,Cultures New Media and Communications Standard
+COMM1901,Communication in Practice Standard
+COMM2001,Communication and Mass Media Standard
+COMM2002,Digital Media HK-ARTS
+COMM2002,Digital Media Standard
+COMM3001,Case Studies in Communication Standard
+COMM3002,Media Production Project Standard
+COMM3004,Journalism in Practice Standard
+COMM5605,Issues in Contemporary Global Journalism Standard
+COMM5607,News Gathering: Technique and Timing Standard
+COMM5701,Strategic Communications in a Digital Era
+DENT4102,Anatomy and Physiology for Dentistry
+DENT4103,Introduction to Clinical Dentistry
+DENT4104,Introduction to Research and Preventive Dentistry
+DENT4105,Introduction to Cariology
+DENT4107,Introduction to Pain Control
+DENT4201,Endodontics and Fixed Prosthodontics
+DENT4202,Immunology Pathology and Periodontics
+DENT4203,Child and Adolescent Oral Health 1
+DENT4204,General Medicine and Surgery Pain Control and Exodontics
+DENT4207,Child and Adolescent Oral Health 2
+DENT4208,Exodontics and General Medicine
+DENT5301,Microbiology Oral Pathology and Oral Medicine
+DENT5302,Research Design Statistics and Dental Public Health
+DENT5303,Complex Oral Rehabilitation 1
+DENT5304,Child and Adolescent Comprehensive Oral Care 1 and Orthodontics
+DENT5305,Special Needs Dentistry and Orofacial Pain
+DENT5306,Introduction to Dental Practice Maxillofacial Infections and Trauma
+DENT5307,Complex Oral Rehabilitation 2
+DENT5308,Child and Adolescent Comprehensive Oral Care 2 and Research
+DENT5401,Research and Professional Development 1 Group B
+DENT5402,Integrated Dental Practice 1 Group B
+DENT5404,Australian Indigenous Rural and Remote Oral Health 1 Group B
+EART1104,Introduction to Geology Standard
+EART2234,Earth Processes Standard
+EART3338,Land Use and Management Standard
+EART3339,Land Rehabilitation Standard
+EART3343,Structural Geology and Tectonics Standard
+EART3351,Mineral Resources Standard
+EART3353,Geological Mapping Standard
+EART3360,Soil-Plant Interactions Standard
+EBUS5504,Electronic Business Standard
+ECON1101,Microeconomics: Prices and Markets Standard
+ECON1102,Macroeconomics: Money and Finance Standard
+ECON1111,Quantitative Methods for Business and Economics Standard
+ECON1120,Environmental Economics 1 Standard
+ECON2105,Rise of the Global Economy Standard
+ECON2224,Environmental Economics 2 Standard
+ECON2233,Microeconomics: Policy and Applications Standard
+ECON2234,Macroeconomics: Policy and Applications Standard
+ECON2245,Business Economics Standard
+ECON2271,Business Econometrics Standard
+ECON3210,Monetary Economics Standard
+ECON3220,Development Economics Standard
+ECON3235,International Trade Standard
+ECON3236,International Finance Standard
+ECON3272,Intermediate Mathematics for Economists Standard
+ECON3300,Agricultural Economics and Marketing Standard
+ECON3301,Game Theory and Strategic Thinking Standard
+ECON3302,Applied Microeconomics Standard
+ECON3303,Applied Macroeconomics Standard
+ECON3310,History of Economic Ideas Standard
+ECON3323,Business and the Environment Standard
+ECON3350,Money Banking and Financial Markets Standard
+ECON3371,Econometrics Standard
+ECON3395,Economic Policy Standard
+ECON4401,Applied Econometrics and Research Methods Standard
+ECON4405,Public Economics Standard
+ECON4408,Advanced Development Economics Standard
+ECON4410,Environmental and Resource Economics
+ECON4413,Applied Advanced Econometrics Standard
+ECON4415,International Finance and Markets Standard
+ECON4418,Macroeconomic Theory Standard
+ECON4450,Advanced International Trade Standard
+ECON4486,Dissertation (Economics) Part 1 Standard
+ECON4503,Advanced Economic Analysis Standard
+ECON4504,Advanced Quantitative Economics Standard
+ECON5001,Contemporary Issues in Economic Development
+ECON5002,Agriculture and Economic Development
+ECON5503,Economic Management and Strategy
+ECON5504,Global Energy and Mineral Markets
+ECON5506,The Economics of Financial Markets Standard
+ECON5510,Consumer Behaviour and Demand Analysis
+ECON5511,Climate Energy and Water Economics
+ECON5541,Economics for Business: Applications and Policy Standard
+EDUC1102,Learning Effectively: Improving Your Learning and Teaching Standard
+EDUC1103,Education for a Global Knowledge Society Standard
+EDUC5429,Perspectives in Aboriginal Education Standard
+EDUC5454,Learning Difficulties Standard
+EDUC5460,English Curriculum I Standard
+EDUC5468,Special Education Curriculum I Standard
+EDUC5481,Professional Practice I
+EDUC5482,Professional Practice II
+EDUC5485,Development Teaching and Learning: Theory and Practice Standard
+EDUC5492,Understanding and Managing Disruptive Behaviour Disorders Standard
+EDUC5500,Professional Practice B
+EDUC5546,Teaching Contexts Standard
+EDUC5608,Integrating Pedagogy and Technology
+EDUC5639,Childhood and Adolescent Developmental Psychopathology CRAWLEY
+EDUC5642,Leading Teaching and Learning CRAWLEY
+EDUC5643,Leading Assessment and Accountability CRAWLEY
+EDUC5644,Leading the Aligned School
+EDUC5645,Leading Curriculum Innovation
+EDUC5658,Education Policy Trends: Global to Local
+ELEC4402,Communications Systems
+ELEC5501,Advanced Communications Standard
+ELEC5502,Analogue Electronics Standard
+ELEC5505,Power System Analysis Standard
+ELEC5551,Electrical and Electronic Engineering Design Project 1 Standard
+ELEC5552,Electrical and Electronic Engineering Design Project 2 Standard
+EMPL1101,Introduction to Employment Relations Standard
+EMPL1206,Social Psychology of Work Standard
+EMPL2202,Australian Employment Relations Standard
+EMPL3241,International Employment Relations Standard
+EMPL3270,Negotiation: Theory and Practice Standard
+EMPL3301,Globalisation and Work Standard
+EMPL5501,Strategic Workplace Relations Standard
+EMPL5514,Negotiation and Dispute Resolution
+ENGL1002,Fact and Fabrication: the Revelations of Literature Standard
+ENGL1401,Page and Screen: Fiction in the Digital Age Standard
+ENGL1501,Reading Creatively/ Writing Creatively Standard
+ENGL1902,Reading Bodies Standard
+ENGL3003,The Arthurian Legend Standard
+ENSC1001,Global Challenges in Engineering Standard
+ENSC1002,Material Behaviour from Atoms to Bridges Standard
+ENSC2001,Motion Standard
+ENSC2002,Energy Standard
+ENSC3001,Mechanisms and Machines Standard
+ENSC3002,Materials and Manufacturing Standard
+ENSC3004,Solid Mechanics Standard
+ENSC3005,Mass and Energy Balances Standard
+ENSC3009,Geomechanics Standard
+ENSC3010,Hydraulics Standard
+ENSC3011,Resource Extraction Technologies Standard
+ENSC3014,Electronic Materials and Devices Standard
+ENSC3017,Circuits and Electronics Standard
+ENVE4401,Contaminant Fate and Transport Standard
+ENVE4402,Hydrology Standard
+ENVE4403,Fluid Transport Mixing and Dispersion Standard
+ENVE4405,Eco-engineering Standard
+ENVE5502,Wastewater Treatment and Reuse
+ENVT2220,The Climate System Standard
+ENVT2221,Global Climate Change and Biodiversity Standard
+ENVT2250,Ecology Standard
+ENVT2251,Environmental Hydrology Standard
+ENVT3306,Coastal Conservation and Management Standard
+ENVT3361,Environmental Assessment Standard
+ENVT3362,Environmental Modelling Standard
+ENVT3363,Ecological Processes Standard
+ENVT4401,Advanced Land Use and Management
+ENVT4402,Analysis for Natural Resource Management
+ENVT4404,Environmental Planning and Management
+ENVT4411,Geographic Information Systems Applications
+ENVT5001,Biotechnology in the Natural Environment
+ENVT5503,Remediation of Soils and Groundwater
+ENVT5510,Soil Dynamics
+ENVT5511,Advanced Geographic Information Systems for Environmental Management
+EURO1101,Contemporary European Culture in Historical Perspective Standard
+EURO2201,Civilisation and Barbarism in European Cultural History Standard
+EURO2209,Utopia Imagination and Modernity in European Culture Standard
+EURO3301,The European Individual Standard
+FINA1109,Managing Your Personal Finance Standard
+FINA1221,Introduction to Finance Standard
+FINA2204,Derivative Products and Markets Standard
+FINA2205,Quantitative Methods for Finance Standard
+FINA2207,Business Analysis and Valuation Standard
+FINA2209,Financial Planning Standard
+FINA2222,Corporate Financial Policy
+FINA2222,Corporate Financial Policy Standard
+FINA3304,Banking: Theory and Practice Standard
+FINA3306,Derivative Strategies and Pricing Standard
+FINA3307,Trading in Securities Markets Standard
+FINA3324,Investment Analysis Standard
+FINA3326,Applied Financial Management Standard
+FINA4401,Microstructure of Financial Markets Standard
+FINA4482,Advanced Corporate Finance Standard
+FINA4491,Capital Markets Research Standard
+FINA5432,Introduction to Finance Standard
+FINA5520,Risk Management and Financial Instruments Standard
+FINA5521,Quantitative Methods in Finance Standard
+FINA5523,Financial Statement Analysis and Business Valuation Standard
+FINA5527,Private Wealth Management and Venture Capital Standard
+FINA5530,Managerial Finance
+FINA5602,Strategic Corporate Finance
+FINA5603,Mergers and Acquisitions
+FINA5631,International Financial Analysis Standard
+FINA5632,Investments Standard
+FINA5635,Corporate Finance Standard
+FNSC2200,Mysteries of Forensic Science Standard
+FREN1401,French Studies 1 Standard
+FREN1402,French Studies 2 Standard
+FREN2404,French Studies 4 Standard
+FREN2812,French Studies 12 Standard
+FREN3814,Specialist French Studies 14 Standard
+GEND1901,Gender in Australia Standard
+GEND2901,Sex Bodies and Spaces Standard
+GEND2902,Men and Masculinities In History Standard
+GEND3901,Feminist Thought Standard
+GENE2230,Molecular Genetics I Standard
+GENE3340,Molecular Genetics II Standard
+GENE3350,Evolution and Development Standard
+GENE3370,Genomics Standard
+GENG4402,Control Engineering Standard
+GENG4403,Extractive Metallurgy Standard
+GENG4405,Numerical Methods and Modelling Standard
+GENG4407,Advanced Engineering Mathematics Standard
+GENG5501,Coastal and Offshore Engineering Standard
+GENG5503,Modern Control Systems Standard
+GENG5504,Petroleum Engineering Standard
+GENG5505,Project Management and Engineering Practice Standard
+GENG5506,Renewable Energy Standard
+GENG5508,Robotics Standard
+GENG5514,Finite Element Methods Standard
+GEOG1101,Geographies of Global Cities Standard
+GEOG1102,Globalisation Environment and Development Standard
+GEOG2201,Geographic Information Systems Standard
+GEOG2204,International Field Work in Geography Standard
+GEOG2205,Geographies of Economic Development Standard
+GEOG2206,Social Geography and Planning Standard
+GEOG3302,Geographic Environment and Planning Fieldwork Standard
+GEOG3304,Environmental Change Standard
+GEOG3306,Regional Development and Planning Standard
+GEOG3307,Coastal Environments Standard
+GEOG4001,Social Demography and Development
+GEOG4011,Honours Research Project in Geography Environment and Planning Part 1 Standard
+GEOG5004,Place-based Development
+GEOS4402,Hydrogeological Impact Assessment
+GEOS4498,Special Unit: Fundamentals of Sedimentology
+GEOS4499,Land and Water Fundamentals Standard
+GEOS5501,Advanced Hydrogeology
+GEOS5504,Mining Hydrogeology
+GEOS5507,Analytical Techniques for the Geosciences
+GRMN1401,German Studies 1 Standard
+GRMN1402,German Studies 2 Standard
+GRMN1404,German Studies 4 Standard
+GRMN1406,German Studies 6 Standard
+GRMN2812,German Studies 12 Standard
+HART1000,Great Moments in Art Standard
+HART1001,Art Technology and Society Standard
+HART2207,Art of the Counter-Reformation Standard
+HART2222,Contemporary Art Standard
+HART2223,Modernism and the Visual Arts Standard
+HART2274,Introduction to Museum and Curatorial Studies Standard
+HART2275,Italian Renaissance Art and Architecture Standard
+HART3301,The Art of Manet and His Circle Standard
+HART3302,Michelangelo Standard
+HART3310,Art and Games: from Dada to Data Standard
+HART3330,Art Theory Standard
+HART3333,The Shifting Subject: Portraiture in Nineteenth-Century Europe Standard
+HART3361,The Dutch Golden Age and the Art of Exploration Standard
+HERI5101,Debates in Contemporary Heritage Studies
+HERI5102,Foundations in Heritage Management Standard
+HERI5103,The Business of Sustainable Heritage
+HIST2011,From 'Glorious Revolution' to Industrial Revolution: Making Britain 1688-1888 Standard
+HIST3016,Eyewitness to the Past: Photography and History Standard
+HIST4101,Historiography Standard
+HIST4103,Topics in Australian History
+HIST4104,Topics in Global History Standard
+HRMT2237,Human Resource Management
+HRMT3344,Staffing Organisations Standard
+HRMT3345,Managing Jobs Performance and Wellbeing Standard
+HRMT5504,Introduction to Human Resource Management Standard
+HRMT5518,Strategic Human Resource Management Standard
+HRMT5530,Developing a Professional HR Career Standard
+HSMD3316,Health Industry Practicum Standard
+HUMA1901,English Language and Academic Communication I Standard
+HUMA1902,English Language and Academic Communication II Standard
+IDES1040,Techniques of Visualisation Standard
+IDES2000,Integrated Design Studio 2 - Making Standard
+IDES2040,Future Making Standard
+IDES3000,Integrated Design Studio 3 - Complex Standard
+IDES3010,Advanced Design Thinking Standard
+IMED1108,Issues in Women's Health Across the Lifespan Standard
+IMED2200,Mental Wellbeing for Today's World Standard
+IMED4111,Foundations of Medical Practice
+IMED4121,Systems-based Learning 1
+IMED4211,Systems-based Learning 2
+IMED4221,Integrated Medical Practice 1
+IMED5805,Innovation and Contemporary Issues in Health Professions Education Standard
+IMED6632,Rural General Practice Part 2 Standard
+INDG1150,Aboriginal Encounters: Strangers in our Backyard Standard
+INDG1160,Boodjar Moort Katitjin: Introduction to Indigenous Heritage and Knowledge Standard
+INDG2300,Indigenous Knowledge: Mind Body Spirit Standard
+INDG2500,Looking North: The Wild West Standard
+INDG2700,Knowing Country: The Dreaming and Darwin Standard
+INDG3400,Indigenous People and Global Issues Standard
+INDO1402,Indonesian 2 Standard
+INMT5501,Enterprise Information Systems Standard
+INMT5504,Business Process Management Standard
+INMT5518,Models for Logistics Operations and Services Standard
+INMT5526,Business Intelligence Standard
+INMT5620,Management of Information Systems Standard
+ITAL1401,Italian Studies 1 Standard
+ITAL1402,Italian Studies 2 Standard
+ITAL1404,Italian Studies 4 Standard
+ITAL1406,Italian Studies 6 Standard
+ITAL2408,Italian Studies 8 Standard
+ITAL2812,Italian Studies 12 Standard
+ITAL3814,Italian Studies 14 Standard
+JAPN1402,Japanese 2 Standard
+JAPN1404,Japanese 4 Standard
+JAPN1406,Japanese 6 Standard
+JAPN2408,Japanese 8 Standard
+KORE1402,Korean 2 Standard
+KORE2402,Korean 4 Standard
+KORE2811,Readings in Korean Language and Culture Standard
+KORE3405,Korean 5 Standard
+KORE3406,Korean 6 Standard
+LACH1020,The Culture of Nature Standard
+LACH2030,Site Manipulation Standard
+LACH5414,Landscape Professional Documents Standard
+LAWS1104,Introduction to Law Standard
+LAWS1110,Crime and Society Standard
+LAWS1111,Law Conflict and Change Standard
+LAWS1120,Australian Legal Principles and Institutions Standard
+LAWS2201,Legal Framework of Business Standard
+LAWS2206,Taxation Law Standard
+LAWS2223,Criminal Justice System Standard
+LAWS2224,Evolution of Human Rights Standard
+LAWS2225,Indigenous Peoples and the Law Standard
+LAWS2226,International Legal Institutions Standard
+LAWS2227,Law in Action Standard
+LAWS2301,Company Law Standard
+LAWS2309,Work and the Law Standard
+LAWS3221,Creative Expression and the Law Standard
+LAWS3302,Environmental Law Standard
+LAWS3306,Finance Law Standard
+LAWS3307,International Commercial Arbitration
+LAWS3308,Marketing Management and the Law Standard
+LAWS3310,Evidence Standard
+LAWS3313,Legal Issues for Not-for-Profit Entities
+LAWS3320,Legislation in Practice Standard
+LAWS3322,Corporations Law Standard
+LAWS3327,Advanced Evidence and Proof
+LAWS3328,International Commercial Law Standard
+LAWS3330,Gender and the Law Standard
+LAWS3334,Law and Religion Standard
+LAWS3338,Introduction to Intellectual Property Standard
+LAWS3340,Conflict of Laws Standard
+LAWS3344,Law and Contemporary Social Issues Standard
+LAWS3360,Employment Law
+LAWS3366,Forensic Advocacy
+LAWS3370,Consumer Law Standard
+LAWS3371,Mining and Energy Law Standard
+LAWS3376,Introduction to Family Law Standard
+LAWS3378,Government Accountability - Law and Practice
+LAWS3391,Special Unit: Law and Religion Standard
+LAWS4021,Procedure Part 1 Standard
+LAWS4022,Procedure Part 2 Standard
+LAWS4101,Legal Process Standard
+LAWS4102,Criminal Law Standard
+LAWS4104,Property Standard
+LAWS4106,Torts Standard
+LAWS4108,Foundations of Public Law Standard
+LAWS4404,Legal Theory and Ethics Standard
+LAWS5105,Remedies Standard
+LAWS5106,Legal Theory and Ethics Standard
+LAWS5110,International Negotiation Practice and Skills
+LAWS5111,Corporate Governance for Resources Companies
+LAWS5158,Negotiation and Mediation
+LAWS5167,Comparative Law Standard
+LAWS5174,Legal Internship Standard
+LAWS5210,Working with China: Business in a Socio-legal Context
+LAWS5211,Intellectual Property and China's Innovation-based Economy
+LAWS5214,Public Policy
+LAWS5227,Foundations of Law and Governance
+LAWS5237,Advanced Australian International Taxation
+LAWS5250,Foundations of International Commercial Law
+LAWS5251,International Sales Law
+LAWS5305,Mediation: Practice and Skills
+LAWS5398,Special unit: Construction Law
+LAWS5508,Commercial and Company Law Standard
+LAWS5517,Mining Law
+LAWS5528,Unjust Enrichment and Restitution
+LAWS5532,Oil and Gas Agreements
+LAWS5534,Indigenous Peoples and the Law Standard
+LAWS5540,Environmental Protection Law
+LAWS6167,Comparative Law Standard
+LAWS6700,Indigenous Peoples and the Law Standard
+LING1001,Language and Communication Standard
+LING1002,Language as a Cognitive System Standard
+LING1901,Language Learning and the Multilingual World Standard
+LING2001,Grammatical Theory: the Structure of Sentences Standard
+LING2002,Phonetics and Phonology: the Sounds of the World's Languages Standard
+LING2003,Language Culture and Society Standard
+LING3001,Morphology: the Structure of Words Standard
+LING3003,Historical Linguistics: Language History and Language Change Standard
+LING3006,Topics in Linguistic Theory Standard
+LING4101,Research in Linguistics Standard
+LING4102,Language Description and Documentation Standard
+LING4103,Methods in Sociolinguistic Research Standard
+MATH0038,Mathematical Analysis Standard
+MATH2021,Introduction to Applied Mathematics Standard
+MATH2031,Introduction to Pure Mathematics Standard
+MATH2501,Mathematical Methods 3 Standard
+MATH3021,Dynamics and Control Standard
+MATH3022,Scientific and Industrial Modelling Standard
+MATH3031,Algebraic Structures and Symmetry Standard
+MATH3032,Analysis and Geometry Standard
+MATH4403,Advanced Mathematics 1 Standard
+MECH4424,Measurement and Noise Standard
+MECH4426,Dynamics Vibration and Sound Standard
+MECH4428,Degradation of Materials Standard
+MECH4429,Applied Engineering Thermodynamics Standard
+MECH5501,Advanced Vibration and Sound Standard
+MECH5502,Analysis and Design of Machine Components Standard
+MECH5504,Design and Failure Analysis of Materials Standard
+MECH5551,Mechanical Engineering Design Project 1 Standard
+MECH5552,Mechanical Engineering Design Project 2 Standard
+MEMS2001,Classical Traditions and Transformations in Medieval and Early Modern Europe Standard
+MGMT1135,Organisational Behaviour Standard
+MGMT1136,Management and Organisations Standard
+MGMT2311,Organisational Learning and Innovation Standard
+MGMT3302,Leadership and Performance Standard
+MGMT3304,Applied International Business Strategy Standard
+MGMT3308,Supply Chain Management Standard
+MGMT3342,Entrepreneurship Standard
+MGMT3346,Managing Organisational Change Standard
+MGMT3347,Strategic Management Standard
+MGMT5501,Organisational Behaviour
+MGMT5504,Data Analysis and Decision Making Standard
+MGMT5506,Ethics and Sustainability Management Standard
+MGMT5507,Management and Organisations Standard
+MGMT5508,Organisational Behaviour and Leadership Standard
+MGMT5511,Introduction to Global Business Standard
+MGMT5513,Data Driven Decision Making
+MGMT5514,Demonstrating Social Impact
+MGMT5516,Social Impact: Entrepreneurs and Social Innovation
+MGMT5517,Leadership for Social Impact
+MGMT5518,Social Investment and Philanthropy
+MGMT5520,Legal Principles for Management
+MGMT5521,Operations and Strategic Supply Chain Management
+MGMT5522,Leading Global Collaborations
+MGMT5523,Becoming a Leader: Perspectives on Leadership Development
+MGMT5524,Strategic Management of Resource Companies
+MGMT5601,Small Business Management
+MGMT5610,Applied Professional Business Communications Standard
+MGMT5618,International Study Program
+MGMT5647,Negotiation Behaviour
+MGMT5665,Project Management
+MGMT5700,Strategic Management
+MGMT6791,Business Research: Principles and Processes
+MGMT6792,Quantitative Methods in Business Research
+MGMT6793,Qualitative Methods in Business Research
+MICR2209,Introduction to Infectious Diseases and Immunology Standard
+MICR3320,Viruses and Viral Disease Standard
+MICR3330,Bacteria and Bacterial Disease Standard
+MICR3340,Immunity and Infection Standard
+MICR3350,Advanced Infectious Diseases Standard
+MICR5814,Epidemiology and Infection Standard
+MICR5829,Foundations of Infectious Diseases Standard
+MICR5830,Principles of Mycology and Parasitology Standard
+MICR5831,Molecular and Cellular Microbiology Part 1 Standard
+MICR5832,Diagnostic Medical Microbiology Standard
+MICR5833,Antimicrobial Agents Standard
+MICR5834,Tropical Travel and Remote Area Infectious Diseases Standard
+MICR5835,Vectors of Infectious Diseases and Vector Control Standard
+MICR5836,Public and Environmental Health Microbiology Standard
+MICR5842,Principles of Infection and Immunity Standard
+MINE4404,Rock Mechanics Standard
+MINE4503,Surface Mining Standard
+MINE5502,Underground Mining 2 Standard
+MINE5551,Mining Engineering Design Project 1 Standard
+MING5501,Applied Structural Geology
+MING5505,Mineral Exploration Data Analysis
+MKTG1203,Marketing Management Standard
+MKTG1204,Consumer Behaviour Standard
+MKTG2238,Advertising and Promotion Standard
+MKTG2305,Marketing Research Standard
+MKTG3301,Marketing Applications Standard
+MKTG3303,New Product Development and Commercialisation Standard
+MKTG3306,Strategic Marketing Standard
+MKTG3307,Contemporary Marketing Issues Standard
+MKTG3310,International Marketing Standard
+MKTG3311,Services Marketing Standard
+MKTG4401,Advanced Readings and Topics in Marketing Standard
+MKTG5406,Buyer Behaviour and Decision Making Standard
+MKTG5408,Marketing Analysis and Planning Standard
+MKTG5462,Global Marketing Strategy Standard
+MKTG5505,Marketing and Society Standard
+MKTG5550,Marketing Principles
+MKTG5561,Marketing Management Standard
+MKTG5578,Client Management Standard
+MSCI4006,Advanced Techniques in Molecular Sciences Standard
+MUSC1310,Communication Skills in Music Standard
+MUSC1321,Music Language 1 Standard
+MUSC1322,Music Language 2 Standard
+MUSC1350,Popular Music in Global Perspective Standard
+MUSC1981,Music Ensemble 1 Standard
+MUSC1982,Music Ensemble 2 Standard
+MUSC2331,Western Art Music 1 (Renaissance and Baroque) Standard
+MUSC2332,Western Art Music 2 (Classical and Romantic) Standard
+MUSC2350,Music in World Cultures Standard
+MUSC2520,Music Language 3 Standard
+MUSC2981,Music Ensemble 3
+MUSC2982,Music Ensemble 4
+MUSC3331,Western Art Music 3 (Modernist and Postmodernist) Standard
+MUSC3560,Music Education in Research and Practice Standard
+NEUR3301,Advanced Neuroscience 1 Standard
+NEUR3310,Neuroscience Standard
+NEUR4010,Modern Research Tools in Neuroscience Standard
+OGEG5809,Field Development Project Standard
+OGEG5810,The Hydrocarbon Economy
+PATH2210,Fundamentals of Pathology and Laboratory Medicine Standard
+PATH2211,Molecular Medicine Standard
+PATH2220,Introduction to Human Disease Standard
+PATH3304,Drugs and Disease B Standard
+PATH3305,Medical Genetics Standard
+PATH3307,Pathology and Laboratory Medicine I Standard
+PATH3308,Pathology and Laboratory Medicine II Standard
+PATH3309,Cancer Pathology Standard
+PATH5121,Clinical Biochemistry Standard
+PATH5131,Anatomical Pathology Standard
+PATH5141,Clinical Immunology Standard
+PATH5151,Molecular Pathology Standard
+PATH5161,Haematology Standard
+PATH5511,Clinical Laboratory Skills 1 Standard
+PATH5514,Clinical Laboratory Skills 2 Standard
+PHAR1101,Drugs that Changed the World Standard
+PHAR2210,Foundations of Pharmacology Standard
+PHAR2220,Human Pharmacology Standard
+PHAR3303,Drugs and Disease A Standard
+PHAR3310,Molecular Pharmacology Standard
+PHAR3320,Systems Pharmacology Standard
+PHCY5611,Medicinal Product Formulation Standard
+PHIL1001,Justice and Contemporary Ethics Standard
+PHIL1002,Introduction to Critical Thinking Standard
+PHIL1003,God Mind and Knowledge Standard
+PHIL2002,Logic: How to Defeat Your Foes with Reasoning Standard
+PHIL2003,Philosophy of Religion Standard
+PHIL2005,Exploring the Nature of Science Standard
+PHIL3001,Metaphysics: a User's Guide to Time Travel Standard
+PHIL3002,Aesthetics Standard
+PHIL3003,Moral Theory Standard
+PHIL3005,Continental Philosophy Standard
+PHYL2001,Physiology of Human Body Systems Standard
+PHYL2002,Physiology of Cells Standard
+PHYL3001,Physiology of Membranes Muscles and Signalling Standard
+PHYL3002,Physiology of Cardiovascular and Respiratory Systems Standard
+PHYL3003,Physiology of Nutrition and Metabolism Standard
+PHYL3004,Physiology of Integrated Organ Function Standard
+PHYL3305,Human Growth Development and Ageing Standard
+PHYL5501,Audiological Instrumentation Part 1
+PHYS0030,Physics 1 Standard
+PHYS1001,Physics for Scientists and Engineers Standard
+PHYS1002,Modern Physics Standard
+PHYS1022,Applied Physics B Standard
+PHYS1030,Physics Bridging Unit Standard
+PHYS2001,Quantum Mechanics 1 and Electromagnetism Standard
+PHYS2002,The Physics of Particles Standard
+PHYS3001,Quantum Mechanics 2 and Atomic Physics Standard
+PHYS3011,Mathematical Physics Standard
+PHYS3012,Frontiers in Modern Physics Standard
+PLNG3301,Geographical and Planning Methods Standard
+PLNG4401,Planning Theory and Practice
+PLNG4402,Planning Law
+PLNT2201,Plants in Action Standard
+PLNT2204,Plant Diversity and Conservation Standard
+PLNT3306,Australian Vegetation Standard
+PLNT4501,Botany Research Dissertation Part 1 Standard
+PODI4101,Podiatric Medicine I Standard
+PODI4102,Introduction to Clinical Practice I Standard
+PODI4104,Lower Extremity Functional Anatomy and Physiology Standard
+PODI4105,Podiatric Medicine II Standard
+PODI4107,Normal Systems II Standard
+PODI4201,Podiatric Medicine III Standard
+PODI4203,General Medicine and Pathology
+PODI4206,Podiatric Medicine IV Standard
+PODI4207,Pharmacology for Podiatrists Standard
+PODI4208,Research Methods Standard
+PODI5301,Podiatric Medicine V Standard
+PODI5303,Anasthesia and General Surgery Standard
+PODI5305,Podiatric Medicine VI Standard
+POLS1102,The Contemporary International System Standard
+POLS2202,Australian Politics: Institutions Campaigning and Spin Standard
+POLS2214,Strategy Diplomacy and Conflict Standard
+POLS2216,Politics in the USA Standard
+POLS2220,International Political Economy Standard
+POLS2231,Politics of the Mass Media HK-ARTS
+POLS3323,Elections Mass Media and Politics Standard
+POLS3324,Islam and World Politics Standard
+POLS3335,Saving the World: Social Movements and the Politics of Change Standard
+POLS5611,Religion Global Identities and World Politics
+POLS5612,World Politics: Muslims in the West Standard
+POLS5631,International Relations of the Asia-Pacific
+POLS5641,International Security
+POLS5651,International Political Economy
+POLS5671,Peace and Security in Africa
+POLS5681,Governance in the International System
+POLS5684,China and the World
+POLS5688,Evolution of International Society
+PSYC1102,Psychology: Behaviour in Context Standard
+PSYC2208,Psychology: Atypical Development Standard
+PSYC2209,Industrial and Organisational Psychology Standard
+PSYC2212,Psychology and Social Behaviour Standard
+PSYC2217,Cognitive Neuroscience Standard
+PSYC3301,Psychological Research Methods: Design and Analysis Standard
+PSYC3302,Psychological Measurement and its Application Standard
+PSYC3303,Psychological Science in the Modern World: Challenges and Controversies Standard
+PSYC4410,Psychological Research Communication Skills Standard
+PSYC4413,Psychological Research and Practice Standard
+PSYC4416,Psychological Research and Theory Standard
+PSYC4418,Psychological Research and Data Standard
+PSYC5515,Organisational Development and Work Design Standard
+PSYC5516,Professional Issues in Industrial and Organisational Psychology Standard
+PSYC5675,Assessment and Intervention - Emotional Disorders Standard
+PSYC5830,Occupational Health Safety and Wellbeing Standard
+PUBH1101,Health and Illness in Human Populations Standard
+PUBH1102,Health and Globalisation Standard
+PUBH2203,Foundations of Epidemiology and Biostatistics Standard
+PUBH2204,Disease Prevention and Control Standard
+PUBH2208,Food and Nutrition in Population Health Standard
+PUBH2216,Communication and Project Planning in Health Standard
+PUBH3301,Health Leadership Standard
+PUBH3307,Health Systems and Policy Standard
+PUBH4401,Biostatistics I Standard
+PUBH4403,Epidemiology I Standard
+PUBH5742,Fundamentals of Genetic Epidemiology
+PUBH5749,Foundations of Public Health Standard
+PUBH5752,Health Systems and Economics Standard
+PUBH5758,Public Health Practicum Standard
+PUBH5769,Biostatistics II Standard
+PUBH5785,Introductory Analysis of Linked Health Data
+PUBH5802,Advanced Analysis of Linked Health Data
+PUBH5804,Food and Nutrition in Population Health
+PUBH5805,Qualitative Research Methods in Health Standard
+PUBH7747,B.Med.Sc.(Public Health) Sp.Un.Pt 1 Standard
+PUBH7750,B.Med.Sc.(Public Health) Sp.Un.Pt 2 Standard
+RMED4403,Health Program Evaluation
+RMED5311,Integrated Rural Medical Practice 1
+SCIE1103,Science Society and Communication Standard
+SCIE1104,Science Society and Data Analysis Standard
+SCIE1106,Molecular Biology of the Cell Standard
+SCIE1121,Our Universe Standard
+SCIE1122,Our Solar System Standard
+SCIE2100,Social Responsibility in Action Standard
+SCIE2204,Marine Systems Standard
+SCIE3304,Field Techniques in Marine Science Standard
+SCIE3314,Agricultural Systems Standard
+SCIE3367,Decision Tools for Natural Resource Management Standard
+SCIE4401,Data Use in the Natural Sciences
+SCIE4402,Data Management and Analysis in the Natural Sciences
+SCIE4403,The Conduct Ethics and Communication of Science Standard
+SCIE4501,FNAS Research Thesis Part 1
+SCIE5500,Scientific Modelling
+SCOM1101,Introduction to Scientific Practices Standard
+SCOM2205,Science Presentations Standard
+SCOM2208,Science Writing Standard
+SCOM3318,Science Communication Practicum Standard
+SOCS0047,Social Science 2 Standard
+SOCS5003,Research Design and Resourcing Standard
+SOCS5005,Social Research Ethics Standard
+SOCS5010,NGOs Governance and Development
+SOCS5013,Gender in Development: Approaches and Issues
+SOCS5501,Evaluation
+SOCS5502,Conservation Development and Sustainability Standard
+SSEH1102,Human Structure and Athletic Performance Standard
+SSEH1103,Physical Fitness and Health Standard
+SSEH1104,Active Leadership 1: Developing Leadership Skills Standard
+SSEH2240,Motor Learning and Control Standard
+SSEH2270,Psychosocial Aspects of Sport Exercise and Health Standard
+SSEH2290,Promoting Lifelong Physical Activity Standard
+SSEH3366,Bioenergetics in Exercise Nutrition and Energy Balance Standard
+SSEH3375,Psychology of Sport Standard
+SSEH3376,Coaching Psychology Standard
+SSEH3385,Motor Development and Dysfunction Standard
+SSEH3393,Professional Practice Part 1 Standard
+SSEH5474,Physical Education Curriculum II
+SSEH5491,Health Education
+SSEH5492,Health Promotion in the Schools
+SSEH5592,Nutrition Health and Body Composition Standard
+SSEH5667,Paediatric Exercise Rehabilitation Standard
+SSEH5691,Industry Practicum 1 Standard
+SSEH5694,Research Colloquium Standard
+STAT1520,Economics and Business Statistics Standard
+STAT3062,Statistical Science Standard
+STAT3404,Statistical Significance Standard
+SWSP5309,Field Education 1: First Placement
+SWSP5406,Policy and Community Standard
+SWSP5429,Field Education 2: Final Placement
+SWSP5611,Indigenous Policy and Practice
+SWSP5630,Developmental Practice
+SWSP5631,Introduction to Social Work Methods Standard
+SWSP5632,Organisational Practice and Law
+SWSP5633,Counselling and Ethics
+SWSP5635,Organisational Practice Law and Research
+TRNS5001,Introduction to Translation Studies Standard
+TRNS5006,Interpreting Standard
+TRNS5007,Translation Project Standard
+TRNS5108,Specialised Translation Standard
+VISA1053,Video Art: Methods and Means Standard
+VISA1054,Art of Drawing Standard
