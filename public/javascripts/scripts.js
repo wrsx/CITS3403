@@ -7,17 +7,47 @@ window.onload = function() {
 		var expEditBtn = document.getElementById("edit-exp"); //Edit experience button
 		var availabilityEditBtn = document.getElementById("availability-edit-btn"); //Edit availability buttion
 		var dayBoxes = document.getElementsByClassName('day'); //All availability day checkboxes
-		
-		//Number of units; fetch from the server
-		var unitNo = 4;
-		
-		unitEditBtn.onclick = function() {
-			document.getElementById('unitModal').style.display = "block";
-		}
-		
-		availabilityEditBtn.onclick = function() {	
-			document.getElementById('availabilityModal').style.display = "block";			
-		}
+
+    /**
+		 * Pull unit data from the database
+     */
+    $(function () {
+      $('#unit-search').typeahead({
+          hint: true,
+          highlight: true,
+          minLength: 3
+        },
+        {
+          limit: 12,
+          async: true,
+          source: function (query, processSync, processAsync) {
+            return $.ajax({
+              url: "/search_unit",
+              type: 'GET',
+              data: {query: query},
+              dataType: 'json',
+              success: function (json) {
+                return processAsync(json);
+              }
+            });
+          }
+        });
+    });
+
+    /**
+     * Display the unit selector modal
+     */
+    unitEditBtn.onclick = function() {
+      var unitNo;
+      document.getElementById('unitModal').style.display = "block";
+    }
+
+    /**
+     * Display the availability selector modal
+     */
+    availabilityEditBtn.onclick = function() {
+      document.getElementById('availabilityModal').style.display = "block";
+    }
 
     /**
 		 * Handler for "edit mode" experience entries

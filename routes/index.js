@@ -2,6 +2,7 @@ var express = require('express');
 // for passport
 var passport = require('passport');
 var Account = require('../models/account');
+var Units = require('../models/units');
 // end passport
 var router = express.Router();
 
@@ -43,5 +44,29 @@ router.post('/signup', function(req, res) {
                       });
                    });
 });
+
+router.get('/search_unit', function(req, res) {
+  var regex = new RegExp(req.query.query, 'i');
+  var query = Units.find({Unit: regex});
+  // Execute query in a callback and return users list
+  query.exec(function(err, units) {
+    if (!err) {
+      //Build a result set
+      console.log(units[0]);
+      var result = [];
+      for (var i=0; i<units.length; i++) {
+        result.push(units[i].Unit);
+      }
+      res.send(result, {
+        'Content-Type': 'application/json'
+      }, 200);
+    } else {
+      res.send(JSON.stringify(err), {
+        'Content-Type': 'application/json'
+      }, 404);
+    }
+  });
+});
+
 
 module.exports = router;
