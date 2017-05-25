@@ -66,8 +66,8 @@ router.post('/signup', function(req, res) {
   Account.register(new Account({  firstname: req.body.firstname,
                                   lastname: req.body.lastname,
                                   username: req.body.username,
-                                  units: [req.body.unit1, req.body.unit2, req.body.unit3, req.body.unit4],
-                                  availability: avail }), req.body.password ,
+                                  availability: avail }),
+                                  req.body.password,
                    function(err, account) {
                       if (err) {
                         console.log(err);
