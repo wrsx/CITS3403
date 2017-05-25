@@ -24,19 +24,18 @@ router.get('/logout', function(req, res) {
 
 /* GET signup page. */
 router.get('/signup', function(req, res, next) {
-  res.render('signup', { title: 'StudyFinder - Signup' , pagenamee: 'signup', loggedIn: false});
+  res.render('signup', { title: 'StudyFinder - Signup' , pagename: 'signup', loggedIn: false});
 });
 
 /* POST signup page. */
 router.post('/signup', function(req, res) {
-  Account.register(new Account({  username : req.body.username,
-                                  firstname: req.body.firstname,
+  Account.register(new Account({  firstname: req.body.firstname,
                                   lastname: req.body.lastname,
-                                  university: req.body.university,
-                                  email: req.body.email}),
+                                  username: req.body.username}),
                    req.body.password,
                    function(err, account) {
                       if (err) {
+                        console.log(err);
                         return res.render('signup', { account : account });
                       }
                       passport.authenticate('local')(req, res, function () {
@@ -48,14 +47,17 @@ router.post('/signup', function(req, res) {
 /* GET unit requests */
 router.get('/search_unit', function(req, res) {
   var regex = new RegExp(req.query.query, 'i');
-  var query = Units.find({Unit: regex});
+  var query = Units.find( {$or: [{unit: regex}, {name: regex}]});
   // Execute query in a callback and return users list
   query.exec(function(err, units) {
     if (!err) {
       //Build a result set
       var result = [];
-      for (var i=0; i<units.length; i++) {
-        result.push(units[i].Unit + " - " + units[i].Name);
+      //Limit response to 12
+      for (var i = 0; i < units.length; i++) {
+        if (result.length < 12) {
+          result.push(units[i].unit + " - " + units[i].name);
+        }
       }
       res.send(result, {
         'Content-Type': 'application/json'

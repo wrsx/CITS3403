@@ -1972,7 +1972,7 @@
             this.menu.bind().onSync("selectableClicked", this._onSelectableClicked, this).onSync("asyncRequested", this._onAsyncRequested, this).onSync("asyncCanceled", this._onAsyncCanceled, this).onSync("asyncReceived", this._onAsyncReceived, this).onSync("datasetRendered", this._onDatasetRendered, this).onSync("datasetCleared", this._onDatasetCleared, this);
             onFocused = c(this, "activate", "open", "_onFocused");
             onBlurred = c(this, "deactivate", "_onBlurred");
-            onEnterKeyed = c(this, "isActive", "isOpen", "_onEnterKeyed");
+            //onEnterKeyed = c(this, "isActive", "isOpen", "_onEnterKeyed");
             onTabKeyed = c(this, "isActive", "isOpen", "_onTabKeyed");
             onEscKeyed = c(this, "isActive", "_onEscKeyed");
             onUpKeyed = c(this, "isActive", "open", "_onUpKeyed");

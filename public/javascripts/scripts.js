@@ -16,7 +16,6 @@ window.onload = function() {
     	var unitExists = false;
       var unitName = this.innerText;
       var curUnits = $('#unitlist').children(); //current unit list
-
 			//if units exist
 			curUnits.each(function () {
 				//if names match, dont add unit
@@ -27,6 +26,20 @@ window.onload = function() {
       if (!unitExists) {
         $('#unitlist').append('<li><label><button class="button modify removeUnit">X</button>'+ unitName + '</label></li>')
 			}
+      $('#unit-search').typeahead('val', ''); //clear the search bar
+    });
+
+    /**
+		 * Search selecting with keyboard
+     */
+    $('#unit-searchbox').on('keyup', function(e) {
+      if(e.which == 13) {
+        var keyed = $('#unit-searchbox').find('.tt-cursor');
+        if(keyed.length > 0) {
+          keyed.trigger('click');
+        }
+        else { $(".tt-suggestion:first-child", this).trigger('click'); }
+      }
     });
 
     /**
@@ -34,7 +47,7 @@ window.onload = function() {
      */
 
     /**
-		 * Twitter typeahead searchbar
+		 * Typeahead searchbar backend request
      */
     $(function () {
       $('#unit-search').typeahead({
@@ -43,7 +56,7 @@ window.onload = function() {
           minLength: 1
         },
         {
-          limit: 12,
+          limit: Infinity,
           async: true,
           source: function (query, processSync, processAsync) {
             return $.ajax({
