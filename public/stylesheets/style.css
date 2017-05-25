@@ -428,7 +428,7 @@
 #experience { padding: 0; }
 #experience li div { flex-basis: 100%; }
 .module-content-text.vacantTxt { text-align: center; }
-#unit-list li, #day-list li { justify-content: center; }
+#day-list li, .vacantTxt { justify-content: center; }
 
 
 .module-content-list {

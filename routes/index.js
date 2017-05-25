@@ -79,6 +79,13 @@ router.post('/signup', function(req, res) {
                    });
 });
 
+/* POST unit requests */
+router.post('/sub-units', function(req, res) {
+  req.user.units = req.body.units;
+  req.user.save();
+  res.redirect('/users/control');
+});
+
 /* GET unit requests */
 router.get('/search_unit', function(req, res) {
   var regex = new RegExp(req.query.query, 'i');

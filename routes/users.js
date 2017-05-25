@@ -14,6 +14,7 @@ router.get('/control', function(req, res, next) {
                           phone: 'should this be added at signup or be optionally added later?',
                           email: req.user.username,
                           units: req.user.units,
+                          noUnits: req.user.units.length
                         });
 });
 

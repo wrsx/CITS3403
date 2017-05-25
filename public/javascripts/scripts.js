@@ -77,24 +77,25 @@ window.onload = function() {
 		var expEditBtn = document.getElementById("edit-exp"); //Edit experience button
 		var availabilityEditBtn = document.getElementById("availability-edit-btn"); //Edit availability buttion
 		var dayBoxes = document.getElementsByClassName('day'); //All availability day checkboxes
-
+		var noUnits = 0;
 
     /**
      * Handler for making a unit selection
      */
     $('#unit-searchbox').on('click', '.tt-suggestion', function(){
-      var unitExists = false;
+    	var unitExists = false;
       var unitName = this.innerText;
       var curUnits = $('#unitlist').children(); //current unit list
       //if units exist
       curUnits.each(function () {
         //if names match, dont add unit
-        if (unitName == $("label", this).contents().get(1).nodeValue) {
+				if (unitName == $("label", this).contents().get(2).nodeValue) {
           unitExists = true;
         }
       });
-      if (!unitExists) {
-        $('#unitlist').append('<li><label><button class="button modify removeUnit">X</button>'+ unitName + '</label></li>')
+      if (!unitExists && noUnits < 4) {
+        $('#unitlist').append('<li><label><button class="button modify removeUnit">X</button><input type="hidden" name="units" value="'+ unitName +'">'+ unitName + '</input></label></li>')
+      	noUnits++;
       }
       $('#unit-search').typeahead('val', ''); //clear the search bar
     });
@@ -117,6 +118,7 @@ window.onload = function() {
      */
     $('#unitlist').on('click', '.removeUnit', function() {
       this.closest('li').remove();
+      noUnits--;
     });
 
     /**
@@ -293,25 +295,7 @@ window.onload = function() {
 				vacantText(e.target);
 			}
 			if (finalized == 1) { openModal.style.display = "none"; }
-			else { alert("Select specify an availability time!"); }
-		}
-
-    /**
-		 * Submit unit handler
-     */
-		subUnits.onclick = function(e) {
-			var noAdded = 0;
-			clearItems(e.target);
-      for (var i=0; i<unitBoxes.length; i++) {
-				if (unitBoxes[i].checked) {
-					addItem(e.target, unitBoxes[i].parentElement.innerText);
-					noAdded++;
-				}
-      }
-			if (noAdded == 0) {
-				vacantText(e.target);
-			}
-			openModal.style.display = "none";
+			else { alert("Specify an availability time!"); }
 		}
 
      /**
@@ -328,7 +312,6 @@ window.onload = function() {
 			clearChildren(itemList);
 		}
 
-
 		/**
 		 * Adds item 'itemContent' to the callers list
 		 * We handle how itemContent should be added by checking the callers ID
@@ -339,13 +322,7 @@ window.onload = function() {
 			var newItemDiv = document.createElement("div");
 			newItemDiv.className = "module-content-header";
 			newListItem.appendChild(newItemDiv);
-			if (caller.id == "unitSubmit") {
-				node = document.createTextNode(itemContent);
-				newItemDiv.appendChild(node);
-				var unitList = document.getElementById("unit-list");
-				unitList.appendChild(newListItem);
-			}
-			else if (caller.id == "availSubmit") {
+			if (caller.id == "availSubmit") {
 				node = document.createTextNode(itemContent.dayName);
 				newItemDiv.appendChild(node);
 				newListItem.appendChild(itemContent.timeFrame);

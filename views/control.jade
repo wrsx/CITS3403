@@ -14,8 +14,11 @@ block content
 				.module-header
 					a Your Units
 				ul#unit-list.module-content-list
-					each unit, index in units
-						li= unit
+					each unit in units
+						li
+							#module-content-text= unit
+					if noUnits==0
+						li.vacantTxt No units selected!
 				.module-footer
 					button#unit-edit-btn.button.modify Edit
 					#unitModal.modal
@@ -27,11 +30,12 @@ block content
 							.modal-content
 								#unit-searchbox
 									input#unit-search.typeahead.form-control(type='text', placeholder='Search...')
-							ul#unitlist.modal-list
-							.modal-footer
-								span.close
-									button.button Close
-								button#unitSubmit.button.login Save
+							form(name='submit-unit-form', method='POST', action='/sub-units')
+								ul#unitlist.modal-list
+								.modal-footer
+									span.close
+										button.button Close
+									input#unitSubmit.button.login(type='submit', value='Save')
 			.module-container.left
 				.module-header
 					a Experience
