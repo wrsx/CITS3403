@@ -84,6 +84,41 @@ block content
 							a Email:
 						.module-content-text
 							a=email
+				.module-footer
+					button#personal-edit-btn.button.modify Edit
+					#personalModal.modal
+						.modal-wrapper
+							.modal-header
+								a Personal & Contact Information Editor
+							.modal-content
+								.reg-content
+									form(name='person-edit-form', onsubmit='return validatePersonalEdit()', method='POST', action='/personaledit')
+										ul.module-content-list
+											li
+												.module-content-header
+													a First name:
+												.module-content-text
+													input#personalName.form-control(type='text', name='name', value=firstname)
+											li
+												.module-content-header
+													a Last name:
+												.module-content-test
+													input#personalName.form-control(type='text', name='name', value=lastname)
+											li
+												.module-content-header
+													a Age:
+												.module-content-text
+													input#personalAge.form-control(type='text', name='age', value=age)
+											li
+												.module-content-header
+													a Phone:
+												.module-content-text
+													input#personalPhone.form-control(type='text', name='phone' value=phone)
+										button#personalSubmit.button.login(type='submit', value='submit') Save
+							.modal-footer
+								span.close
+									button.button Close
+
 			.module-container
 				.module-header
 					a Availability

@@ -46,9 +46,11 @@ window.onload = function() {
 
 	if (document.getElementsByTagName("body")[0].className.match("control")) { //Only for user panel page
 		var subUnits = document.getElementById('unitSubmit'); //Unit submit button
+    var subPersonal = document.getElementById('personalSubmit'); //Personal and Contact Information submit button
 		var subDays = document.getElementById('availSubmit'); //Availability submit button
 		var unitEditBtn = document.getElementById("unit-edit-btn"); //Edit units button
 		var expEditBtn = document.getElementById("edit-exp"); //Edit experience button
+    var personalEditBtn = document.getElementById("personal-edit-btn"); //Edit Personal and Contact Information button
 		var availabilityEditBtn = document.getElementById("availability-edit-btn"); //Edit availability buttion
 		var dayBoxes = document.getElementsByClassName('day'); //All availability day checkboxes
 
@@ -124,6 +126,13 @@ window.onload = function() {
      */
     unitEditBtn.onclick = function() {
       document.getElementById('unitModal').style.display = "block";
+    }
+
+    /**
+     * Display the personal & contact information modal
+     */
+    personalEditBtn.onclick = function() {
+      document.getElementById('personalModal').style.display = "block";
     }
 
     /**

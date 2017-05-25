@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 
 /* POST home page. AKA Login */
 router.post('/login', passport.authenticate('local'), function(req, res) {
-  res.redirect('/'); //TO DO: redirect this to users profile page
+  res.redirect('/users/control');
 });
 
 /* GET Logout */
@@ -33,7 +33,9 @@ router.post('/signup', function(req, res) {
   console.log((avail));
   Account.register(new Account({  firstname: req.body.firstname,
                                   lastname: req.body.lastname,
+                                  age: req.body.age,
                                   username: req.body.username,
+                                  phone: 'Please add your phone number!',
                                   units: [req.body.unit1, req.body.unit2, req.body.unit3, req.body.unit4],
                                   availability: avail }),
                                   req.body.password,
@@ -43,7 +45,7 @@ router.post('/signup', function(req, res) {
                         return res.render('signup', { account : account });
                       }
                       passport.authenticate('local')(req, res, function () {
-                        res.redirect('/');
+                        res.redirect('/users/control');
                       });
                    });
 });
@@ -72,6 +74,21 @@ router.get('/search_unit', function(req, res) {
       }, 404);
     }
   });
+});
+
+router.post('/personaledit', function(req, res) {
+  /*Account.find(
+    {username: req.body.username},
+    function(err, accounts){
+      if (err) return console.error(err);
+      console.log(accounts);
+  });*/
+
+  req.user.age = req.body.age;
+  req.user.phone = req.body.phone;
+  req.user.save();
+
+  res.redirect('/users/control');
 });
 
 
