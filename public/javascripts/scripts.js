@@ -116,6 +116,8 @@ window.onload = function() {
 					removeBars[i].classList.toggle("active");
 				}				
 				expEditBtn.innerText=("Save");
+				expEditBtn.classList.add("saveExp");
+        $('.edit-exp').attr('type', 'submit');
 				editToggle = !editToggle;			
 			}
 			else {

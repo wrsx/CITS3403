@@ -70,5 +70,10 @@ router.get('/search_unit', function(req, res) {
   });
 });
 
+/* POST experience info to db - UNFINISHED */
+router.post('/submit_exp', function(req, res) {
+  user = req.user;
+  res.send('test');
+});
 
 module.exports = router;
