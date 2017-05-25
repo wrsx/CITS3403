@@ -34,7 +34,6 @@ router.post('/signup', function(req, res) {
   Account.register(new Account({  firstname: req.body.firstname,
                                   lastname: req.body.lastname,
                                   username: req.body.username,
-                                  units: [req.body.unit1, req.body.unit2, req.body.unit3, req.body.unit4],
                                   availability: avail }),
                                   req.body.password,
                    function(err, account) {
@@ -46,6 +45,13 @@ router.post('/signup', function(req, res) {
                         res.redirect('/');
                       });
                    });
+});
+
+/* POST unit requests */
+router.post('/sub-units', function(req, res) {
+  req.user.units = req.body.units;
+  req.user.save();
+  res.redirect('/users/control');
 });
 
 /* GET unit requests */
