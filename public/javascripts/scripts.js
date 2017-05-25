@@ -63,8 +63,7 @@ window.onload = function() {
       //if units exist
       curUnits.each(function () {
         //if names match, dont add unit
-        console.log($(this));
-				if (unitName == $("label", this).contents().get(1).nodeValue) {
+				if (unitName == $("label", this).contents().get(2).nodeValue) {
           unitExists = true;
         }
       });

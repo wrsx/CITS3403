@@ -15,9 +15,10 @@ block content
 					a Your Units
 				ul#unit-list.module-content-list
 					each unit in units
-						li= unit
+						li
+							#module-content-text= unit
 					if noUnits==0
-						li No units selected!
+						li.vacantTxt No units selected!
 				.module-footer
 					button#unit-edit-btn.button.modify Edit
 					#unitModal.modal
