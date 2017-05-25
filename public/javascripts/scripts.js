@@ -54,27 +54,27 @@ window.onload = function() {
 
 
     /**
-		 * Handler for making a unit selection
-      */
+     * Handler for making a unit selection
+     */
     $('#unit-searchbox').on('click', '.tt-suggestion', function(){
-    	var unitExists = false;
+      var unitExists = false;
       var unitName = this.innerText;
       var curUnits = $('#unitlist').children(); //current unit list
-			//if units exist
-			curUnits.each(function () {
-				//if names match, dont add unit
-				if (unitName == $("label", this).contents().get(1).nodeValue) {
+      //if units exist
+      curUnits.each(function () {
+        //if names match, dont add unit
+        if (unitName == $("label", this).contents().get(1).nodeValue) {
           unitExists = true;
         }
-			});
+      });
       if (!unitExists) {
         $('#unitlist').append('<li><label><button class="button modify removeUnit">X</button>'+ unitName + '</label></li>')
-			}
+      }
       $('#unit-search').typeahead('val', ''); //clear the search bar
     });
 
     /**
-		 * Search selecting with keyboard
+     * Search selecting with keyboard
      */
     $('#unit-searchbox').on('keyup', function(e) {
       if(e.which == 13) {
@@ -87,14 +87,14 @@ window.onload = function() {
     });
 
     /**
-		 * Handler for removing a unit
+     * Handler for removing a unit
      */
     $('#unitlist').on('click', '.removeUnit', function() {
-    	this.closest('li').remove();
-		});
+      this.closest('li').remove();
+    });
 
     /**
-		 * Typeahead searchbar backend request
+     * Typeahead searchbar backend request
      */
     $(function () {
       $('#unit-search').typeahead({
