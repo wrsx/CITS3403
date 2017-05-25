@@ -1,7 +1,51 @@
+if (!Array.prototype.filter) {
+  Array.prototype.filter = function(fun/*, thisArg*/) {
+    'use strict';
+
+    if (this === void 0 || this === null) {
+      throw new TypeError();
+    }
+
+    var t = Object(this);
+    var len = t.length >>> 0;
+    if (typeof fun !== 'function') {
+      throw new TypeError();
+    }
+
+    var res = [];
+    var thisArg = arguments.length >= 2 ? arguments[1] : void 0;
+    for (var i = 0; i < len; i++) {
+      if (i in t) {
+        var val = t[i];
+
+        // NOTE: Technically this should Object.defineProperty at
+        //       the next index, as push can be affected by
+        //       properties on Object.prototype and Array.prototype.
+        //       But that method's new, and collisions should be
+        //       rare, so use the more-compatible alternative.
+        if (fun.call(thisArg, val, i, t)) {
+          res.push(val);
+        }
+      }
+    }
+
+    return res;
+  };
+}
+
+function intersect(a,b){
+  var t;
+  if(b.length > a.length) t =b, b=a, a=t;
+  return a.filter(function(e){
+    return b.indexOf(e) > -1;
+  });
+}
+
+
 window.onload = function() {
 
 	if (document.getElementsByTagName("body")[0].className.match("control")) { //Only for user panel page
-		var subUnits = document.getElementById('unitSubmit'); //Unit submit button	
+		var subUnits = document.getElementById('unitSubmit'); //Unit submit button
 		var subDays = document.getElementById('availSubmit'); //Availability submit button
 		var unitEditBtn = document.getElementById("unit-edit-btn"); //Edit units button
 		var expEditBtn = document.getElementById("edit-exp"); //Edit experience button
@@ -93,30 +137,30 @@ window.onload = function() {
 		 * Handler for "edit mode" experience entries
      */
 		var editToggle = false;
-		var vacantExp;	
+		var vacantExp;
 		var experience = document.getElementById('experience');
 		expEditBtn.onclick = function(e) {
-			var final = true;	
-			var expHeaders = experience.getElementsByClassName('module-content-header');	
-			var expContents = experience.getElementsByClassName('module-content-text');		
+			var final = true;
+			var expHeaders = experience.getElementsByClassName('module-content-header');
+			var expContents = experience.getElementsByClassName('module-content-text');
 			var addBtn = document.getElementById("add-exp");
 			var removeBars = document.getElementsByClassName("module-footer experience");
-			if (editToggle == false) {			
+			if (editToggle == false) {
 				for (var i=0; i<expHeaders.length; i++) {
 					var headerName = expHeaders[i].innerText;
 					var contentText = expContents[i].innerText;
 					expHeaders[i].innerHTML = '<textarea class="textHeader" rows="1" cols="62" maxlength = "50"></textarea>';
 					expContents[i].innerHTML = '<textarea rows="8" cols="62"></textarea>';
 					expHeaders[i].childNodes[0].value = headerName;
-					expContents[i].childNodes[0].value = contentText;			
+					expContents[i].childNodes[0].value = contentText;
 				}
 				//Toggle + and - buttons
 				addBtn.classList.toggle("active");
 				for (var i=0; i<removeBars.length; i++) {
 					removeBars[i].classList.toggle("active");
-				}				
+				}
 				expEditBtn.innerText=("Save");
-				editToggle = !editToggle;			
+				editToggle = !editToggle;
 			}
 			else {
 				for (var i=0; i<expHeaders.length; i++) {
@@ -128,14 +172,14 @@ window.onload = function() {
 				if (final) {
 					for (var i=0; i<expHeaders.length; i++) {
 					expHeaders[i].innerHTML = expHeaders[i].childNodes[0].value;
-					expContents[i].innerHTML = expContents[i].childNodes[0].value;						
-					}				
+					expContents[i].innerHTML = expContents[i].childNodes[0].value;
+					}
 					addBtn.classList.toggle("active");
 					for (var i=0; i<removeBars.length; i++) {
 						removeBars[i].classList.toggle("active");
-					}				
-					expEditBtn.innerText=("Edit") 
-					editToggle = !editToggle;	
+					}
+					expEditBtn.innerText=("Edit")
+					editToggle = !editToggle;
 				}
 			}
 		}
@@ -152,7 +196,7 @@ window.onload = function() {
 					if (experience.childNodes[0].getElementsByTagName("li").length == 0) {
 						vacantText(e.target);
 						vacantExp = true;
-					}		
+					}
 				}
 			}
 		}
@@ -164,7 +208,7 @@ window.onload = function() {
 		var addBtn = document.getElementById('add-exp');
 		addBtn.onclick = function() {
 			if (vacantExp) { experience.childNodes[0].innerHTML = "" }
-			var newListItem = document.createElement("li");			
+			var newListItem = document.createElement("li");
 			var moduleContentHeader = document.createElement("div");
 			moduleContentHeader.className = "module-content-header";
 			var moduleContentText = document.createElement("div");
@@ -179,7 +223,7 @@ window.onload = function() {
 			newListItem.appendChild(moduleFooter);
 			experience.childNodes[0].appendChild(newListItem);
 			vacantExp = false;
-			syncRemoves();	
+			syncRemoves();
 		}
 
     /**
@@ -213,13 +257,13 @@ window.onload = function() {
 					};
 					if (insert.lowerTime.classList.contains('inactive') && insert.upperTime.classList.contains('inactive')) {
 						addItem(e.target, insert);
-						noAdded++;			
+						noAdded++;
 					}
 					else { finalized = 0; }
 				}
 			}
 			if (noAdded == 0) {
-				vacantText(e.target);			
+				vacantText(e.target);
 			}
 			if (finalized == 1) { openModal.style.display = "none"; }
 			else { alert("Select specify an availability time!"); }
@@ -229,7 +273,7 @@ window.onload = function() {
 		 * Submit unit handler
      */
 		subUnits.onclick = function(e) {
-			var noAdded = 0;		
+			var noAdded = 0;
 			clearItems(e.target);
       for (var i=0; i<unitBoxes.length; i++) {
 				if (unitBoxes[i].checked) {
@@ -246,7 +290,7 @@ window.onload = function() {
      /**
 		 * Removes all items from the callers list
      */
-		function clearItems(caller) {	
+		function clearItems(caller) {
 			var itemList;
 			if (caller.id == "unitSubmit") {
 				itemList = document.getElementById("unit-list");
@@ -270,7 +314,7 @@ window.onload = function() {
 			newListItem.appendChild(newItemDiv);
 			if (caller.id == "unitSubmit") {
 				node = document.createTextNode(itemContent);
-				newItemDiv.appendChild(node);			
+				newItemDiv.appendChild(node);
 				var unitList = document.getElementById("unit-list");
 				unitList.appendChild(newListItem);
 			}
@@ -286,8 +330,8 @@ window.onload = function() {
     /**
 		 * Adds vacant text to the item list
      */
-		function vacantText(caller) {				
-			var newListItem = document.createElement("li");			
+		function vacantText(caller) {
+			var newListItem = document.createElement("li");
 			var newItemDiv = document.createElement("div");
 			var node;
 			newItemDiv.className = "module-content-text vacantTxt";
@@ -296,12 +340,12 @@ window.onload = function() {
 				node = document.createTextNode("No units selected!");
 				var unitList = document.getElementById("unit-list");
 				newItemDiv.appendChild(node);
-				unitList.appendChild(newListItem);				
+				unitList.appendChild(newListItem);
 			}
-			else if (caller.id == "availSubmit") { 
-				node = document.createTextNode("No days selected!") 
-				var dayList = document.getElementById("day-list");	
-				newItemDiv.appendChild(node);	
+			else if (caller.id == "availSubmit") {
+				node = document.createTextNode("No days selected!")
+				var dayList = document.getElementById("day-list");
+				newItemDiv.appendChild(node);
 				dayList.appendChild(newListItem);
 			}
 			else if (caller.id == "edit-exp" || caller.classList.contains('removeExp')) {
@@ -310,7 +354,7 @@ window.onload = function() {
 				newItemDiv.appendChild(node);
 				expList.appendChild(newListItem);
 			}
-		}		
+		}
 
     /**
 		 * Handler to open dropdowns
@@ -373,9 +417,9 @@ window.onload = function() {
 					clearChildren(dropContent);
 					for (var z=i+1; z<realTimes.length; z++) {
 						var validTime = document.createElement("a");
-						var node = document.createTextNode(textTimes[z]);	
+						var node = document.createTextNode(textTimes[z]);
 						validTime.appendChild(node);
-						dropContent.appendChild(validTime);				
+						dropContent.appendChild(validTime);
 					}
 				}
 			}
@@ -386,7 +430,7 @@ window.onload = function() {
      */
 		function clearChildren(elemnt) {
 			elemnt.innerHTML = '';
-		}		
+		}
 
     /**
 		 * //Enables/disables avaibility buttons based on checkbox state
@@ -399,31 +443,31 @@ window.onload = function() {
 					if (liElements[i].nodeName == "DIV") {
 						timeframe = liElements[i];
 					}
-				}				
+				}
 				if (e.target.checked) {
 						timeframe.childNodes[0].classList.toggle("inactive");
 				}
-				else { 
+				else {
 					//reset to 0
 					for (var i=0; i<timeframe.childNodes.length; i++) {
 						if (timeframe.childNodes[i].nodeName == "DIV") {
 							var dropdown = timeframe.childNodes[i];
 							dropdown.childNodes[0].innerText = "0:00";
 							if (!dropdown.classList.contains("inactive")) {
-								dropdown.classList.toggle("inactive");	
+								dropdown.classList.toggle("inactive");
 							}
 						}
-					}				
+					}
 				}
 			});
-		}				
+		}
 	}
-	
+
 	else if (document.getElementsByTagName("body")[0].className.match("matches")) { // Only for matches page
 		var matchTabs = document.getElementsByClassName('match-tab'); //Match tabs on modal
-		var matchList = document.getElementById('single-matches'); //List of matches	
+		var matchList = document.getElementById('single-matches'); //List of matches
 		var matches = matchList.getElementsByTagName('li'); //List of matches
-		
+
 		for (var i=0; i<matches.length; i++) {
 			matches[i].addEventListener("click", function() {
 				document.getElementById('sampleMatch').style.display = "block";
@@ -437,7 +481,7 @@ window.onload = function() {
 			matchTabs[i].addEventListener("click", function(e) {
 				var openTab = getActiveTab();
 				sampleMatch.getElementsByClassName('tab-content')[openTab].classList.toggle('active');
-				sampleMatch.getElementsByClassName('match-tab')[openTab].classList.toggle('active');	
+				sampleMatch.getElementsByClassName('match-tab')[openTab].classList.toggle('active');
 				if (e.target.classList.contains("exp")) {
 					sampleMatch.getElementsByClassName('exp')[0].classList.toggle('active');
 					sampleMatch.getElementsByClassName('exp')[1].classList.toggle('active');
@@ -463,9 +507,9 @@ window.onload = function() {
 					return i;
 				}
 			}
-		}	
+		}
 	}
-	
+
 	else if (document.getElementsByTagName("body")[0].className.match("index")) { // Only for index page
 		var loginBtn = document.getElementById("loginBtn"); //Login button
 		loginBtn.onclick = function() {
@@ -473,7 +517,7 @@ window.onload = function() {
 		}
 	}
 	var allModals = document.getElementsByClassName('modal'); //All modal elements
-	var allDropDowns = document.getElementsByClassName('drop-content'); //All dropdown elements	
+	var allDropDowns = document.getElementsByClassName('drop-content'); //All dropdown elements
 	var closes = document.getElementsByClassName("close"); //All close buttons (for modals)
 
   /**
@@ -490,20 +534,20 @@ window.onload = function() {
 	 * Global 'click outside of anything to close' function
    */
 	window.onclick = function(event) {
-		openModal = getOpenModal();	
+		openModal = getOpenModal();
 		openDropDown = getOpenDropdown();
-		if (event.target == openModal) {			
+		if (event.target == openModal) {
 			openModal.style.display = "none";
-		}	
+		}
 		if (!event.target.matches('.drop-btn') && typeof openDropDown != "undefined") {
 			openDropDown.classList.remove('show');
-		}			
-	}	
+		}
+	}
 
   /**
 	 * Returns open modal
    */
-	function getOpenModal() {;	
+	function getOpenModal() {;
 		for (var i=0; i < allModals.length; i++) {
 			var curDisp = document.getElementsByClassName('modal')[i];
 			if (curDisp.hasAttribute("style") && curDisp.style.display != "none") {
@@ -565,5 +609,5 @@ window.onload = function() {
 	 * Return last modified time & date
    */
 	document.getElementById("footer-lastmodified").innerHTML = "Last Modified: " + document.lastModified;
-	
+
 };
