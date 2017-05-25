@@ -1,3 +1,29 @@
+function parseTime(timeString) {
+    if (timeString == '') return null;
+
+    var time = timeString.match(/(\d+)(:(\d\d))?\s*(p?)/i);
+    if (time == null) return null;
+
+    var hours = parseInt(time[1],10);
+    if (hours == 12 && !time[4]) {
+          hours = 0;
+    }
+    else {
+        hours += (hours < 12 && time[4])? 12 : 0;
+    }
+
+    return (hours + ":" + time[3] || "00");
+}
+
+function updateTimeDB(insert){
+  console.log(insert.dayName);
+  var startTime = parseTime(insert.lowerTime.childNodes[0].innerHTML);
+  var endTime = parseTime(insert.upperTime.childNodes[0].innerHTML);
+  console.log(startTime);
+  console.log(endTime);
+  $.post( "/updateavailability", { 'availability': [ insert.dayName, {'start': startTime , 'end': endTime} ] });
+}
+
 if (!Array.prototype.filter) {
   Array.prototype.filter = function(fun/*, thisArg*/) {
     'use strict';
@@ -255,6 +281,7 @@ window.onload = function() {
 						lowerTime: dayBoxes[i].parentElement.parentElement.childNodes[1].childNodes[0],
 						upperTime: dayBoxes[i].parentElement.parentElement.childNodes[1].childNodes[2]
 					};
+          updateTimeDB(insert);
 					if (insert.lowerTime.classList.contains('inactive') && insert.upperTime.classList.contains('inactive')) {
 						addItem(e.target, insert);
 						noAdded++;

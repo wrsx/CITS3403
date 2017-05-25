@@ -16,10 +16,42 @@ router.post('/login', passport.authenticate('local'), function(req, res) {
   res.redirect('/'); //TO DO: redirect this to users profile page
 });
 
+function dayToNum(day){
+  return ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].indexOf(day);
+}
+
+router.post('/updateavailability', function(req, res) {
+
+  var day = req.body.availability[0];
+  var start = req.body.availability[1].start; //TO DO: redirect this to users profile page
+  var end = req.body.availability[1].end;
+  var query = {'username': req.user.username};
+
+
+  console.log( day + " " + start + " " + end );
+  var curr_availability = JSON.parse( req.user.availability );
+
+
+
+  curr_availability[dayToNum(day)].start = start;
+  curr_availability[dayToNum(day)].end = end;
+
+  console.log( JSON.stringify( curr_availability ) );
+
+  Account.findOneAndUpdate(query, { "availability" : JSON.stringify( curr_availability ) }, function(err){
+    if (err){
+      console.log("ERROR");
+    }
+  });
+
+  console.log(req.user.availability);
+  res.end();
+});
+
 /* GET Logout */
 router.get('/logout', function(req, res) {
   req.logout();
-    res.redirect('/');
+  res.redirect('/');
 });
 
 /* GET signup page. */
@@ -35,8 +67,7 @@ router.post('/signup', function(req, res) {
                                   lastname: req.body.lastname,
                                   username: req.body.username,
                                   units: [req.body.unit1, req.body.unit2, req.body.unit3, req.body.unit4],
-                                  availability: avail }),
-                                  req.body.password,
+                                  availability: avail }), req.body.password ,
                    function(err, account) {
                       if (err) {
                         console.log(err);
