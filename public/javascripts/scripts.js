@@ -45,6 +45,9 @@ window.onload = function() {
     /**
 		 * Handler for removing a unit
      */
+    $('#unitlist').on('click', '.removeUnit', function() {
+    	this.closest('li').remove();
+		});
 
     /**
 		 * Typeahead searchbar backend request
