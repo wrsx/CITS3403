@@ -382,7 +382,7 @@ window.onload = function() {
 		for (var i=0; i<times.length; i++) {
 			times[i].addEventListener("click", function(e) {
         if (e.target.tagName.toLowerCase() === 'a') { //if the click is valid
-        	var buttonText = e.target.parentElement.parentElement.childNodes[0];
+          var buttonText = e.target.parentElement.parentElement.childNodes[0];
           var lowerTime = e.target.parentElement.parentElement.parentElement.childNodes[0];
           var upperTime = e.target.parentElement.parentElement.parentElement.childNodes[2];
           buttonText.innerText = e.target.innerText;
