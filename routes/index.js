@@ -16,6 +16,38 @@ router.post('/login', passport.authenticate('local'), function(req, res) {
   res.redirect('/users/control');
 });
 
+function dayToNum(day){
+  return ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].indexOf(day);
+}
+
+router.post('/updateavailability', function(req, res) {
+
+  var day = req.body.availability[0];
+  var start = req.body.availability[1].start; //TO DO: redirect this to users profile page
+  var end = req.body.availability[1].end;
+  var query = {'username': req.user.username};
+
+
+  console.log( day + " " + start + " " + end );
+  var curr_availability = JSON.parse( req.user.availability );
+
+
+
+  curr_availability[dayToNum(day)].start = start;
+  curr_availability[dayToNum(day)].end = end;
+
+  console.log( JSON.stringify( curr_availability ) );
+
+  Account.findOneAndUpdate(query, { "availability" : JSON.stringify( curr_availability ) }, function(err){
+    if (err){
+      console.log("ERROR");
+    }
+  });
+
+  console.log(req.user.availability);
+  res.end();
+});
+
 /* GET Logout */
 router.get('/logout', function(req, res) {
   req.logout();
@@ -48,6 +80,26 @@ router.post('/signup', function(req, res) {
                         res.redirect('/users/control');
                       });
                    });
+});
+
+/* POST unit requests */
+router.post('/sub-units', function(req, res) {
+  req.user.units = req.body.units;
+  req.user.save();
+  res.redirect('/users/control');
+});
+
+/* POST experience requests */
+router.post('/sub-exp', function(req, res) {
+  var result = new Array(req.body.expHeader.length);
+  for (var i=0; i<req.body.expHeader.length; i++) {
+    result[i] = new Array(2);
+    result[i][0] = req.body.expHeader[i];
+    result[i][1] = req.body.expContent[i];
+  }
+  req.user.experience = result;
+  req.user.save();
+  res.send(result);
 });
 
 /* GET unit requests */

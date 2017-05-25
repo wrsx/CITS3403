@@ -403,13 +403,13 @@
 }
 
 .module-footer.experience {
+	padding: 0px;
 	display: none;
 	border: none;
 	background-color: #fff;
 }
 
 .module-footer.experience.active {
-	padding: 5px;
 	display: block;
 }
 
@@ -428,7 +428,7 @@
 #experience { padding: 0; }
 #experience li div { flex-basis: 100%; }
 .module-content-text.vacantTxt { text-align: center; }
-#unit-list li, #day-list li { justify-content: center; }
+#day-list li, .vacantTxt { justify-content: center; }
 
 
 .module-content-list {
@@ -448,7 +448,7 @@
 	display: flex;
 	flex-wrap: wrap;
     border-top: 1px solid #ccc;
-    padding: 10px 10px 10px 20px;
+    padding: 10px 20px 10px 20px;
 }
 
 /* Modal Config */
@@ -714,7 +714,7 @@ input[type=checkbox] {
 }
 
 textarea {
-	width: 98%;
+	width: 100%;
 	height: 100%;
     resize: none;
 }

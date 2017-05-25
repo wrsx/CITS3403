@@ -1,3 +1,29 @@
+function parseTime(timeString) {
+    if (timeString == '') return null;
+
+    var time = timeString.match(/(\d+)(:(\d\d))?\s*(p?)/i);
+    if (time == null) return null;
+
+    var hours = parseInt(time[1],10);
+    if (hours == 12 && !time[4]) {
+          hours = 0;
+    }
+    else {
+        hours += (hours < 12 && time[4])? 12 : 0;
+    }
+
+    return (hours + ":" + time[3] || "00");
+}
+
+function updateTimeDB(insert){
+  console.log(insert.dayName);
+  var startTime = parseTime(insert.lowerTime.childNodes[0].innerHTML);
+  var endTime = parseTime(insert.upperTime.childNodes[0].innerHTML);
+  console.log(startTime);
+  console.log(endTime);
+  $.post( "/updateavailability", { 'availability': [ insert.dayName, {'start': startTime , 'end': endTime} ] });
+}
+
 if (!Array.prototype.filter) {
   Array.prototype.filter = function(fun/*, thisArg*/) {
     'use strict';
@@ -53,24 +79,26 @@ window.onload = function() {
     var personalEditBtn = document.getElementById("personal-edit-btn"); //Edit Personal and Contact Information button
 		var availabilityEditBtn = document.getElementById("availability-edit-btn"); //Edit availability buttion
 		var dayBoxes = document.getElementsByClassName('day'); //All availability day checkboxes
+		var noUnits = 0;
 
 
     /**
      * Handler for making a unit selection
      */
     $('#unit-searchbox').on('click', '.tt-suggestion', function(){
-      var unitExists = false;
+    	var unitExists = false;
       var unitName = this.innerText;
       var curUnits = $('#unitlist').children(); //current unit list
       //if units exist
       curUnits.each(function () {
         //if names match, dont add unit
-        if (unitName == $("label", this).contents().get(1).nodeValue) {
+				if (unitName == $("label", this).contents().get(2).nodeValue) {
           unitExists = true;
         }
       });
-      if (!unitExists) {
-        $('#unitlist').append('<li><label><button class="button modify removeUnit">X</button>'+ unitName + '</label></li>')
+      if (!unitExists && noUnits < 4) {
+        $('#unitlist').append('<li><label><button class="button modify removeUnit">X</button><input type="hidden" name="units" value="'+ unitName +'">'+ unitName + '</input></label></li>')
+      	noUnits++;
       }
       $('#unit-search').typeahead('val', ''); //clear the search bar
     });
@@ -93,6 +121,7 @@ window.onload = function() {
      */
     $('#unitlist').on('click', '.removeUnit', function() {
       this.closest('li').remove();
+      noUnits--;
     });
 
     /**
@@ -143,6 +172,18 @@ window.onload = function() {
     }
 
     /**
+		 * A single click handler for changing the exp edit button
+     */
+    $('#edit-exp').one('click', function(e) {
+      if (editToggle == false) {
+      	$(this).prop('type', 'submit');
+				e.preventDefault();
+      } else {
+        $(this).prop('type', 'button');
+			}
+    });
+
+    /**
 		 * Handler for "edit mode" experience entries
      */
 		var editToggle = false;
@@ -158,8 +199,8 @@ window.onload = function() {
 				for (var i=0; i<expHeaders.length; i++) {
 					var headerName = expHeaders[i].innerText;
 					var contentText = expContents[i].innerText;
-					expHeaders[i].innerHTML = '<textarea class="textHeader" rows="1" cols="62" maxlength = "50"></textarea>';
-					expContents[i].innerHTML = '<textarea rows="8" cols="62"></textarea>';
+					expHeaders[i].innerHTML = '<textarea name="expHeader" class="textHeader" rows="1" cols="62" maxlength = "50"></input>';
+					expContents[i].innerHTML = '<textarea name="expContent" rows="8" cols="62"></textarea>';
 					expHeaders[i].childNodes[0].value = headerName;
 					expContents[i].childNodes[0].value = contentText;
 				}
@@ -177,18 +218,6 @@ window.onload = function() {
 						window.alert("Please fill out every field!");
 						final = false;
 					}
-				}
-				if (final) {
-					for (var i=0; i<expHeaders.length; i++) {
-					expHeaders[i].innerHTML = expHeaders[i].childNodes[0].value;
-					expContents[i].innerHTML = expContents[i].childNodes[0].value;
-					}
-					addBtn.classList.toggle("active");
-					for (var i=0; i<removeBars.length; i++) {
-						removeBars[i].classList.toggle("active");
-					}
-					expEditBtn.innerText=("Edit")
-					editToggle = !editToggle;
 				}
 			}
 		}
@@ -224,8 +253,8 @@ window.onload = function() {
 			moduleContentText.className = "module-content-text";
 			var moduleFooter = document.createElement("div");
 			moduleFooter.className = "module-footer experience active";
-			moduleContentHeader.innerHTML = '<textarea class="textHeader" maxlength = "50" rows="1" cols="62"></textarea>';
-			moduleContentText.innerHTML = '<textarea rows="8" cols="62"></textarea>';
+			moduleContentHeader.innerHTML = '<textarea name="expHeader" class="textHeader" maxlength = "50" rows="1" cols="62"></textarea>';
+			moduleContentText.innerHTML = '<textarea name="expContent" rows="8" cols="62"></textarea>';
 			moduleFooter.innerHTML = '<button class="button modify removeExp">-</button>'
 			newListItem.appendChild(moduleContentHeader);
 			newListItem.appendChild(moduleContentText);
@@ -264,6 +293,7 @@ window.onload = function() {
 						lowerTime: dayBoxes[i].parentElement.parentElement.childNodes[1].childNodes[0],
 						upperTime: dayBoxes[i].parentElement.parentElement.childNodes[1].childNodes[2]
 					};
+          updateTimeDB(insert);
 					if (insert.lowerTime.classList.contains('inactive') && insert.upperTime.classList.contains('inactive')) {
 						addItem(e.target, insert);
 						noAdded++;
@@ -275,25 +305,7 @@ window.onload = function() {
 				vacantText(e.target);
 			}
 			if (finalized == 1) { openModal.style.display = "none"; }
-			else { alert("Select specify an availability time!"); }
-		}
-
-    /**
-		 * Submit unit handler
-     */
-		subUnits.onclick = function(e) {
-			var noAdded = 0;
-			clearItems(e.target);
-      for (var i=0; i<unitBoxes.length; i++) {
-				if (unitBoxes[i].checked) {
-					addItem(e.target, unitBoxes[i].parentElement.innerText);
-					noAdded++;
-				}
-      }
-			if (noAdded == 0) {
-				vacantText(e.target);
-			}
-			openModal.style.display = "none";
+			else { alert("Specify an availability time!"); }
 		}
 
      /**
@@ -310,7 +322,6 @@ window.onload = function() {
 			clearChildren(itemList);
 		}
 
-
 		/**
 		 * Adds item 'itemContent' to the callers list
 		 * We handle how itemContent should be added by checking the callers ID
@@ -321,13 +332,7 @@ window.onload = function() {
 			var newItemDiv = document.createElement("div");
 			newItemDiv.className = "module-content-header";
 			newListItem.appendChild(newItemDiv);
-			if (caller.id == "unitSubmit") {
-				node = document.createTextNode(itemContent);
-				newItemDiv.appendChild(node);
-				var unitList = document.getElementById("unit-list");
-				unitList.appendChild(newListItem);
-			}
-			else if (caller.id == "availSubmit") {
+			if (caller.id == "availSubmit") {
 				node = document.createTextNode(itemContent.dayName);
 				newItemDiv.appendChild(node);
 				newListItem.appendChild(itemContent.timeFrame);
@@ -442,7 +447,7 @@ window.onload = function() {
 		}
 
     /**
-		 * //Enables/disables avaibility buttons based on checkbox state
+		 * //Enables/disables availability buttons based on checkbox state
      */
 		for (var i=0; i<dayBoxes.length; i++) {
 			dayBoxes[i].addEventListener("change", function(e) {;

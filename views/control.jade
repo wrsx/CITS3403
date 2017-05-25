@@ -14,8 +14,11 @@ block content
 				.module-header
 					a Your Units
 				ul#unit-list.module-content-list
-					each unit, index in units
-						li= unit
+					each unit in units
+						li
+							#module-content-text= unit
+					if noUnits==0
+						li.vacantTxt No units selected!
 				.module-footer
 					button#unit-edit-btn.button.modify Edit
 					#unitModal.modal
@@ -27,38 +30,40 @@ block content
 							.modal-content
 								#unit-searchbox
 									input#unit-search.typeahead.form-control(type='text', placeholder='Search...')
-							ul#unitlist.modal-list
-							.modal-footer
-								span.close
-									button.button Close
-								button#unitSubmit.button.login Save
+							form(name='submit-unit-form', method='POST', action='/sub-units')
+								ul#unitlist.modal-list
+								.modal-footer
+									span.close
+										button.button(type="button") Close
+									input#unitSubmit.button.login(type='submit', value='Save')
 			.module-container.left
 				.module-header
 					a Experience
-				#experience.module-content
-					ul.module-content-list
-						li
-							.module-content-header C#
-							.module-content-text
-								| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
-							.module-footer.experience
-								button.button.modify.removeExp -
-						li
-							.module-content-header C++
-							.module-content-text
-								| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
-							.module-footer.experience
-								button.button.modify.removeExp -
-						li
-							.module-content-header Java
-							.module-content-text
-								| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
-							.module-footer.experience
-								button.button.modify.removeExp -
-				.module-footer
-					button#add-exp.button.modify.add +
-					button#edit-exp.button.modify Edit
-					button#cancel-exp.button.modify.cancel Cancel
+				form(name='submit-exp-form', method='POST', action='/sub-exp')
+					#experience.module-content
+						ul.module-content-list
+							li
+								.module-content-header C#
+								.module-content-text
+									| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
+								.module-footer.experience
+									button.button.modify.removeExp -
+							li
+								.module-content-header C++
+								.module-content-text
+									| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
+								.module-footer.experience
+									button.button.modify.removeExp -
+							li
+								.module-content-header Java
+								.module-content-text
+									| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
+								.module-footer.experience
+									button.button.modify.removeExp -
+					.module-footer
+						button#add-exp.button.modify.add(type="button") +
+						button#edit-exp.button.modify(type="button") Edit
+						button#cancel-exp.button.modify.cancel(type="button") Cancel
 		.twoElement
 			.module-container
 				.module-header
@@ -140,7 +145,7 @@ block content
 										| Monday
 									.timeframe
 										.dropdown.inactive
-											button.button.modify.drop-btn 0:00
+											button.button.modify.drop-btn= loggedIn.availability[0].start
 											.drop-content
 												a 12:00am
 												a 1:00am
@@ -168,7 +173,7 @@ block content
 												a 11:00pm
 										a  To&nbsp
 										.dropdown.inactive
-											button.button.modify.drop-btn 0:00
+											button.button.modify.drop-btn= loggedIn.availability[0].end
 											.drop-content
 												a 12:00am
 												a 1:00am
@@ -557,4 +562,4 @@ block content
 							.modal-footer
 								span.close
 									button.button Close
-								button#availSubmit.button.login Save
+								button#availSubmit.button.login(onclick="updateTimeDB()") Save

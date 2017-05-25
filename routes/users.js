@@ -16,6 +16,7 @@ router.get('/control', function(req, res, next) {
                           phone: req.user.phone,
                           email: req.user.username,
                           units: req.user.units,
+                          noUnits: req.user.units.length
                         });
 });
 
@@ -31,7 +32,6 @@ router.get('/matches', function(req, res, next) {
               var currAvail = JSON.parse(req.user.availability);
               var userAvail = JSON.parse(users[i].availability);
               for(var m = 0 ; m < 7 ; m++){
-
                 var userStart = new Date(Date.parse('01/01/2001 ' + currAvail[m].start));
   							var userEnd = new Date(Date.parse('01/01/2001 ' +  currAvail[m].end));
   							var guestStart = new Date(Date.parse('01/01/2001 ' + userAvail[m].start));

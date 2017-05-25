@@ -23,18 +23,6 @@ block content
 						br
 						input(type='password', name='password', placeholder='Password', required='')
 						br
-						h4 Enter up to four units
-							.row.no-gutter
-								.col-md-3
-									input(type='text', maxlength=8 , name='unit1', placeholder='Unit Code')
-								.col-md-3
-									input(type='text', maxlength=8 , name='unit2', placeholder='Unit Code')
-								.col-md-3
-									input(type='text', maxlength=8 , name='unit3', placeholder='Unit Code')
-								.col-md-3
-									input(type='text', maxlength=8 , name='unit4', placeholder='Unit Code')
-									br
-									br
 						each val , index in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 							.row.no-gutter
 								.col-md-3
