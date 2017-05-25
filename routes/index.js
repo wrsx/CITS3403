@@ -29,10 +29,14 @@ router.get('/signup', function(req, res, next) {
 
 /* POST signup page. */
 router.post('/signup', function(req, res) {
+  var avail = JSON.stringify(req.body.avail);
+  console.log((avail));
   Account.register(new Account({  firstname: req.body.firstname,
                                   lastname: req.body.lastname,
-                                  username: req.body.username}),
-                   req.body.password,
+                                  username: req.body.username,
+                                  units: [req.body.unit1, req.body.unit2, req.body.unit3, req.body.unit4],
+                                  availability: avail }),
+                                  req.body.password,
                    function(err, account) {
                       if (err) {
                         console.log(err);
@@ -70,10 +74,5 @@ router.get('/search_unit', function(req, res) {
   });
 });
 
-/* POST experience info to db - UNFINISHED */
-router.post('/submit_exp', function(req, res) {
-  user = req.user;
-  res.send('test');
-});
 
 module.exports = router;

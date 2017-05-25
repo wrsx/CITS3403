@@ -1,305 +1,63 @@
 extends layout
 
 block content
-	#row3.row
-		.fullElement
-			h1 Your matches
-			p
-				| Here you can find and view your existing matches, click on a match to view user details. Matching is done automatically. You will be alerted when new matches have been found. If you wish to view the most recent match data, you can force a resync by pressing the refresh button at any time.
-		.fullElement
-			ul#single-matches
-				li
-					.module-container.match
-						.module-header
-							| 21493118
-						.match-photo
-							img(src='/images/nophoto_s.png', alt='vacantPhoto')
-						| 								Name: Sample Match
-						br
-						| Email: 21493118@student.uwa.edu.au
-						br
-						| Units: CITS3002, CITS3001
-						br
-						| Match Percentage: 81%
-				li
-					.module-container.match
-						.module-header
-							| 21493118
-						.match-photo
-							img(src='/images/nophoto_s.png', alt='vacantPhoto')
-						| 								Name: Sample Match
-						br
-						| Email: 21493118@student.uwa.edu.au
-						br
-						| Units: CITS3002, CITS3001
-						br
-						| Match Percentage: 81%;
-				li
-					.module-container.match
-						.module-header
-							| 21493118
-						.match-photo
-							img(src='/images/nophoto_s.png', alt='vacantPhoto')
-						| 								Name: Sample Match
-						br
-						| Email: 21493118@student.uwa.edu.au
-						br
-						| Units: CITS3002, CITS3001
-						br
-						| Match Percentage: 81%;
-				li
-					.module-container.match
-						.module-header
-							| 21493118
-						.match-photo
-							img(src='/images/nophoto_s.png', alt='vacantPhoto')
-						| 								Name: Sample Match
-						br
-						| Email: 21493118@student.uwa.edu.au
-						br
-						| Units: CITS3002, CITS3001
-						br
-						| Match Percentage: 81%;
-				li
-					.module-container.match
-						.module-header
-							| 21493118
-						.match-photo
-							img(src='/images/nophoto_s.png', alt='vacantPhoto')
-						| 								Name: Sample Match
-						br
-						| Email: 21493118@student.uwa.edu.au
-						br
-						| Units: CITS3002, CITS3001
-						br
-						| Match Percentage: 81%;
-				li
-					.module-container.match
-						.module-header
-							| 21493118
-						.match-photo
-							img(src='/images/nophoto_s.png', alt='vacantPhoto')
-						| 								Name: Sample Match
-						br
-						| Email: 21493118@student.uwa.edu.au
-						br
-						| Units: CITS3002, CITS3001
-						br
-						| Match Percentage: 81%;
-				li
-					.module-container.match
-						.module-header
-							| 21493118
-						.match-photo
-							img(src='/images/nophoto_s.png', alt='vacantPhoto')
-						| 								Name: Sample Match
-						br
-						| Email: 21493118@student.uwa.edu.au
-						br
-						| Units: CITS3002, CITS3001
-						br
-						| Match Percentage: 81%;
-				li
-					.module-container.match
-						.module-header
-							| 21493118
-						.match-photo
-							img(src='/images/nophoto_s.png', alt='vacantPhoto')
-						| 								Name: Sample Match
-						br
-						| Email: 21493118@student.uwa.edu.au
-						br
-						| Units: CITS3002, CITS3001
-						br
-						| Match Percentage: 81%;
-			#sampleMatch.modal
-				.modal-wrapper
-					.modal-header
-						a 21493118
-					.modal-content
-						.match-tab.units.active Units
-						.match-tab.exp Experience
-						.match-tab.avail Availability & Contact
-					.tab-content.units.active
-						ul.module-content-list
-							li
-								.module-content-header CITS3001 - Algorithms, Agents and Artificial Intelligence
-							li
-								.module-content-header CITS3002 - Networks and Security
-					.tab-content.exp
-						ul.module-content-list
-							li
-								.module-content-header C#
-								.module-content-text
-									| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
-							li
-								.module-content-header C++
-								.module-content-text
-									| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
-							li
-								.module-content-header Java
-								.module-content-text
-									| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
-					.tab-content.avail
-						.modal-content
-							a.modal-content-subtitle Availability
-						ul.module-content-list.avail
-							li
-								.module-content-header Monday
-								.timeframe
-									.dropdown.inactive
-										button.button.modify.drop-btn 12:00pm
-										.drop-content
-											a 12:00am
-											a 1:00am
-											a.show 2:00am
-											a 3:00am
-											a 4:00am
-											a 5:00am
-											a 6:00am
-											a 7:00am
-											a 8:00am
-											a 9:00am
-											a 10:00am
-											a 11:00am
-											a 12:00pm
-											a 1:00pm
-											a 2:00pm
-											a 3:00pm
-											a 4:00pm
-											a 5:00pm
-											a 6:00pm
-											a 7:00pm
-											a 8:00pm
-											a 9:00pm
-											a 10:00pm
-											a 11:00pm
-									a To
-									.dropdown.inactive
-										button.button.modify.drop-btn 6:00pm
-										.drop-content
-											a 1:00pm
-											a 2:00pm
-											a 3:00pm
-											a.show 4:00pm
-											a 5:00pm
-											a 6:00pm
-											a 7:00pm
-											a 8:00pm
-											a 9:00pm
-											a 10:00pm
-											a 11:00pm
-											a 12:00am
-							li
-								.module-content-header Wednesday
-								.timeframe
-									.dropdown.inactive
-										button.button.modify.drop-btn 9:00am
-										.drop-content
-											a 12:00am
-											a 1:00am
-											a.show 2:00am
-											a 3:00am
-											a 4:00am
-											a 5:00am
-											a 6:00am
-											a 7:00am
-											a 8:00am
-											a 9:00am
-											a 10:00am
-											a 11:00am
-											a 12:00pm
-											a 1:00pm
-											a 2:00pm
-											a 3:00pm
-											a 4:00pm
-											a 5:00pm
-											a 6:00pm
-											a 7:00pm
-											a 8:00pm
-											a 9:00pm
-											a 10:00pm
-											a 11:00pm
-									a To
-									.dropdown.inactive
-										button.button.modify.drop-btn 12:00pm
-										.drop-content
-											a 10:00am
-											a 11:00am
-											a 12:00pm
-											a.show 1:00pm
-											a 2:00pm
-											a 3:00pm
-											a 4:00pm
-											a 5:00pm
-											a 6:00pm
-											a 7:00pm
-											a 8:00pm
-											a 9:00pm
-											a 10:00pm
-											a 11:00pm
-											a 12:00am
-							li
-								.module-content-header Thursday
-								.timeframe
-									.dropdown.inactive
-										button.button.modify.drop-btn 11:00am
-										.drop-content
-											a 12:00am
-											a 1:00am
-											a.show 2:00am
-											a 3:00am
-											a 4:00am
-											a 5:00am
-											a 6:00am
-											a 7:00am
-											a 8:00am
-											a 9:00am
-											a 10:00am
-											a 11:00am
-											a 12:00pm
-											a 1:00pm
-											a 2:00pm
-											a 3:00pm
-											a 4:00pm
-											a 5:00pm
-											a 6:00pm
-											a 7:00pm
-											a 8:00pm
-											a 9:00pm
-											a 10:00pm
-											a 11:00pm
-									a To
-									.dropdown.inactive
-										button.button.modify.drop-btn 2:00pm
-										.drop-content
-											a 12:00pm
-											a 1:00pm
-											a 2:00pm
-											a.show 3:00pm
-											a 4:00pm
-											a 5:00pm
-											a 6:00pm
-											a 7:00pm
-											a 8:00pm
-											a 9:00pm
-											a 10:00pm
-											a 11:00pm
-											a 12:00am
-						.modal-content
-							a.modal-content-subtitle Contact Details
-						ul.module-content-list
-							li
-								.module-content-header
-									a Phone:
-								.module-content-text
-									a 0435606909
-							li
-								.module-content-header
-									a Email:
-								.module-content-text
-									a 21493118@student.uwa.edu.au
-					.modal-footer
-						span.close
-							button.button Close
-						button#unitSubmit.button.login Unmatch
+	.container.content
+		#row3.row
+			h1 Matches
+			#signup-wrapper.fullElement
+			- var avail = JSON.parse(loggedIn.availability);
+			if matchlist.length > 0
+				each val in matchlist
+					.container.match
+						.row
+							.col-md-3
+								h3.headingsMatches= val.firstname + " " + val.lastname
+								p.
+									#[i #[strong= 'Email : ' + val.username]]
+							.col-md-9.unitSection
+								h3.headingsMatches Studying Units :
+								br
+								ul.pull-right.allunits
+									each unit, index in val.units
+										- function intersect(a,b){
+										-  	var t;
+										-  	if(b.length > a.length) t=b, b=a, a=t;
+										-  	return a.filter(function(e){
+										-    	return b.indexOf(e) > -1;
+										-  	});
+										-	}
+										- var inboth = intersect(loggedIn.units, val.units);
+										- if( inboth.indexOf(unit) >= 0 && unit !== '' ){
+												li.unititem.highlight= unit
+										- } else {
+												li.unititem= unit
+										- }
+						.row.sevencol
+							- var availability = JSON.parse( val.availability );
+							each day , index in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+								- var userStart = new Date(Date.parse('01/01/2001 ' + avail[index].start));
+								- var txt_userStart = userStart.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true});
+								- var userEnd = new Date(Date.parse('01/01/2001 ' +  avail[index].end));
+								- var txt_userEnd = userEnd.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true});
+								- var guestStart = new Date(Date.parse('01/01/2001 ' + availability[index].start));
+								- var txt_guestStart = guestStart.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true});
+								- var guestEnd = new Date(Date.parse('01/01/2001 ' + availability[index].end));
+								- var txt_guestEnd = guestEnd.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true});
+								- if ( +guestStart == +guestEnd ){
+									- console.log(txt_userStart + " == " + txt_userEnd + ", " + txt_guestEnd + " == " + txt_guestStart);
+									.col-md-1.eachDay
+										h4.daytitle <span>#{day}
+										p </span> Unavailable
+								- } else {
+									- if( +userStart <= +guestEnd && +userEnd >= +guestStart  ){
+										.col-md-1.eachDay.highlightBox
+											h4.daytitle <span>#{day}
+											p </span> #{txt_guestStart} <i class="fa fa-arrow-right" aria-hidden="true"></i> #{txt_guestEnd}
+									- } else {
+										.col-md-1.eachDay
+											h4.daytitle <span>#{day}
+											p </span> #{txt_guestStart} <i class="fa fa-arrow-right" aria-hidden="true"></i> #{txt_guestEnd}
+									- }
+								- }
+			else
+				h4 Sorry, No Matches Found , Try Again Later

@@ -14,8 +14,8 @@ block content
 				.module-header
 					a Your Units
 				ul#unit-list.module-content-list
-					li
-						.module-content-text.vacantTxt No units selected!
+					each unit, index in units
+						li= unit
 				.module-footer
 					button#unit-edit-btn.button.modify Edit
 					#unitModal.modal
@@ -57,6 +57,7 @@ block content
 								button.button.modify.removeExp -
 				.module-footer
 					button#add-exp.button.modify.add +
+					button#edit-exp.button.modify Edit
 					button#cancel-exp.button.modify.cancel Cancel
 		.twoElement
 			.module-container
