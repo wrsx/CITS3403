@@ -34,35 +34,36 @@ block content
 								ul#unitlist.modal-list
 								.modal-footer
 									span.close
-										button.button Close
+										button.button(type="button") Close
 									input#unitSubmit.button.login(type='submit', value='Save')
 			.module-container.left
 				.module-header
 					a Experience
-				#experience.module-content
-					ul.module-content-list
-						li
-							.module-content-header C#
-							.module-content-text
-								| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
-							.module-footer.experience
-								button.button.modify.removeExp -
-						li
-							.module-content-header C++
-							.module-content-text
-								| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
-							.module-footer.experience
-								button.button.modify.removeExp -
-						li
-							.module-content-header Java
-							.module-content-text
-								| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
-							.module-footer.experience
-								button.button.modify.removeExp -
-				.module-footer
-					button#add-exp.button.modify.add +
-					button#edit-exp.button.modify Edit
-					button#cancel-exp.button.modify.cancel Cancel
+				form(name='submit-exp-form', method='POST', action='/sub-exp')
+					#experience.module-content
+						ul.module-content-list
+							li
+								.module-content-header C#
+								.module-content-text
+									| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
+								.module-footer.experience
+									button.button.modify.removeExp -
+							li
+								.module-content-header C++
+								.module-content-text
+									| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
+								.module-footer.experience
+									button.button.modify.removeExp -
+							li
+								.module-content-header Java
+								.module-content-text
+									| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
+								.module-footer.experience
+									button.button.modify.removeExp -
+					.module-footer
+						button#add-exp.button.modify.add(type="button") +
+						button#edit-exp.button.modify(type="button") Edit
+						button#cancel-exp.button.modify.cancel(type="button") Cancel
 		.twoElement
 			.module-container
 				.module-header

@@ -86,6 +86,19 @@ router.post('/sub-units', function(req, res) {
   res.redirect('/users/control');
 });
 
+/* POST experience requests */
+router.post('/sub-exp', function(req, res) {
+  var result = new Array(req.body.expHeader.length);
+  for (var i=0; i<req.body.expHeader.length; i++) {
+    result[i] = new Array(2);
+    result[i][0] = req.body.expHeader[i];
+    result[i][1] = req.body.expContent[i];
+  }
+  req.user.experience = result;
+  req.user.save();
+  res.send(result);
+});
+
 /* GET unit requests */
 router.get('/search_unit', function(req, res) {
   var regex = new RegExp(req.query.query, 'i');

@@ -2,13 +2,19 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var passportLocalMongoose = require('passport-local-mongoose');
 
+var Experience = new Schema({
+  exp_header: String,
+  exp_body: String
+});
+
 var Account = new Schema({
   firstname: String,
   lastname: String,
   username: String,
   password: String,
   units: [String],
-  availability: String
+  availability: String,
+  experience: [Experience],
 });
 
 Account.plugin(passportLocalMongoose);

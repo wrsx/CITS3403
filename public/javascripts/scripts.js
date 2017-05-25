@@ -79,6 +79,7 @@ window.onload = function() {
 		var dayBoxes = document.getElementsByClassName('day'); //All availability day checkboxes
 		var noUnits = 0;
 
+
     /**
      * Handler for making a unit selection
      */
@@ -162,6 +163,18 @@ window.onload = function() {
     }
 
     /**
+		 * A single click handler for changing the exp edit button
+     */
+    $('#edit-exp').one('click', function(e) {
+      if (editToggle == false) {
+      	$(this).prop('type', 'submit');
+				e.preventDefault();
+      } else {
+        $(this).prop('type', 'button');
+			}
+    });
+
+    /**
 		 * Handler for "edit mode" experience entries
      */
 		var editToggle = false;
@@ -177,8 +190,8 @@ window.onload = function() {
 				for (var i=0; i<expHeaders.length; i++) {
 					var headerName = expHeaders[i].innerText;
 					var contentText = expContents[i].innerText;
-					expHeaders[i].innerHTML = '<textarea class="textHeader" rows="1" cols="62" maxlength = "50"></textarea>';
-					expContents[i].innerHTML = '<textarea rows="8" cols="62"></textarea>';
+					expHeaders[i].innerHTML = '<textarea name="expHeader" class="textHeader" rows="1" cols="62" maxlength = "50"></input>';
+					expContents[i].innerHTML = '<textarea name="expContent" rows="8" cols="62"></textarea>';
 					expHeaders[i].childNodes[0].value = headerName;
 					expContents[i].childNodes[0].value = contentText;
 				}
@@ -196,18 +209,6 @@ window.onload = function() {
 						window.alert("Please fill out every field!");
 						final = false;
 					}
-				}
-				if (final) {
-					for (var i=0; i<expHeaders.length; i++) {
-					expHeaders[i].innerHTML = expHeaders[i].childNodes[0].value;
-					expContents[i].innerHTML = expContents[i].childNodes[0].value;
-					}
-					addBtn.classList.toggle("active");
-					for (var i=0; i<removeBars.length; i++) {
-						removeBars[i].classList.toggle("active");
-					}
-					expEditBtn.innerText=("Edit")
-					editToggle = !editToggle;
 				}
 			}
 		}
@@ -243,8 +244,8 @@ window.onload = function() {
 			moduleContentText.className = "module-content-text";
 			var moduleFooter = document.createElement("div");
 			moduleFooter.className = "module-footer experience active";
-			moduleContentHeader.innerHTML = '<textarea class="textHeader" maxlength = "50" rows="1" cols="62"></textarea>';
-			moduleContentText.innerHTML = '<textarea rows="8" cols="62"></textarea>';
+			moduleContentHeader.innerHTML = '<textarea name="expHeader" class="textHeader" maxlength = "50" rows="1" cols="62"></textarea>';
+			moduleContentText.innerHTML = '<textarea name="expContent" rows="8" cols="62"></textarea>';
 			moduleFooter.innerHTML = '<button class="button modify removeExp">-</button>'
 			newListItem.appendChild(moduleContentHeader);
 			newListItem.appendChild(moduleContentText);
@@ -437,7 +438,7 @@ window.onload = function() {
 		}
 
     /**
-		 * //Enables/disables avaibility buttons based on checkbox state
+		 * //Enables/disables availability buttons based on checkbox state
      */
 		for (var i=0; i<dayBoxes.length; i++) {
 			dayBoxes[i].addEventListener("change", function(e) {;
