@@ -68,8 +68,8 @@ function validatePersonalEdit() {
     return false;
   }
 
-  var age = document.forms["person-edit-form"]["phone"].value;
-  if (!(/^(04\d{8}|Please add your phone number!|\s*)$/.test(age))) {
+  var phone = document.forms["person-edit-form"]["phone"].value;
+  if (!(/^(04\d{8}|Please add your phone number!|\s*)$/.test(phone))) {
     alert("Phone must be a mobile number beginning with \"04\". ie. \"0400555666\"");
     return false;
   }

@@ -4,6 +4,7 @@ var passport = require('passport');
 var Account = require('../models/account');
 var Units = require('../models/units');
 // end passport
+
 var router = express.Router();
 
 
@@ -61,25 +62,44 @@ router.get('/signup', function(req, res, next) {
 
 /* POST signup page. */
 router.post('/signup', function(req, res) {
-  var avail = JSON.stringify(req.body.avail);
-  console.log((avail));
-  Account.register(new Account({  firstname: req.body.firstname,
-                                  lastname: req.body.lastname,
-                                  age: req.body.age,
-                                  username: req.body.username,
-                                  phone: 'Please add your phone number!',
-                                  units: [req.body.unit1, req.body.unit2, req.body.unit3, req.body.unit4],
-                                  availability: avail }),
-                                  req.body.password,
-                   function(err, account) {
-                      if (err) {
-                        console.log(err);
-                        return res.render('signup', { account : account });
-                      }
-                      passport.authenticate('local')(req, res, function () {
-                        res.redirect('/users/control');
-                      });
-                   });
+  var error = "";
+  if (!(/^([A-Za-z])+$/.test(req.body.firstname)))
+    error = "First Name may only contain letters. ie. \"John\"\n";
+  if (!(/^([A-Za-z])+$/.test(req.body.lastname)))
+    error = error + "Last Name may only contain letters. ie. \"Smith\"\n";
+  if (!(/^\d{2}$/.test(req.body.age)))
+    error = error + "Age may only contain two digits. ie. \"23\"\n";
+  if (!(/^\d{8}@student\.uwa\.edu\.au$/.test(req.body.username)))
+    error = error + "Email must be of the form: \"12345678@student.uwa.edu.au\"\n";
+  if (!(/^(\w|\d){6,18}$/.test(req.body.password)))
+    error = error + "Password must contain 6-18 alphanumeric characters. ie. \"pa$$w0rd\"\n";
+
+  if(!error) {
+    Account.register(
+      new Account({
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        age: req.body.age,
+        username: req.body.username,
+        phone: 'Please add your phone number!',
+        units: [req.body.unit1, req.body.unit2, req.body.unit3, req.body.unit4],
+        availability: JSON.stringify(req.body.avail)
+        }),
+        req.body.password,
+        function(err, account) {
+          if (err) {
+            console.log(err);
+            return res.render('signup', { account : account });
+          }
+          passport.authenticate('local')(req, res, function () {
+            res.redirect('/users/control');
+            });
+        });
+  }
+  else {
+    console.log("\nERROR: " + error);
+    res.redirect('/signup');
+  }
 });
 
 /* POST unit requests */
@@ -135,18 +155,28 @@ router.get('/search_unit', function(req, res) {
 });
 
 router.post('/personaledit', function(req, res) {
-  /*Account.find(
-    {username: req.body.username},
-    function(err, accounts){
-      if (err) return console.error(err);
-      console.log(accounts);
-  });*/
+  var error = "";
+  if (!(/^([A-Za-z])+$/.test(req.body.firstname)))
+    error = "First Name may only contain letters. ie. \"John\"\n";
+  if (!(/^([A-Za-z])+$/.test(req.body.lastname)))
+    error = error + "Last Name may only contain letters. ie. \"Smith\"\n";
+  if (!(/^\d{2}$/.test(req.body.age)))
+    error = error + "Age may only contain two digits. ie. \"23\"\n";
+  if (!(/^(04\d{8}|Please add your phone number!|\s*)$/.test(req.body.phone)))
+    error = error + "Phone must be a mobile number beginning with \"04\". ie. \"0400555666\"\n";
 
-  req.user.age = req.body.age;
-  req.user.phone = req.body.phone;
-  req.user.save();
-
-  res.redirect('/users/control');
+  if(!error) {
+    req.user.firstname = req.body.firstname;
+    req.user.lastname = req.body.lastname;
+    req.user.age = req.body.age;
+    req.user.phone = req.body.phone;
+    req.user.save();
+    res.redirect('/users/control');
+  }
+  else {
+    console.log("\nERROR: " + error);
+    res.redirect('/users/control');
+  }
 });
 
 
