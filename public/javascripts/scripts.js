@@ -545,13 +545,15 @@ window.onload = function() {
 	else if (document.getElementsByTagName("body")[0].className.match("matches")) { // Only for matches page
 		var matchTabs = document.getElementsByClassName('match-tab'); //Match tabs on modal
 		var matchList = document.getElementById('single-matches'); //List of matches
-		var matches = matchList.getElementsByTagName('li'); //List of matches
+		var expModals = $('.modal');
 
-		for (var i=0; i<matches.length; i++) {
-			matches[i].addEventListener("click", function() {
-				document.getElementById('sampleMatch').style.display = "block";
-			})
-		}
+
+		$('.viewExp').click(function (){
+			var parentCol = $(this).closest('div');
+			var row = parentCol.parent();
+			var modal = row.find('.modal');
+			modal.css("display", "block");
+		});
 
     /**
 		 * Event handler for tab switching in match viewer

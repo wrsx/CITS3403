@@ -70,7 +70,6 @@ router.post('/signup', function(req, res) {
         age: req.body.age,
         username: req.body.username,
         phone: 'Please add your phone number!',
-        units: [req.body.unit1, req.body.unit2, req.body.unit3, req.body.unit4],
         availability: JSON.stringify(req.body.avail)
         }),
         req.body.password,
