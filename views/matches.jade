@@ -47,11 +47,10 @@ block content
 										-	}
 										- var inboth = intersect(loggedIn.units, val.units);
 										- if( inboth.indexOf(unit) >= 0 && unit !== '' ){
-												li.unititem.highlight= unit
+												li.unititem.highlight= unit.substring(0,8)
 										- } else {
-												li.unititem= unit
+												li.unititem= unit.substring(0,8)
 										- }
-										br
 						.row.sevencol
 							- var availability = JSON.parse( val.availability );
 							each day , index in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
