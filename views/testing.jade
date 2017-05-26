@@ -1,3 +1,21 @@
 extends layout
 
 block content
+  .container.content
+    #row1.row
+      h1 Testing & Validation
+        br
+        h2 Validation
+        br
+        p
+          | Validation of user data occurs on both the client-side and the server-side for StudyFinder. If an error is found on the client-side the user will be notified via a javascript alert. If an error is found on the server-side it may be displayed to the user or it may not be. General errors like a '404 page not found' will be displayed to the user. Also if the user somehow manages to get past client-side checks and enter a correct password but incorrect username they will be shown an 'unauthorised' page. Many other server errors are shown as well through the browser. The server side user-data validation errors currently only appear on the command-line. Possibly future functionality for StudyFinder could involve developing code to ensure all errors are shown in the browser keeping the user more informed and making development easier. Overall StudyFinder involves multiple levels of validation and error checks. The goal was to try and ensure user data entered the application correctly in the first case to minimise errors developing later from incorrect data.
+        h2 Testing
+        br
+        p
+          | Testing StudyFinder involved general peer-reviews of code by all group members. After code was committed to GitHub team members would generally download the latest version of StudyFinder shortly after and run the latest code. They would inspect new functions for errors and report back to the author what they found. This agile approach to testing allowed us to develop the application quickly and collaboratively.
+        br
+        p
+          | Team members also generally carried out their own acceptance tests working with a live version of the application thanks to the node package 'nodemon' that automatically restarted the server when it detected any changes in code. We chose Google Chrome as out primary development browser; however, FireFox was used to run tests with Selenium.
+        br
+        p
+          | Several Selenium IDE tests were carried out to ensure javascript user data validation functions threw errors and alerts at the correct times. Selenium was very helpful for developing strong validation functions. The Selenium test case code can be found in the 'tests' directory and run using Selenium IDE FireFox Add-on.
