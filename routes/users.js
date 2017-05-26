@@ -16,7 +16,9 @@ router.get('/control', function(req, res, next) {
                           phone: req.user.phone,
                           email: req.user.username,
                           units: req.user.units,
-                          noUnits: req.user.units.length
+                          noUnits: req.user.units.length,
+                          experience: req.user.experience,
+                          noExp: req.user.experience.length
                         });
 });
 

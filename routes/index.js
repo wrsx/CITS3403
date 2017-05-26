@@ -6,6 +6,7 @@ var Units = require('../models/units');
 // end passport
 var router = express.Router();
 
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'StudyFinder - Home' , pagename: 'index', loggedIn: req.user});
@@ -26,7 +27,6 @@ router.post('/updateavailability', function(req, res) {
   var start = req.body.availability[1].start; //TO DO: redirect this to users profile page
   var end = req.body.availability[1].end;
   var query = {'username': req.user.username};
-
 
   console.log( day + " " + start + " " + end );
   var curr_availability = JSON.parse( req.user.availability );
@@ -91,15 +91,21 @@ router.post('/sub-units', function(req, res) {
 
 /* POST experience requests */
 router.post('/sub-exp', function(req, res) {
-  var result = new Array(req.body.expHeader.length);
-  for (var i=0; i<req.body.expHeader.length; i++) {
-    result[i] = new Array(2);
-    result[i][0] = req.body.expHeader[i];
-    result[i][1] = req.body.expContent[i];
+  req.user.experience = [];
+  if(typeof req.body.expContent != 'undefined') { //if any exp entries were sent
+    if (req.body.expContent.constructor == Array) { // if we receive multiple exp entries
+      console.log('Added multiple entry, size: ' + req.body.expHeader.length);
+      for (var i = 0; i < req.body.expHeader.length; i++) {
+        req.user.experience.push({exp_header: req.body.expHeader[i], exp_body: req.body.expContent[i]});
+      }
+    }
+    else { //we receive only one entry, so we can just add it
+      console.log('Added single entry');
+      req.user.experience.push({exp_header: req.body.expHeader, exp_body: req.body.expContent});
+    }
   }
-  req.user.experience = result;
   req.user.save();
-  res.send(result);
+  res.redirect('/users/control');
 });
 
 /* GET unit requests */

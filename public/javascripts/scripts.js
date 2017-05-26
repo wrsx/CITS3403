@@ -172,30 +172,20 @@ window.onload = function() {
     }
 
     /**
-		 * A single click handler for changing the exp edit button
-     */
-    $('#edit-exp').one('click', function(e) {
-      if (editToggle == false) {
-      	$(this).prop('type', 'submit');
-				e.preventDefault();
-      } else {
-        $(this).prop('type', 'button');
-			}
-    });
-
-    /**
-		 * Handler for "edit mode" experience entries
+		 * Handler for experience module
      */
 		var editToggle = false;
 		var vacantExp;
 		var experience = document.getElementById('experience');
-		expEditBtn.onclick = function(e) {
+		$('#edit-exp').click(function(e) {
+      var form = $('form[name="submit-exp-form"]');
 			var final = true;
-			var expHeaders = experience.getElementsByClassName('module-content-header');
-			var expContents = experience.getElementsByClassName('module-content-text');
-			var addBtn = document.getElementById("add-exp");
-			var removeBars = document.getElementsByClassName("module-footer experience");
+			var expHeaders = $('#experience .module-content-header');
+			var expContents = $('#experience .module-content-text');
+			var addBtn = $('#add-exp');
+			var removeBars = $(".module-footer.experience");
 			if (editToggle == false) {
+				//for every existing exp entry, create textareas
 				for (var i=0; i<expHeaders.length; i++) {
 					var headerName = expHeaders[i].innerText;
 					var contentText = expContents[i].innerText;
@@ -205,9 +195,10 @@ window.onload = function() {
 					expContents[i].childNodes[0].value = contentText;
 				}
 				//Toggle + and - buttons
-				addBtn.classList.toggle("active");
+				addBtn.toggleClass("active");
 				for (var i=0; i<removeBars.length; i++) {
-					removeBars[i].classList.toggle("active");
+					console.log(removeBars[i]);
+					$(removeBars[i]).toggleClass("active");
 				}
 				expEditBtn.innerText=("Save");
 				editToggle = !editToggle;
@@ -219,8 +210,11 @@ window.onload = function() {
 						final = false;
 					}
 				}
+				if (final == true) {
+        	form.submit();
+				}
 			}
-		}
+		});
 
     /**
 		 * Remove experience entry
@@ -245,6 +239,11 @@ window.onload = function() {
      */
 		var addBtn = document.getElementById('add-exp');
 		addBtn.onclick = function() {
+      var temp = $('#experience').find('.vacantTxt')
+      if (temp.length > 0) {
+        vacantExp = true;
+        console.log('true');
+      }
 			if (vacantExp) { experience.childNodes[0].innerHTML = "" }
 			var newListItem = document.createElement("li");
 			var moduleContentHeader = document.createElement("div");
