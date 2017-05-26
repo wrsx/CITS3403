@@ -166,18 +166,22 @@ window.onload = function() {
      * Handler for making a unit selection
      */
     $('#unit-searchbox').on('click', '.tt-suggestion', function(){
+    	var unitList = $('#unitlist');
+    	noUnits = $('#unitlist li').length;
     	var unitExists = false;
       var unitName = this.innerText;
-      var curUnits = $('#unitlist').children(); //current unit list
+      var curUnits = unitList.children(); //current unit list
       //if units exist
       curUnits.each(function () {
+      	console.log(unitName );
+      	console.log($("label", this).contents().get(1).nodeValue);
         //if names match, dont add unit
-				if (unitName == $("label", this).contents().get(2).nodeValue) {
-          unitExists = true;
+				if (unitName == $("label", this).contents().get(1).nodeValue) {
+					unitExists = true;
         }
       });
       if (!unitExists && noUnits < 4) {
-        $('#unitlist').append('<li><label><input type="hidden" name="units" value="'+ unitName +'">'+ unitName + '</label><button type="button" class="button modify removeUnit">X</button></li>')
+        $('#unitlist').append(" <li><label><input type='hidden' name='units' value='"+unitName +"'>"+unitName+"</label><button type='button' class='button modify removeUnit'>X</button></li>");
       	noUnits++;
       }
       $('#unit-search').typeahead('val', ''); //clear the search bar

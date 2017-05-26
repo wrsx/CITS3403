@@ -32,6 +32,12 @@ block content
 									input#unit-search.typeahead.form-control(type='text', placeholder='Search...')
 							form(name='submit-unit-form', method='POST', action='/sub-units')
 								ul#unitlist.modal-list
+									each unit in units
+										li
+											label
+												input(type='hidden', name='units', value= unit)
+												=unit
+											button.button.modify.removeUnit(type='button') X
 								.modal-footer
 									span.close
 										button.button(type="button") Close
