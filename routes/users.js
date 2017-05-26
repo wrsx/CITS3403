@@ -5,7 +5,7 @@ var Account = require('../models/account');
 
 
 /* GET users listing. */
-router.get('/control', function(req, res, next) {
+router.get('/control', ensureAuthenticated , function(req, res, next) {
   res.render('control', { title: 'StudyFinder - User Control',
                           pagename: 'control',
                           loggedIn: req.user,
@@ -22,7 +22,7 @@ router.get('/control', function(req, res, next) {
                         });
 });
 
-router.post('/updateavailability' , function (req,res) {
+router.post('/updateavailability' , ensureAuthenticated , function (req,res) {
   console.log(req.body.avail);
   console.log( JSON.stringify( req.body.avail ) );
   Account.findOneAndUpdate( {username: req.user.username} , { "availability" : JSON.stringify( req.body.avail ) }, function(err){
@@ -33,7 +33,9 @@ router.post('/updateavailability' , function (req,res) {
   res.redirect('/users/control');
 });
 
-router.get('/matches', function(req, res, next) {
+
+
+router.get('/matches', ensureAuthenticated , function(req, res, next) {
 
   Account.find({}, function(err, users){
     var matchesusers = [];
@@ -70,5 +72,14 @@ router.get('/matches', function(req, res, next) {
   });
 
 });
+
+function ensureAuthenticated(req, res, next){
+  if(req.isAuthenticated()){
+    return next();
+  } else {
+    res.redirect('/');
+  }
+}
+
 
 module.exports = router;
