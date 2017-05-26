@@ -177,7 +177,7 @@ window.onload = function() {
         }
       });
       if (!unitExists && noUnits < 4) {
-        $('#unitlist').append('<li><label><button class="button modify removeUnit">X</button><input type="hidden" name="units" value="'+ unitName +'">'+ unitName + '</input></label></li>')
+        $('#unitlist').append('<li><label><input type="hidden" name="units" value="'+ unitName +'">'+ unitName + '</label><button type="button" class="button modify removeUnit">X</button></li>')
       	noUnits++;
       }
       $('#unit-search').typeahead('val', ''); //clear the search bar
@@ -200,7 +200,7 @@ window.onload = function() {
      * Handler for removing a unit
      */
     $('#unitlist').on('click', '.removeUnit', function() {
-      this.closest('li').remove();
+    	this.closest('li').remove();
       noUnits--;
     });
 
