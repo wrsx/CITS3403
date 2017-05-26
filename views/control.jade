@@ -42,24 +42,14 @@ block content
 				form(name='submit-exp-form', method='POST', action='/sub-exp')
 					#experience.module-content
 						ul.module-content-list
-							li
-								.module-content-header C#
-								.module-content-text
-									| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
-								.module-footer.experience
-									button.button.modify.removeExp -
-							li
-								.module-content-header C++
-								.module-content-text
-									| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
-								.module-footer.experience
-									button.button.modify.removeExp -
-							li
-								.module-content-header Java
-								.module-content-text
-									| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
-								.module-footer.experience
-									button.button.modify.removeExp -
+							each exp in experience
+								li
+									.module-content-header=exp.exp_header
+									.module-content-text=exp.exp_body
+									.module-footer.experience
+										button.button.modify.removeExp -
+							if noExp==0
+								li.vacantTxt No experience added!
 					.module-footer
 						button#add-exp.button.modify.add(type="button") +
 						button#edit-exp.button.modify(type="button") Edit
