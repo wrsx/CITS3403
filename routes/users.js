@@ -22,6 +22,17 @@ router.get('/control', function(req, res, next) {
                         });
 });
 
+router.post('/updateavailability' , function (req,res) {
+  console.log(req.body.avail);
+  console.log( JSON.stringify( req.body.avail ) );
+  Account.findOneAndUpdate( {username: req.user.username} , { "availability" : JSON.stringify( req.body.avail ) }, function(err){
+    if (err){
+      console.log("ERROR");
+    }
+  });
+  res.redirect('/users/control');
+});
+
 router.get('/matches', function(req, res, next) {
 
   Account.find({}, function(err, users){

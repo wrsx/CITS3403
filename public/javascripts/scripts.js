@@ -368,7 +368,12 @@ window.onload = function() {
 		 * Submit availability handler
      */
 		subDays.onclick = function(e) {
-			var finalized = 1;
+      console.log(e);
+			addDayAvailabilityItem(e);
+		}
+
+    function addDayAvailabilityItem(e){
+      var finalized = 1;
 			var noAdded = 0;
 			clearItems(e.target);
 			for (var i=0; i<dayBoxes.length; i++) {
@@ -392,7 +397,7 @@ window.onload = function() {
 			}
 			if (finalized == 1) { openModal.style.display = "none"; }
 			else { alert("Specify an availability time!"); }
-		}
+    }
 
      /**
 		 * Removes all items from the callers list
