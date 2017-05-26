@@ -230,8 +230,10 @@ window.onload = function() {
      */
 		var addBtn = document.getElementById('add-exp');
 		addBtn.onclick = function() {
-      if ($('#experience').find('.vacantTxt')) {
+      var temp = $('#experience').find('.vacantTxt')
+      if (temp.length > 0) {
         vacantExp = true;
+        console.log('true');
       }
 			if (vacantExp) { experience.childNodes[0].innerHTML = "" }
 			var newListItem = document.createElement("li");
