@@ -7,6 +7,10 @@ var Units = require('../models/units');
 
 var router = express.Router();
 
+/* GET references page*/
+router.get('/bio', function(req, res, next) {
+  res.render('bio', {title: 'StudyFinder - Algorithm', pagename: 'algorithm', loggedIn: req.user});
+});
 
 /* GET algorithm page*/
 router.get('/algorithm', function(req, res, next) {
