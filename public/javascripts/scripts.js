@@ -1,3 +1,83 @@
+/**
+ * Validates login entry data client-side
+ */
+
+function validateLogin() {
+  var username = document.forms["login-form"]["username"].value;
+  if (!(/^\d{8}@student\.uwa\.edu\.au$/.test(username))) {
+    alert("Email must be of the form 12345678@student.uwa.edu.au");
+    return false;
+  }
+}
+
+/**
+ * Validates sign-up entry data client-side
+ */
+function validateSignUp() {
+  var firstname = document.forms["sign-up-form"]["firstname"].value;
+  if (!(/^([A-Za-z])+$/.test(firstname))) {
+    alert("First Name may only contain letters. ie. \"John\"");
+    return false;
+  }
+
+  var lastname = document.forms["sign-up-form"]["lastname"].value;
+  if (!(/^([A-Za-z])+$/.test(lastname))) {
+    alert("Last Name may only contain letters. ie. \"Smith\"");
+    return false;
+  }
+
+  var age = document.forms["sign-up-form"]["age"].value;
+  if (!(/^\d{2}$/.test(age))) {
+    alert("Age may only contain two digits. ie. \"23\"");
+    return false;
+  }
+
+  var username = document.forms["sign-up-form"]["username"].value;
+  if (!(/^\d{8}@student\.uwa\.edu\.au$/.test(username))) {
+    alert("Email must be of the form: \"12345678@student.uwa.edu.au\"");
+    return false;
+  }
+
+  var password = document.forms["sign-up-form"]["password"].value;
+  if (!(/^(\w|\d){6,18}$/.test(password))) {
+    alert("Password must contain 6-18 alphanumeric characters. ie. \"pa$$w0rd\"");
+    return false;
+  }
+}
+
+/**
+  * Validates personal & contact information client-side
+**/
+
+function validatePersonalEdit() {
+  var firstname = document.forms["person-edit-form"]["firstname"].value;
+  if (!(/^([A-Za-z])+$/.test(firstname))) {
+    alert("First Name may only contain letters. ie. \"John\"");
+    return false;
+  }
+
+  var lastname = document.forms["person-edit-form"]["lastname"].value;
+  if (!(/^([A-Za-z])+$/.test(lastname))) {
+    alert("Last Name may only contain letters. ie. \"Smith\"");
+    return false;
+  }
+
+  var age = document.forms["person-edit-form"]["age"].value;
+  if (!(/^\d{2}$/.test(age))) {
+    alert("Age may only contain two digits. ie. \"23\"");
+    return false;
+  }
+
+  var age = document.forms["person-edit-form"]["phone"].value;
+  if (!(/^(04\d{8}|Please add your phone number!|\s*)$/.test(age))) {
+    alert("Phone must be a mobile number beginning with \"04\". ie. \"0400555666\"");
+    return false;
+  }
+}
+
+
+
+
 function parseTime(timeString) {
     if (timeString == '') return null;
 
@@ -580,41 +660,6 @@ window.onload = function() {
 			if (curDrop.classList.contains('show')) {
 				return curDrop;
 			}
-		}
-	}
-
-  /**
-	 * Validates valid form entries
-   */
-	function validateSignUp() {
-		var uname = document.forms["sign-up-form"]["uname"].value;
-		if (!(/^(\d|\w)+$/.test(uname))) {
-			alert("Username is invalid.");
-			return false;
-		}
-
-		var fname = document.forms["sign-up-form"]["fname"].value;
-		if (!(/^(\w)+$/.test(fname))) {
-			alert("First Name is invalid.");
-			return false;
-		}
-
-		var lname = document.forms["sign-up-form"]["lname"].value;
-		if (!(/^(\w)+$/.test(lname))) {
-			alert("Last Name is invalid.");
-			return false;
-		}
-
-		var uni = document.forms["sign-up-form"]["uni"].value;
-		if (!(/^(\w)+(\s\w+)*$/.test(uni))) {
-			alert("Uni is invalid.");
-			return false;
-		}
-
-		var email = document.forms["sign-up-form"]["email"].value;
-		if (!(/^(\d|\w)+@\w*\.edu\.au$/.test(email))) {
-			alert("Email is invalid.");
-			return false;
 		}
 	}
 

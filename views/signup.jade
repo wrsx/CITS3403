@@ -12,7 +12,7 @@ block content
 								a.close(href='#',data-dismiss='alert') &times;
 								a.alert-link(href='#')=e.msg
 				.reg-content
-					form(multipart='urlencoded', name='sign-up-form', action="/signup" , method='POST')
+					form(multipart='urlencoded', name='sign-up-form', onsubmit='return validateSignUp()', action="/signup" , method='POST')
 						input(type='text', name='firstname', placeholder='First Name', required='')
 						br
 						input(type='text', name='lastname', placeholder='Last Name', required='')
