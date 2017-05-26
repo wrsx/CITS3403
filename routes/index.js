@@ -8,6 +8,21 @@ var Units = require('../models/units');
 var router = express.Router();
 
 
+/* GET algorithm page*/
+router.get('/algorithm', function(req, res, next) {
+  res.render('algorithm', {title: 'StudyFinder - Algorithm', pagename: 'algorithm', loggedIn: req.user});
+});
+
+/* GET architecture/design/difficulties page*/
+router.get('/design', function(req, res, next) {
+  res.render('design', {title: 'StudyFinder - Design', pagename: 'design', loggedIn: req.user});
+});
+
+/* GET testing/validation page*/
+router.get('/testing', function(req, res, next) {
+  res.render('testing', {title: 'StudyFinder - Testing', pagename: 'testing', loggedIn: req.user});
+});
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'StudyFinder - Home' , pagename: 'index', loggedIn: req.user});

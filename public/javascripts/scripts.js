@@ -8,6 +8,12 @@ function validateLogin() {
     alert("Email must be of the form 12345678@student.uwa.edu.au");
     return false;
   }
+
+  var password = document.forms["login-form"]["password"].value;
+  if (!(/^(\w|\d){6,18}$/.test(password))) {
+    alert("Password must contain 6-18 alphanumeric characters. ie. \"pa$$w0rd\"");
+    return false;
+  }
 }
 
 /**
@@ -74,9 +80,6 @@ function validatePersonalEdit() {
     return false;
   }
 }
-
-
-
 
 function parseTime(timeString) {
     if (timeString == '') return null;
