@@ -20,14 +20,14 @@ npm install
 
 ### Install mongoDB & Using MongoDB
 REMOTE
-```
+
 Application is already setup to run with a remote database.
 
 Remote DB URI: 'mongodb://erklik:tusif556571@ds147681.mlab.com:47681/cits3403mac'
 
 
 LOCAL
-```
+
 Open db.js in the 'routes' directory.
 
 Comment out the remote DB URI.
