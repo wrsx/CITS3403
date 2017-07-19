@@ -8,12 +8,31 @@ block content
 			- var avail = JSON.parse(loggedIn.availability);
 			if matchlist.length > 0
 				each val in matchlist
+					- var count = 0;
 					.container.match
 						.row
 							.col-md-3
 								h3.headingsMatches= val.firstname + " " + val.lastname
 								p.
 									#[i #[strong= 'Email : ' + val.username]]
+								button.button.viewExp Experience
+							.experienceModal.modal
+								.modal-wrapper
+									.modal-header
+										a= val.firstname + "'s Experience"
+									.module-content-list
+										each exp in val.experience
+											- ++count
+											li
+												.module-content-header
+													=exp.exp_header
+												.module-content-text
+													=exp.exp_body
+										if count == 0
+											li.vacantTxt This user has no experiece.
+									.modal-footer
+										span.close
+											button.button Close
 							.col-md-9.unitSection
 								h3.headingsMatches Studying Units :
 								br
@@ -28,9 +47,9 @@ block content
 										-	}
 										- var inboth = intersect(loggedIn.units, val.units);
 										- if( inboth.indexOf(unit) >= 0 && unit !== '' ){
-												li.unititem.highlight= unit
+												li.unititem.highlight= unit.substring(0,8)
 										- } else {
-												li.unititem= unit
+												li.unititem= unit.substring(0,8)
 										- }
 						.row.sevencol
 							- var availability = JSON.parse( val.availability );

@@ -32,6 +32,12 @@ block content
 									input#unit-search.typeahead.form-control(type='text', placeholder='Search...')
 							form(name='submit-unit-form', method='POST', action='/sub-units')
 								ul#unitlist.modal-list
+									each unit in units
+										li
+											label
+												input(type='hidden', name='units', value= unit)
+												=unit
+											button.button.modify.removeUnit(type='button') X
 								.modal-footer
 									span.close
 										button.button(type="button") Close
@@ -42,24 +48,14 @@ block content
 				form(name='submit-exp-form', method='POST', action='/sub-exp')
 					#experience.module-content
 						ul.module-content-list
-							li
-								.module-content-header C#
-								.module-content-text
-									| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
-								.module-footer.experience
-									button.button.modify.removeExp -
-							li
-								.module-content-header C++
-								.module-content-text
-									| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
-								.module-footer.experience
-									button.button.modify.removeExp -
-							li
-								.module-content-header Java
-								.module-content-text
-									| Sample text to demonstrate the ability for users to enter their own experience details. Experience entries are entered entirely by the user, and give an opportunity to list any skillsets which might be of interest to other users.
-								.module-footer.experience
-									button.button.modify.removeExp -
+							each exp in experience
+								li
+									.module-content-header=exp.exp_header
+									.module-content-text=exp.exp_body
+									.module-footer.experience
+										button.button.modify.removeExp -
+							if noExp==0
+								li.vacantTxt No experience added!
 					.module-footer
 						button#add-exp.button.modify.add(type="button") +
 						button#edit-exp.button.modify(type="button") Edit
@@ -89,6 +85,100 @@ block content
 							a Email:
 						.module-content-text
 							a=email
+				.module-footer
+					button#personal-edit-btn.button.modify Edit
+					#personalModal.modal
+						.modal-wrapper
+							.modal-header
+								a Personal & Contact Information Editor
+							.modal-content
+								.reg-content
+									form(name='person-edit-form', onsubmit='return validatePersonalEdit()', method='POST', action='/personaledit')
+										ul.module-content-list
+											li
+												.module-content-header
+													a First name:
+												.module-content-text
+													input#personalName.form-control(type='text', name='firstname', value=firstname)
+											li
+												.module-content-header
+													a Last name:
+												.module-content-test
+													input#personalName.form-control(type='text', name='lastname', value=lastname)
+											li
+												.module-content-header
+													a Age:
+												.module-content-text
+													input#personalAge.form-control(type='text', name='age', value=age)
+											li
+												.module-content-header
+													a Phone:
+												.module-content-text
+													input#personalPhone.form-control(type='text', name='phone' value=phone)
+										button#personalSubmit.button.login(type='submit', value='submit') Save
+							.modal-footer
+								span.close
+									button.button Close
+			.module-container
+				.module-header
+					a Availability
+				ul.module-content-list
+					- var availability = JSON.parse( loggedIn.availability );
+					each day , index in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+						- var userStart = new Date(Date.parse('01/01/2001 ' + availability[index].start));
+						- var txt_userStart = userStart.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true});
+						- var userEnd = new Date(Date.parse('01/01/2001 ' +  availability[index].end));
+						- var txt_userEnd = userEnd.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true});
+						- if ( +userStart == +userEnd ){
+							li
+								.module-content-header
+									a !{day}
+								.module-content-text
+									a Unavailable
+						- } else {
+							li
+								.module-content-header
+									a !{day}
+								.module-content-text
+									a !{txt_userStart} <i class="fa fa-arrow-right" aria-hidden="true"></i> !{txt_userEnd}
+						- }
+				.module-footer
+					- var availability = JSON.parse( loggedIn.availability );
+					button#availability-edit-btn.button.modify Edit
+					#availabilityModal.modal
+						.modal-wrapper
+							.modal-header
+								a Availability Editor
+							.modal-content
+								.reg-content
+									form(multipart='urlencoded', name='sign-up-form', method='POST' ,action="/users/updateavailability"  )
+										each val , index in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+											.row.no-gutter
+												.col-md-3
+													h3= val
+												.col-md-9
+													.col-md-6
+														select(name='avail[' + index + '][start]', selected= availability[index].start)
+															each time in ['00:00','01:00','02:00','03:00','04:00','05:00','06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00','24:00']
+																- if (availability[index].start == time) {
+																		option( value = time, selected=availability[index].start )= time
+																- } else {
+																		option( value = time )= time
+																- }
+													.col-md-6
+														select(name='avail[' + index + '][end]', , selected= "\'" + availability[index].end + "\'")
+															each time in ['00:00','01:00','02:00','03:00','04:00','05:00','06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00','24:00']
+																- if (availability[index].end == time) {
+																		option( value = time, selected=availability[index].end )= time
+																- } else {
+																		option( value = time )= time
+																- }
+										button#availSubmit.button.login() Save
+							.modal-footer
+								span.close
+									button.button Close
+
+// -
 			.module-container
 				.module-header
 					a Availability
@@ -96,7 +186,7 @@ block content
 					li
 						.module-content-text.vacantTxt No days selected!
 				.module-footer
-					button#availability-edit-btn.button.modify Edit
+
 					#availabilityModal.modal
 						.modal-wrapper
 							.modal-header
@@ -528,3 +618,4 @@ block content
 								span.close
 									button.button Close
 								button#availSubmit.button.login(onclick="updateTimeDB()") Save
+//

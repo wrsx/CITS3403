@@ -1,27 +1,84 @@
-function parseTime(timeString) {
-    if (timeString == '') return null;
+/**
+ * Validates login entry data client-side
+ */
 
-    var time = timeString.match(/(\d+)(:(\d\d))?\s*(p?)/i);
-    if (time == null) return null;
+function validateLogin() {
+  var username = document.forms["login-form"]["username"].value;
+  if (!(/^\d{8}@student\.uwa\.edu\.au$/.test(username))) {
+    alert("Email must be of the form 12345678@student.uwa.edu.au");
+    return false;
+  }
 
-    var hours = parseInt(time[1],10);
-    if (hours == 12 && !time[4]) {
-          hours = 0;
-    }
-    else {
-        hours += (hours < 12 && time[4])? 12 : 0;
-    }
-
-    return (hours + ":" + time[3] || "00");
+  var password = document.forms["login-form"]["password"].value;
+  if (!(/^(\w|\d){6,18}$/.test(password))) {
+    alert("Password must contain 6-18 alphanumeric characters. ie. \"pa$$w0rd\"");
+    return false;
+  }
 }
 
-function updateTimeDB(insert){
-  console.log(insert.dayName);
-  var startTime = parseTime(insert.lowerTime.childNodes[0].innerHTML);
-  var endTime = parseTime(insert.upperTime.childNodes[0].innerHTML);
-  console.log(startTime);
-  console.log(endTime);
-  $.post( "/updateavailability", { 'availability': [ insert.dayName, {'start': startTime , 'end': endTime} ] });
+/**
+ * Validates sign-up entry data client-side
+ */
+function validateSignUp() {
+  var firstname = document.forms["sign-up-form"]["firstname"].value;
+  if (!(/^([A-Za-z])+$/.test(firstname))) {
+    alert("First Name may only contain letters. ie. \"John\"");
+    return false;
+  }
+
+  var lastname = document.forms["sign-up-form"]["lastname"].value;
+  if (!(/^([A-Za-z])+$/.test(lastname))) {
+    alert("Last Name may only contain letters. ie. \"Smith\"");
+    return false;
+  }
+
+  var age = document.forms["sign-up-form"]["age"].value;
+  if (!(/^\d{2}$/.test(age))) {
+    alert("Age may only contain two digits. ie. \"23\"");
+    return false;
+  }
+
+  var username = document.forms["sign-up-form"]["username"].value;
+  if (!(/^\d{8}@student\.uwa\.edu\.au$/.test(username))) {
+    alert("Email must be of the form: \"12345678@student.uwa.edu.au\"");
+    return false;
+  }
+
+  var password = document.forms["sign-up-form"]["password"].value;
+  if (!(/^(\w|\d){6,18}$/.test(password))) {
+    alert("Password must contain 6-18 alphanumeric characters. ie. \"pa$$w0rd\"");
+    return false;
+  }
+}
+
+/**
+  * Validates personal & contact information client-side
+**/
+
+function validatePersonalEdit() {
+  var firstname = document.forms["person-edit-form"]["firstname"].value;
+  if (!(/^([A-Za-z])+$/.test(firstname))) {
+    alert("First Name may only contain letters. ie. \"John\"");
+    return false;
+  }
+
+  var lastname = document.forms["person-edit-form"]["lastname"].value;
+  if (!(/^([A-Za-z])+$/.test(lastname))) {
+    alert("Last Name may only contain letters. ie. \"Smith\"");
+    return false;
+  }
+
+  var age = document.forms["person-edit-form"]["age"].value;
+  if (!(/^\d{2}$/.test(age))) {
+    alert("Age may only contain two digits. ie. \"23\"");
+    return false;
+  }
+
+  var phone = document.forms["person-edit-form"]["phone"].value;
+  if (!(/^(04\d{8}|Please add your phone number!|\s*)$/.test(phone))) {
+    alert("Phone must be a mobile number beginning with \"04\". ie. \"0400555666\"");
+    return false;
+  }
 }
 
 if (!Array.prototype.filter) {
@@ -72,9 +129,11 @@ window.onload = function() {
 
 	if (document.getElementsByTagName("body")[0].className.match("control")) { //Only for user panel page
 		var subUnits = document.getElementById('unitSubmit'); //Unit submit button
+    var subPersonal = document.getElementById('personalSubmit'); //Personal and Contact Information submit button
 		var subDays = document.getElementById('availSubmit'); //Availability submit button
 		var unitEditBtn = document.getElementById("unit-edit-btn"); //Edit units button
 		var expEditBtn = document.getElementById("edit-exp"); //Edit experience button
+    var personalEditBtn = document.getElementById("personal-edit-btn"); //Edit Personal and Contact Information button
 		var availabilityEditBtn = document.getElementById("availability-edit-btn"); //Edit availability buttion
 		var dayBoxes = document.getElementsByClassName('day'); //All availability day checkboxes
 		var noUnits = 0;
@@ -84,18 +143,22 @@ window.onload = function() {
      * Handler for making a unit selection
      */
     $('#unit-searchbox').on('click', '.tt-suggestion', function(){
+    	var unitList = $('#unitlist');
+    	noUnits = $('#unitlist li').length;
     	var unitExists = false;
       var unitName = this.innerText;
-      var curUnits = $('#unitlist').children(); //current unit list
+      var curUnits = unitList.children(); //current unit list
       //if units exist
       curUnits.each(function () {
+      	console.log(unitName );
+      	console.log($("label", this).contents().get(1).nodeValue);
         //if names match, dont add unit
-				if (unitName == $("label", this).contents().get(2).nodeValue) {
-          unitExists = true;
+				if (unitName == $("label", this).contents().get(1).nodeValue) {
+					unitExists = true;
         }
       });
       if (!unitExists && noUnits < 4) {
-        $('#unitlist').append('<li><label><button class="button modify removeUnit">X</button><input type="hidden" name="units" value="'+ unitName +'">'+ unitName + '</input></label></li>')
+        $('#unitlist').append(" <li><label><input type='hidden' name='units' value='"+unitName +"'>"+unitName+"</label><button type='button' class='button modify removeUnit'>X</button></li>");
       	noUnits++;
       }
       $('#unit-search').typeahead('val', ''); //clear the search bar
@@ -118,7 +181,7 @@ window.onload = function() {
      * Handler for removing a unit
      */
     $('#unitlist').on('click', '.removeUnit', function() {
-      this.closest('li').remove();
+    	this.closest('li').remove();
       noUnits--;
     });
 
@@ -156,6 +219,13 @@ window.onload = function() {
     }
 
     /**
+     * Display the personal & contact information modal
+     */
+    personalEditBtn.onclick = function() {
+      document.getElementById('personalModal').style.display = "block";
+    }
+
+    /**
      * Display the availability selector modal
      */
     availabilityEditBtn.onclick = function() {
@@ -163,30 +233,20 @@ window.onload = function() {
     }
 
     /**
-		 * A single click handler for changing the exp edit button
-     */
-    $('#edit-exp').one('click', function(e) {
-      if (editToggle == false) {
-      	$(this).prop('type', 'submit');
-				e.preventDefault();
-      } else {
-        $(this).prop('type', 'button');
-			}
-    });
-
-    /**
-		 * Handler for "edit mode" experience entries
+		 * Handler for experience module
      */
 		var editToggle = false;
 		var vacantExp;
 		var experience = document.getElementById('experience');
-		expEditBtn.onclick = function(e) {
+		$('#edit-exp').click(function(e) {
+      var form = $('form[name="submit-exp-form"]');
 			var final = true;
-			var expHeaders = experience.getElementsByClassName('module-content-header');
-			var expContents = experience.getElementsByClassName('module-content-text');
-			var addBtn = document.getElementById("add-exp");
-			var removeBars = document.getElementsByClassName("module-footer experience");
+			var expHeaders = $('#experience .module-content-header');
+			var expContents = $('#experience .module-content-text');
+			var addBtn = $('#add-exp');
+			var removeBars = $(".module-footer.experience");
 			if (editToggle == false) {
+				//for every existing exp entry, create textareas
 				for (var i=0; i<expHeaders.length; i++) {
 					var headerName = expHeaders[i].innerText;
 					var contentText = expContents[i].innerText;
@@ -196,9 +256,10 @@ window.onload = function() {
 					expContents[i].childNodes[0].value = contentText;
 				}
 				//Toggle + and - buttons
-				addBtn.classList.toggle("active");
+				addBtn.toggleClass("active");
 				for (var i=0; i<removeBars.length; i++) {
-					removeBars[i].classList.toggle("active");
+					console.log(removeBars[i]);
+					$(removeBars[i]).toggleClass("active");
 				}
 				expEditBtn.innerText=("Save");
 				editToggle = !editToggle;
@@ -210,8 +271,11 @@ window.onload = function() {
 						final = false;
 					}
 				}
+				if (final == true) {
+        	form.submit();
+				}
 			}
-		}
+		});
 
     /**
 		 * Remove experience entry
@@ -236,6 +300,11 @@ window.onload = function() {
      */
 		var addBtn = document.getElementById('add-exp');
 		addBtn.onclick = function() {
+      var temp = $('#experience').find('.vacantTxt')
+      if (temp.length > 0) {
+        vacantExp = true;
+        console.log('true');
+      }
 			if (vacantExp) { experience.childNodes[0].innerHTML = "" }
 			var newListItem = document.createElement("li");
 			var moduleContentHeader = document.createElement("div");
@@ -273,7 +342,12 @@ window.onload = function() {
 		 * Submit availability handler
      */
 		subDays.onclick = function(e) {
-			var finalized = 1;
+      console.log(e);
+			addDayAvailabilityItem(e);
+		}
+
+    function addDayAvailabilityItem(e){
+      var finalized = 1;
 			var noAdded = 0;
 			clearItems(e.target);
 			for (var i=0; i<dayBoxes.length; i++) {
@@ -297,7 +371,7 @@ window.onload = function() {
 			}
 			if (finalized == 1) { openModal.style.display = "none"; }
 			else { alert("Specify an availability time!"); }
-		}
+    }
 
      /**
 		 * Removes all items from the callers list
@@ -471,13 +545,15 @@ window.onload = function() {
 	else if (document.getElementsByTagName("body")[0].className.match("matches")) { // Only for matches page
 		var matchTabs = document.getElementsByClassName('match-tab'); //Match tabs on modal
 		var matchList = document.getElementById('single-matches'); //List of matches
-		var matches = matchList.getElementsByTagName('li'); //List of matches
+		var expModals = $('.modal');
 
-		for (var i=0; i<matches.length; i++) {
-			matches[i].addEventListener("click", function() {
-				document.getElementById('sampleMatch').style.display = "block";
-			})
-		}
+
+		$('.viewExp').click(function (){
+			var parentCol = $(this).closest('div');
+			var row = parentCol.parent();
+			var modal = row.find('.modal');
+			modal.css("display", "block");
+		});
 
     /**
 		 * Event handler for tab switching in match viewer
@@ -572,41 +648,6 @@ window.onload = function() {
 			if (curDrop.classList.contains('show')) {
 				return curDrop;
 			}
-		}
-	}
-
-  /**
-	 * Validates valid form entries
-   */
-	function validateSignUp() {
-		var uname = document.forms["sign-up-form"]["uname"].value;
-		if (!(/^(\d|\w)+$/.test(uname))) {
-			alert("Username is invalid.");
-			return false;
-		}
-
-		var fname = document.forms["sign-up-form"]["fname"].value;
-		if (!(/^(\w)+$/.test(fname))) {
-			alert("First Name is invalid.");
-			return false;
-		}
-
-		var lname = document.forms["sign-up-form"]["lname"].value;
-		if (!(/^(\w)+$/.test(lname))) {
-			alert("Last Name is invalid.");
-			return false;
-		}
-
-		var uni = document.forms["sign-up-form"]["uni"].value;
-		if (!(/^(\w)+(\s\w+)*$/.test(uni))) {
-			alert("Uni is invalid.");
-			return false;
-		}
-
-		var email = document.forms["sign-up-form"]["email"].value;
-		if (!(/^(\d|\w)+@\w*\.edu\.au$/.test(email))) {
-			alert("Email is invalid.");
-			return false;
 		}
 	}
 

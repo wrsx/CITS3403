@@ -4,7 +4,28 @@ var passport = require('passport');
 var Account = require('../models/account');
 var Units = require('../models/units');
 // end passport
+
 var router = express.Router();
+
+/* GET references page*/
+router.get('/bio', function(req, res, next) {
+  res.render('bio', {title: 'StudyFinder - Algorithm', pagename: 'algorithm', loggedIn: req.user});
+});
+
+/* GET algorithm page*/
+router.get('/algorithm', function(req, res, next) {
+  res.render('algorithm', {title: 'StudyFinder - Algorithm', pagename: 'algorithm', loggedIn: req.user});
+});
+
+/* GET architecture/design/difficulties page*/
+router.get('/design', function(req, res, next) {
+  res.render('design', {title: 'StudyFinder - Design', pagename: 'design', loggedIn: req.user});
+});
+
+/* GET testing/validation page*/
+router.get('/testing', function(req, res, next) {
+  res.render('testing', {title: 'StudyFinder - Testing', pagename: 'testing', loggedIn: req.user});
+});
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -13,45 +34,17 @@ router.get('/', function(req, res, next) {
 
 /* POST home page. AKA Login */
 router.post('/login', passport.authenticate('local'), function(req, res) {
-  res.redirect('/'); //TO DO: redirect this to users profile page
+  res.redirect('/users/control');
 });
 
 function dayToNum(day){
   return ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].indexOf(day);
 }
 
-router.post('/updateavailability', function(req, res) {
-
-  var day = req.body.availability[0];
-  var start = req.body.availability[1].start; //TO DO: redirect this to users profile page
-  var end = req.body.availability[1].end;
-  var query = {'username': req.user.username};
-
-
-  console.log( day + " " + start + " " + end );
-  var curr_availability = JSON.parse( req.user.availability );
-
-
-
-  curr_availability[dayToNum(day)].start = start;
-  curr_availability[dayToNum(day)].end = end;
-
-  console.log( JSON.stringify( curr_availability ) );
-
-  Account.findOneAndUpdate(query, { "availability" : JSON.stringify( curr_availability ) }, function(err){
-    if (err){
-      console.log("ERROR");
-    }
-  });
-
-  console.log(req.user.availability);
-  res.end();
-});
-
 /* GET Logout */
 router.get('/logout', function(req, res) {
   req.logout();
-  res.redirect('/');
+    res.redirect('/');
 });
 
 /* GET signup page. */
@@ -61,22 +54,43 @@ router.get('/signup', function(req, res, next) {
 
 /* POST signup page. */
 router.post('/signup', function(req, res) {
-  var avail = JSON.stringify(req.body.avail);
-  console.log((avail));
-  Account.register(new Account({  firstname: req.body.firstname,
-                                  lastname: req.body.lastname,
-                                  username: req.body.username,
-                                  availability: avail }),
-                                  req.body.password,
-                   function(err, account) {
-                      if (err) {
-                        console.log(err);
-                        return res.render('signup', { account : account });
-                      }
-                      passport.authenticate('local')(req, res, function () {
-                        res.redirect('/');
-                      });
-                   });
+  var error = "";
+  if (!(/^([A-Za-z])+$/.test(req.body.firstname)))
+    error = "First Name may only contain letters. ie. \"John\"\n";
+  if (!(/^([A-Za-z])+$/.test(req.body.lastname)))
+    error = error + "Last Name may only contain letters. ie. \"Smith\"\n";
+  if (!(/^\d{2}$/.test(req.body.age)))
+    error = error + "Age may only contain two digits. ie. \"23\"\n";
+  if (!(/^\d{8}@student\.uwa\.edu\.au$/.test(req.body.username)))
+    error = error + "Email must be of the form: \"12345678@student.uwa.edu.au\"\n";
+  if (!(/^(\w|\d){6,18}$/.test(req.body.password)))
+    error = error + "Password must contain 6-18 alphanumeric characters. ie. \"pa$$w0rd\"\n";
+
+  if(!error) {
+    Account.register(
+      new Account({
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        age: req.body.age,
+        username: req.body.username,
+        phone: 'Please add your phone number!',
+        availability: JSON.stringify(req.body.avail)
+        }),
+        req.body.password,
+        function(err, account) {
+          if (err) {
+            console.log(err);
+            return res.render('signup', { account : account });
+          }
+          passport.authenticate('local')(req, res, function () {
+            res.redirect('/users/control');
+            });
+        });
+  }
+  else {
+    console.log("\nERROR: " + error);
+    res.redirect('/signup');
+  }
 });
 
 /* POST unit requests */
@@ -88,15 +102,21 @@ router.post('/sub-units', function(req, res) {
 
 /* POST experience requests */
 router.post('/sub-exp', function(req, res) {
-  var result = new Array(req.body.expHeader.length);
-  for (var i=0; i<req.body.expHeader.length; i++) {
-    result[i] = new Array(2);
-    result[i][0] = req.body.expHeader[i];
-    result[i][1] = req.body.expContent[i];
+  req.user.experience = [];
+  if(typeof req.body.expContent != 'undefined') { //if any exp entries were sent
+    if (req.body.expContent.constructor == Array) { // if we receive multiple exp entries
+      console.log('Added multiple entry, size: ' + req.body.expHeader.length);
+      for (var i = 0; i < req.body.expHeader.length; i++) {
+        req.user.experience.push({exp_header: req.body.expHeader[i], exp_body: req.body.expContent[i]});
+      }
+    }
+    else { //we receive only one entry, so we can just add it
+      console.log('Added single entry');
+      req.user.experience.push({exp_header: req.body.expHeader, exp_body: req.body.expContent});
+    }
   }
-  req.user.experience = result;
   req.user.save();
-  res.send(result);
+  res.redirect('/users/control');
 });
 
 /* GET unit requests */
@@ -123,6 +143,31 @@ router.get('/search_unit', function(req, res) {
       }, 404);
     }
   });
+});
+
+router.post('/personaledit', function(req, res) {
+  var error = "";
+  if (!(/^([A-Za-z])+$/.test(req.body.firstname)))
+    error = "First Name may only contain letters. ie. \"John\"\n";
+  if (!(/^([A-Za-z])+$/.test(req.body.lastname)))
+    error = error + "Last Name may only contain letters. ie. \"Smith\"\n";
+  if (!(/^\d{2}$/.test(req.body.age)))
+    error = error + "Age may only contain two digits. ie. \"23\"\n";
+  if (!(/^(04\d{8}|Please add your phone number!|\s*)$/.test(req.body.phone)))
+    error = error + "Phone must be a mobile number beginning with \"04\". ie. \"0400555666\"\n";
+
+  if(!error) {
+    req.user.firstname = req.body.firstname;
+    req.user.lastname = req.body.lastname;
+    req.user.age = req.body.age;
+    req.user.phone = req.body.phone;
+    req.user.save();
+    res.redirect('/users/control');
+  }
+  else {
+    console.log("\nERROR: " + error);
+    res.redirect('/users/control');
+  }
 });
 
 

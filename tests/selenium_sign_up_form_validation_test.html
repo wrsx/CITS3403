@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://127.0.0.1:3000/" />
+<title>selenium_sign_up_form_validation_test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">selenium_sign_up_form_validation_test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign Up</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=firstname</td>
+	<td>Ben</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=lastname</td>
+	<td>Beige</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=age</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=username</td>
+	<td>01010101@student.uwa.edu.au</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>pass</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=firstname</td>
+	<td>1Be1n1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=lastname</td>
+	<td>1Be1ige1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=age</td>
+	<td>a200a</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=username</td>
+	<td>001010101@student.uwa.edu.au0</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>First Name may only contain letters. ie. &quot;John&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=firstname</td>
+	<td>Be1n1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>First Name may only contain letters. ie. &quot;John&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=firstname</td>
+	<td>Be1n</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>First Name may only contain letters. ie. &quot;John&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=firstname</td>
+	<td>Ben</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Last Name may only contain letters. ie. &quot;Smith&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=lastname</td>
+	<td>1Be1ige</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Last Name may only contain letters. ie. &quot;Smith&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=lastname</td>
+	<td>1Beige</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Last Name may only contain letters. ie. &quot;Smith&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=lastname</td>
+	<td>Beige</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Age may only contain two digits. ie. &quot;23&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=age</td>
+	<td>a200</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Age may only contain two digits. ie. &quot;23&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=age</td>
+	<td>a20</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Age may only contain two digits. ie. &quot;23&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=age</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Email must be of the form: &quot;12345678@student.uwa.edu.au&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=username</td>
+	<td>001010101@student.uwa.edu.au</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Email must be of the form: &quot;12345678@student.uwa.edu.au&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=username</td>
+	<td>001010101@student.uwa.edu</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Email must be of the form: &quot;12345678@student.uwa.edu.au&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=username</td>
+	<td>01010101@student.uwa.edu</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Email must be of the form: &quot;12345678@student.uwa.edu.au&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=username</td>
+	<td>01010101@uwa.edu.au</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Email must be of the form: &quot;12345678@student.uwa.edu.au&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=username</td>
+	<td>01010101@student.edu.au</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Email must be of the form: &quot;12345678@student.uwa.edu.au&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=username</td>
+	<td>01010101@student..edu.au</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=username</td>
+	<td>01010101@student.uwa.au</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Email must be of the form: &quot;12345678@student.uwa.edu.au&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=username</td>
+	<td>a1010101@student.uwa.edu.au</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Email must be of the form: &quot;12345678@student.uwa.edu.au&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=username</td>
+	<td>0101010a@student.uwa.edu.au</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Email must be of the form: &quot;12345678@student.uwa.edu.au&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=username</td>
+	<td>01010101@student.uwa.edu.au</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Password must contain 6-18 alphanumeric characters. ie. &quot;pa$$w0rd&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>pass6</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Password must contain 6-18 alphanumeric characters. ie. &quot;pa$$w0rd&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>pass666666666666666666</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Password must contain 6-18 alphanumeric characters. ie. &quot;pa$$w0rd&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>h e l e </td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Password must contain 6-18 alphanumeric characters. ie. &quot;pa$$w0rd&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td> 4567890</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Password must contain 6-18 alphanumeric characters. ie. &quot;pa$$w0rd&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>a</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Password must contain 6-18 alphanumeric characters. ie. &quot;pa$$w0rd&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=lastname</td>
+	<td>Beige Brown</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Last Name may only contain letters. ie. &quot;Smith&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=firstname</td>
+	<td>Ben Brown</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>First Name may only contain letters. ie. &quot;John&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=firstname</td>
+	<td>Ben</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=lastname</td>
+	<td>Beige</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=age</td>
+	<td>20 0</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Age may only contain two digits. ie. &quot;23&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=age</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=username</td>
+	<td>01010101@gmail.com</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Email must be of the form: &quot;12345678@student.uwa.edu.au&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=username</td>
+	<td>01010101@student.uwa.edu.au</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input.button</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

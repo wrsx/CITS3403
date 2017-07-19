@@ -5,20 +5,37 @@ var Account = require('../models/account');
 
 
 /* GET users listing. */
-router.get('/control', function(req, res, next) {
+router.get('/control', ensureAuthenticated , function(req, res, next) {
   res.render('control', { title: 'StudyFinder - User Control',
                           pagename: 'control',
                           loggedIn: req.user,
-                          name: req.user.firstname + " " + req.user.lastname,
-                          age: 'should this be added at signup or be optionally added later?',
-                          phone: 'should this be added at signup or be optionally added later?',
+                          name: req.user.firstname + ' ' + req.user.lastname,
+                          firstname: req.user.firstname,
+                          lastname: req.user.lastname,
+                          age: req.user.age,
+                          phone: req.user.phone,
                           email: req.user.username,
                           units: req.user.units,
-                          noUnits: req.user.units.length
+                          noUnits: req.user.units.length,
+                          experience: req.user.experience,
+                          noExp: req.user.experience.length
                         });
 });
 
-router.get('/matches', function(req, res, next) {
+router.post('/updateavailability' , ensureAuthenticated , function (req,res) {
+  console.log(req.body.avail);
+  console.log( JSON.stringify( req.body.avail ) );
+  Account.findOneAndUpdate( {username: req.user.username} , { "availability" : JSON.stringify( req.body.avail ) }, function(err){
+    if (err){
+      console.log("ERROR");
+    }
+  });
+  res.redirect('/users/control');
+});
+
+
+
+router.get('/matches', ensureAuthenticated , function(req, res, next) {
 
   Account.find({}, function(err, users){
     var matchesusers = [];
@@ -55,5 +72,14 @@ router.get('/matches', function(req, res, next) {
   });
 
 });
+
+function ensureAuthenticated(req, res, next){
+  if(req.isAuthenticated()){
+    return next();
+  } else {
+    res.redirect('/');
+  }
+}
+
 
 module.exports = router;

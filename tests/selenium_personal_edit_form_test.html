@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://127.0.0.1:3000/" />
+<title>selenium_personal_edit_form_test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">selenium_personal_edit_form_test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=loginBtn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=username</td>
+	<td>01010101@student.uwa.edu.au</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=login-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personal-edit-btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=personalName</td>
+	<td>1Ben</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>First Name may only contain letters. ie. &quot;John&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=personalName</td>
+	<td>Ben1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>First Name may only contain letters. ie. &quot;John&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=personalName</td>
+	<td>Be1n</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>First Name may only contain letters. ie. &quot;John&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=personalName</td>
+	<td>Ben Beige</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>First Name may only contain letters. ie. &quot;John&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=personalName</td>
+	<td>Ben </td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>First Name may only contain letters. ie. &quot;John&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=personalName</td>
+	<td>Ben</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=lastname</td>
+	<td>1Beige</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Last Name may only contain letters. ie. &quot;Smith&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=lastname</td>
+	<td>Beige1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Last Name may only contain letters. ie. &quot;Smith&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=lastname</td>
+	<td>Bei1ge</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Last Name may only contain letters. ie. &quot;Smith&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=lastname</td>
+	<td>Beige Ben</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Last Name may only contain letters. ie. &quot;Smith&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=lastname</td>
+	<td>Beige </td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Last Name may only contain letters. ie. &quot;Smith&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=lastname</td>
+	<td>Beige</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=personalAge</td>
+	<td>a200a</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Age may only contain two digits. ie. &quot;23&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=personalAge</td>
+	<td>a200</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Age may only contain two digits. ie. &quot;23&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=personalAge</td>
+	<td>200</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Age may only contain two digits. ie. &quot;23&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=personalAge</td>
+	<td>20 0</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Age may only contain two digits. ie. &quot;23&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=personalAge</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=personalPhone</td>
+	<td>0500444666</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Phone must be a mobile number beginning with &quot;04&quot;. ie. &quot;0400555666&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=personalPhone</td>
+	<td>0400 444 666</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Phone must be a mobile number beginning with &quot;04&quot;. ie. &quot;0400555666&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=personalPhone</td>
+	<td>0400 444666</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Phone must be a mobile number beginning with &quot;04&quot;. ie. &quot;0400555666&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=personalPhone</td>
+	<td>a0400444666</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Phone must be a mobile number beginning with &quot;04&quot;. ie. &quot;0400555666&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=personalPhone</td>
+	<td>0400444666a</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Phone must be a mobile number beginning with &quot;04&quot;. ie. &quot;0400555666&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=personalPhone</td>
+	<td>040a444666</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Phone must be a mobile number beginning with &quot;04&quot;. ie. &quot;0400555666&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=personalPhone</td>
+	<td>0400444666</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=personalSubmit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

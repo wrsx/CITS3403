@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    h1 Architecture, Design Choices, and Difficulties
+    h3 Architecture
+    | We opted for a simple and easy to use site architecture. Users are greeted with a simple splash page asking them to login, where they are redirected to their User Panel. We have kept our navigation & footer consistent across every page for ease of access. Users can easily navigate back to the Home Page by clicking the logo in the top right. Content on both the User Panel and Matches page are separated by modules with prominent headers to give different features a distinct area.
+    h3 Design Choices
+    | The website makes extensive use of modal popup's to prevent clutter and excessive use of separate web pages. The general idea of the site it to keep things simple yet functional at the same time. We kept strict to a consistent theme throughout the site, only making use of a few selective colours and styles. Design wise, the site differs only slightly from stage 1 of the project. Fortunately our proposed front-ends were all similar in looks, making it easy to agree on a common theme.
+    h3 Difficulties
+    li Repository - Keeping code up to date while at the same time working on the same documents caused some slight overlap. Luckily, merging was made much less painful than expected thanks to how Github handles commits.
+    br
+    li Merging features - Despite our front-ends having a similar theme & style, we found some difficulty in merging certain features due to implementation methods.
+    br
+    li Converting a front-end to a back-end - Much of our code was written in pure javascript due to limitations during the first part of the project. Secondly, many placeholder variables, functions, and buttons were in place for demonstration sake, which in some cases needed do be completely re-written to suite the back-end. Libraries such a jQuery were extensively used during the second part of the project, leaving us with a script file scattered with a mixture of both pure Javascript and jQuery.
+    br
+    li Cross-browser functionality - As all group members used the same browser, little time was left for testing across separate browsers. Consequently, certain features remain buggy in less-common browsers.
+    br
+    li Blackboard API - We had hoped to make use of the API Blackboard provides to easily pull unit/user data. Unfortunately, blackboard does not allow cross-domain Ajax requests, and as such, we had to think of an alternative option. This proved to be one of the most prominent difficulties faced, with considerable time lost trying to figure workarounds. In the end, we were forced to manually populate our DB with unit data, and implement a predictive searchbar for users to add their units.

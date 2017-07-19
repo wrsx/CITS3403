@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var dbURI = 'mongodb://jimorey:jim123@ds117271.mlab.com:17271/studyfinderdb'
 //var dbURI = 'mongodb://localhost:27017/CITS3403'
+
 mongoose.connect(dbURI);
 
 mongoose.connection.on('connected', function () {

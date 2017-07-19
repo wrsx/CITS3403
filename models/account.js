@@ -10,6 +10,8 @@ var Experience = new Schema({
 var Account = new Schema({
   firstname: String,
   lastname: String,
+  age: String,
+  phone: String,
   username: String,
   password: String,
   units: [String],
